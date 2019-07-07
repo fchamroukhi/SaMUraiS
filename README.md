@@ -3,12 +3,19 @@ StAtistical Models for the UnsupeRvised segmentAion of tIme Series
 
 SaMUraiS is a toolbox including many flexible user-friendly and efficient statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, logitidunal data which include regime changes.
 This includes namely the following packages
+
 RHLP 
+
 MRHLP 
+
 HMM/HMMR 
+
 MHMMR 
+
 PWR
+
 The models and algorithms are developped and written in Matlab by Faicel Chamroukhi, and translated and designed into R packages by Florian Lecocq, Marius Bartcus and Faicel Chamroukhi.
+
 References
 
 Faicel Chamroukhi and Hien D. Nguyen. Model-Based Clustering and Classification of Functional Data. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, Jan., 2019
