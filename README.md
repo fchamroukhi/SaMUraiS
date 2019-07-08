@@ -1,8 +1,8 @@
 # SaMUraiS
 StAtistical Models for the UnsupeRvised segmentAion of tIme Series
 
-SaMUraiS is a toolbox including many flexible user-friendly and efficient statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, logitidunal data which include regime changes.
-This includes namely the following packages
+SaMUraiS is a toolbox including many flexible user-friendly and original statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, logitidunal data which include regime changes.
+Our SaMUraiS use mainly the following efficient "sword" packages to segment data:
 
 RHLP 
 
