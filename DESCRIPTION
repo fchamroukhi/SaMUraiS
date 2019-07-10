@@ -1,0 +1,27 @@
+Package: samurais
+Type: Package
+Title: StAtistical Models for the UnsupeRvised segmentAion of tIme Series
+Version: 0.1.0
+Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
+    email = "faicel.chamroukhi@unicaen.fr",
+    comment = c(ORCID = "0000-0002-5894-3103")),
+    person("Marius", "Bartcus", role = c("aut"), 
+    email = "marius.bartcus@gmail.com"),
+    person("Florian", "Lecocq", role = c("aut", "cre"),
+    email = "florian.lecocq@outlook.com"))
+Description: SaMUraiS is a toolbox including many flexible user-friendly and 
+    original statistical latent variable models and unsupervised algorithms to 
+    segment and represent, time-series data (univariate or multivariate), and 
+    more generally, logitidunal data which include regime changes. Our 
+    SaMUraiS use mainly the following efficient 'sword' packages to segment 
+    data: RHLP, MRHLP, HMMR, MHMMR, PWR.
+License: GPL (>= 3)
+Imports: 
+    Rcpp
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
