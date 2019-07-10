@@ -1,0 +1,123 @@
+citHeader("To cite the package samurais in publications use:")
+
+citEntry(
+  entry = "Article",
+  title = "Model-Based Clustering and Classification of Functional Data",
+  author = personList(person(given="F.", family="Chamroukhi"),
+                      person(given="Hien D.", family="Nguyen")),
+  journal = "Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery",
+  year = "2019",
+  url = "https://chamroukhi.com/papers/MBCC-FDA.pdf",
+  doi = "10.1002/widm.1298",
+  textVersion = "Chamroukhi F, Nguyen H (2019). \u201cModel-Based Clustering
+  and Classification of Functional Data.\u201d Wiley Interdisciplinary Reviews:
+  Data Mining and Knowledge Discovery. doi: 10.1002/widm.1298
+  (URL: https://doi.org/10.1002/widm.1298),
+  <URL:https://chamroukhi.com/papers/MBCC-FDA.pdf>."
+)
+
+citEntry(
+  entry = "PhdThesis",
+  title = "Statistical learning of latent data models for complex data analysis",
+  author = person(given="F.", family="Chamroukhi"),
+  school = "Universit\'{e} de Toulon",
+  year = "2015",
+  type = "{Habilitation Thesis (HDR)}",
+  textVersion = "Chamroukhi F (2015). \u201cStatistical learning of latent data
+  models for complex data analysis\u201d. Habilitation Thesis (HDR),
+  Universit\u00e9 de Toulon."
+)
+
+citEntry(
+  entry = "Article",
+  title = "Joint segmentation of multivariate time series with hidden process regression for human activity recognition",
+  author = personList(person(given="F.", family="Chamroukhi"),
+                      person(given="D.", family="Trabelsi"),
+                      person(given="S.", family="Mohammed"),
+                      person(given="L.", family="Oukhellou"),
+                      person(given="Y.", family="Amirat")),
+  journal = "Neurocomputing",
+  year = "2013",
+  volume = "120",
+  publisher = "Elsevier",
+  pages = "633--644",
+  url = "https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf",
+  textVersion = "Chamroukhi F, Trabelsi D, Mohammed S, Oukhellou L and Amirat Y (2013).
+  \u201cJoint segmentation of multivariate time series with hidden process regression
+  for human activity recognition.\u201d Neurocomputing, 120, pp. 633-644.
+  <URL:https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>."
+)
+
+citEntry(
+  entry = "Article",
+  title = "An unsupervised approach for automatic activity recognition based on Hidden
+          Markov Model Regression",
+  author = personList(person(given="D.", family="Trabelsi"),
+                      person(given="S.", family="Mohammed"),
+                      person(given="F.", family="Chamroukhi"),
+                      person(given="L.", family="Oukhellou"),
+                      person(given="Y.", family="Amirat")),
+  journal = "IEEE Transactions on Automation Science and Engineering",
+  year = "2013",
+  volume = "3",
+  number = "10",
+  pages = "829--335",
+  url = "https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf",
+  textVersion = "Trabelsi D, Mohammed S, Chamroukhi F, Oukhellou L, Amirat Y (2013).
+  \u201cAn unsupervised approach for automatic activity recognition based on Hidden Markov
+  Model Regression.\u201d IEEE Transactions on Automation Science and Engineering, 3(10),
+  829-335. <URL: https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>."
+)
+
+citEntry(
+  entry = "PhdThesis",
+  title = "Hidden process regression for curve modeling, classification and tracking",
+  author = person(given="F.", family="Chamroukhi"),
+  school = "Universit\'{e} de Technologie de Compi\`{e}gne",
+  year = "2010",
+  type = "Ph.D. Thesis",
+  url = "https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf",
+  textVersion = "Chamroukhi F (2010). \u201cHidden process regression for curve
+  modeling, classification and tracking\u201d. Ph.D. Thesis, Universit\u00e9 de
+  Technologie de Compi\u00e8gne.
+  <URL: https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>."
+)
+
+citEntry(
+  entry = "Article",
+  title = "A hidden process regression model for functional data description. Application to curve discrimination",
+  author = personList(person(given="F.", family="Chamroukhi"),
+                      person(given="A.", family="Sam\\'{e}"),
+                      person(given="G.", family="Govaert"),
+                      person(given="P.", family="Aknin")),
+  journal = "Neurocomputing",
+  publisher = "",
+  year = "2010",
+  volume = "73",
+  number = "7-9",
+  pages = "1210--1221",
+  url = "https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf",
+  textVersion = "Chamroukhi F, Sam\u00e9 A, Govaert G, Aknin P (2010). \u201cA
+  hidden process regression model for functional data description. Application
+  to curve discrimination.\u201d Neurocomputing, 73(7-9), 1210-1221.
+  <URL: https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>."
+)
+
+citEntry(
+  entry = "Article",
+  title = "Time series modeling by a regression approach based on a latent process",
+  author = personList(person(given="F.", family="Chamroukhi"),
+                      person(given="A.", family="Sam\\'{e}"),
+                      person(given="G.", family="Govaert"),
+                      person(given="P.", family="Aknin")),
+  journal = "Neural Networks",
+  publisher = "Elsevier Science Ltd.",
+  year = "2009",
+  volume = "22",
+  number = "5-6",
+  pages = "593--602",
+  url = "https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf",
+  textVersion = "Chamroukhi F, Sam\u00e9 A, Govaert G, Aknin P (2009). \u201cTime series
+  modeling by a  regression approach based on a latent process.\u201d Neural Networks,
+  22(5-6), 593-602. <URL:https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>."
+)

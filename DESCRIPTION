@@ -1,5 +1,5 @@
-Package: samurais
 Type: Package
+Package: samurais
 Title: StAtistical Models for the UnsupeRvised segmentAion of tIme Series
 Version: 0.1.0
 Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
@@ -16,11 +16,56 @@ Description: SaMUraiS is a toolbox including many flexible user-friendly and
     SaMUraiS use mainly the following efficient 'sword' packages to segment 
     data: RHLP, MRHLP, HMMR, MHMMR, PWR.
 License: GPL (>= 3)
+Depends: 
+    R (>= 2.10)
 Imports: 
+    methods,
+    stats,
+    MASS,
     Rcpp
+Suggests: 
+    knitr,
+    rmarkdown
 LinkingTo: 
     Rcpp,
     RcppArmadillo
+Collate:
+    samurais-package.R
+    RcppExports.R
+    utils.R
+    dynamicProg.R
+    fitPWRFisher.R
+    mkStochastic.R
+    hmmProcess.R
+    MData.R
+    ParamHMMR.R
+    ParamMHMMR.R
+    ParamMRHLP.R
+    ParamPWR.R
+    ParamRHLP.R
+    StatHMMR.R
+    StatMHMMR.R
+    StatMRHLP.R
+    StatPWR.R
+    StatRHLP.R
+    ModelHMMR.R
+    ModelMHMMR.R
+    ModelMRHLP.R
+    ModelPWR.R
+    ModelRHLP.R
+    emHMMR.R
+    emMHMMR.R
+    emMRHLP.R
+    emRHLP.R
+    selectHMMR.R
+    selectMHMMR.R
+    selectMRHLP.R
+    selectRHLP.R
+    data-multivrealdataset.R
+    data-multivtoydataset.R
+    data-univrealdataset.R
+    data-univtoydataset.R
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

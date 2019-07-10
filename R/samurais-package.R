@@ -1,3 +1,4 @@
+#' @import methods
 ## usethis namespace: start
 #' @useDynLib samurais, .registration = TRUE
 ## usethis namespace: end

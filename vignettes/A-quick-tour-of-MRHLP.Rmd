@@ -1,0 +1,94 @@
+---
+title: "A-quick-tour-of-MRHLP"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A-quick-tour-of-MRHLP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+	fig.align = "center",
+	fig.height = 5.5,
+	fig.width = 6,
+	warning = FALSE,
+	collapse = TRUE,
+	dev.args = list(pointsize = 10),
+	out.width = "90%",
+	par = TRUE
+)
+knit_hooks$set(par = function(before, options, envir)
+  { if (before && options$fig.show != "none") 
+       par(family = "sans", mar = c(4.1,4.1,1.1,1.1), mgp = c(3,1,0), tcl = -0.5)
+})
+```
+
+```{r, message = FALSE, echo = FALSE}
+library(samurais)
+```
+
+# Introduction
+
+**MRHLP**: Flexible and user-friendly probabilistic joint segmentation of 
+multivariate time series (or multivariate structured data) with smooth and/or 
+abrupt regime changes by a mixture model-based multiple regression approach 
+with a hidden logistic process, fitted by the EM algorithm.
+
+It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production.
+
+See `help(package="samurais")` for further details and references provided by `citation("samurais")`.
+
+# Load simulated data
+
+```{r}
+data("multivtoydataset")
+```
+
+## Set up MRHLP model parameters
+
+```{r}
+K <- 5 # Number of regimes (mixture components)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+```
+
+## Set up EM parameters
+
+```{r}
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+verbose_IRLS <- FALSE
+```
+
+
+## Estimation
+
+```{r}
+mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], K, p, q, 
+                 variance_type, n_tries, max_iter, threshold, verbose, verbose_IRLS)
+```
+
+## Summary
+
+```{r}
+mrhlp$summary()
+```
+
+# Plots
+
+## Fitted regressors
+
+```{r}
+mrhlp$plot(what = "regressors")
+```
+
+## Estimated signal
+
+```{r}
+mrhlp$plot(what = "estimatedsignal")
+```
