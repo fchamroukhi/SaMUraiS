@@ -1,9 +1,9 @@
-#' emRHLP is used to fit a RHLP model.
+#' emRHLP inmplemens the EM algorithm to fit a RHLP model.
 #'
-#' emRHLP is used to fit a RHLP model. The estimation method is performed by the
-#' Expectation-Maximization algorithm.
+#' emRHLP implements the maximum-likelihood parameter estimation of the RHLP model by the
+#' Expectation-Maximization (EM) algorithm.
 #'
-#' @details emRHLP function implements the EM algorithm. This function starts
+#' @details emRHLP function implements the EM algorithm for the RHLP model. This function starts
 #'   with an initialization of the parameters done by the method `initParam` of
 #'   the class [ParamRHLP][ParamRHLP], then it alternates between the E-Step
 #'   (method of the class [StatRHLP][StatRHLP]) and the M-Step (method of the
@@ -106,7 +106,7 @@ emRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", "
     }
   }
 
-  # Computation of c_ig the hard partition of the curves and klas
+  # Computation of Z_ik the hard partition of the curves and klas (the estimated segment labels z_i)
   statSolution$MAP()
 
   if (n_tries > 1 && verbose) {

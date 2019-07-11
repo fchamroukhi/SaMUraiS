@@ -61,7 +61,7 @@ ModelMHMMR <- setRefClass(
         plot.default(param$mData$X, stat$predict_prob[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[t - 1]) ~ ')'), col = colorsvec[1], lwd = 1.5, main = "Prediction probabilities", ylim = c(0, 1), ...)
         if (param$K > 1) {
           for (k in 2:param$K) {
-            lines(param$mData$X, stat$predict_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Post Probs: Pr(Z_{t}=k|y_1,\ldots,y_{t-1})
+            lines(param$mData$X, stat$predict_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Pred Probs: Pr(Z_{t}=k|y_1,\ldots,y_{t-1})
           }
         }
       }
@@ -79,7 +79,7 @@ ModelMHMMR <- setRefClass(
         plot.default(param$mData$X, stat$filter_prob[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[t]) ~ ')'), col = colorsvec[1], lwd = 1.5, main = "Filtering probabilities", ylim = c(0, 1), ...)
         if (param$K > 1) {
           for (k in 2:param$K) {
-            lines(param$mData$X, stat$filter_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Post Probs: Pr(Z_{t}=k|y_1,\ldots,y_t)
+            lines(param$mData$X, stat$filter_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Filter Probs: Pr(Z_{t}=k|y_1,\ldots,y_t)
           }
         }
       }
@@ -106,7 +106,7 @@ ModelMHMMR <- setRefClass(
 
         }
 
-        # Probablities of the hidden process (segmentation)
+        # Smoothing Probablities of the hidden process (segmentation)
         plot.default(param$mData$X, stat$tau_tk[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[n]) ~ ')'), col = colorsvec[1], lwd = 1.5, main = "Smoothing probabilities", ylim = c(0, 1), ...)
         if (param$K > 1) {
           for (k in 2:param$K) {

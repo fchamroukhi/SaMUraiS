@@ -1,6 +1,6 @@
 #' A Reference Class which contains parameters of a MHMMR model.
 #'
-#' ParamMHMMR contains all the parameters of a MHMMR model.
+#' ParamMHMMR contains all the parameters of a MHMMR model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
 #'
 #' @field mData [MData][MData] object representing the sample (covariates/inputs
 #'   `X` and observed multivariate responses/outputs `Y`).
@@ -86,7 +86,7 @@ ParamMHMMR <- setRefClass(
       \\code{sigma2} are initialized by segmenting randomly the time series
       \\code{Y} into \\code{K} segments."
 
-      # Initialization taking into account the constraint:
+      # Initialization taking into account the constraint (oredered segments)
 
       # Initialization of the transition matrix
       maskM <- 0.5 * diag(K) # Mask of order 1
@@ -104,7 +104,7 @@ ParamMHMMR <- setRefClass(
       prior <<- matrix(c(1, rep(0, K - 1)))
 
       # Initialization of regression coefficients and variances
-      if (try_algo == 1) { # Uniform segmentation into K contiguous segments, and then a regression
+      if (try_algo == 1) { # Uniform segmentation into K contiguous segments, and then a regression on each segment)
 
         zi <- round(mData$m / K) - 1
 
@@ -124,7 +124,7 @@ ParamMHMMR <- setRefClass(
             sigma2[, , k] <<- sk / length(yk)
           }
         }
-      } else {# Random segmentation into contiguous segments, and then a regression
+      } else {# Random segmentation into contiguous segments, and then a regression on each segment
 
         Lmin <- p + 1 + 1 # Minimum length of a segment
         tk_init <- rep(0, K)

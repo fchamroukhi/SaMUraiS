@@ -1,6 +1,6 @@
-#' A Reference Class which contains parameters of a MRHLP model.
+#' A Reference Class which contains the parameters of a MRHLP model.
 #'
-#' ParamMRHLP contains all the parameters of a MRHLP model.
+#' ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
 #'
 #' @field mData [MData][MData] object representing the sample
 #'   (covariates/inputs `X` and observed responses/outputs `Y`).
@@ -111,7 +111,7 @@ ParamMRHLP <- setRefClass(
         }
 
       }
-      else{# Random segmentation into K contiguous segments, and then a regression
+      else{# Random segmentation into K contiguous segments, and then a regression on each segment
 
         # Initialization of W
         W <<- rand(q + 1, K - 1)
@@ -190,7 +190,7 @@ ParamMRHLP <- setRefClass(
       }
 
       # Maximization w.r.t W
-      #  IRLS : Iteratively Reweighted Least Squares (for IRLS, see the IJCNN 2009 paper)
+      #  IRLS : Iteratively Reweighted Least Squares (for IRLS, see our IJCNN 2009 paper for example)
       res_irls <- IRLS(phi$Xw, statMRHLP$tau_ik, ones(nrow(statMRHLP$tau_ik), 1), W, verbose_IRLS)
 
       W <<- res_irls$W

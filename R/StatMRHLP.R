@@ -2,7 +2,9 @@
 #'
 #' StatMRHLP contains all the statistics associated to a [MRHLP][ParamMRHLP]
 #' model.
-#'
+#' It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables, 
+#' as well as the calculation of the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+#' 
 #' @field pi_ik Matrix of size \eqn{(m, K)} representing the prior/logistic
 #'   probabilities \eqn{\pi_{k}(x_{i}; \boldsymbol{\Psi}) = P(z_{i} = k |
 #'   \boldsymbol{x}; \Psi)}{\pi_{k}(x_{i}; \Psi) = P(z_{i} = k | x; \Psi)} of

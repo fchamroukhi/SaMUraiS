@@ -30,7 +30,7 @@ ModelMRHLP <- setRefClass(
         }
         \\item{\\code{\\dots}}{Other graphics parameters.}
       }
-      By default, all the above graphs are produced."
+      By default, all the graphs mentioned above are produced."
 
       what <- match.arg(what, several.ok = TRUE)
 

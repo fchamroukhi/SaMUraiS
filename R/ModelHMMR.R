@@ -36,7 +36,7 @@ ModelHMMR <- setRefClass(
         }
         \\item{\\code{\\dots}}{Other graphics parameters.}
       }
-      By default, all the above graphs are produced."
+      By default, all the graphs mentioned above are produced."
 
       what <- match.arg(what, several.ok = TRUE)
 
@@ -54,11 +54,11 @@ ModelHMMR <- setRefClass(
         lines(param$X, stat$predicted, type = "l", col = "red", lwd = 1.5, ...)
         title(main = "Original and predicted HMMR time series")
 
-        # Prediction probabilities of the hidden process (segmentation)
+        # Prediction probabilities of the hidden process 
         plot.default(param$X, stat$predict_prob[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[t - 1]) ~ ')'), col = colorsvec[1], lwd = 1.5, main = "Prediction probabilities", ylim = c(0, 1), ...)
         if (param$K > 1) {
           for (k in 2:param$K) {
-            lines(param$X, stat$predict_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Post Probs: Pr(Z_{t}=k|y_1,\ldots,y_{t-1})
+            lines(param$X, stat$predict_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Pred Probs: Pr(Z_{t}=k|y_1,\ldots,y_{t-1})
           }
         }
       }
@@ -70,12 +70,12 @@ ModelHMMR <- setRefClass(
         title(main = "Original and filtered HMMR time series")
         lines(param$X, stat$filtered, col = "red", lwd = 1.5, ...)
 
-        # Filtering probabilities of the hidden process (segmentation)
+        # Filtering probabilities of the hidden process
         plot.default(param$X, stat$filter_prob[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[t]) ~ ')'), col = colorsvec[1], lwd = 1.5, ylim = c(0, 1), ...)
         title(main = "Filtering probabilities")
         if (param$K > 1) {
           for (k in 2:param$K) {
-            lines(param$X, stat$filter_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Post Probs: Pr(Z_{t}=k|y_1,\ldots,y_t)
+            lines(param$X, stat$filter_prob[, k], col = colorsvec[k], lwd = 1.5, ...) # Filter Probs: Pr(Z_{t}=k|y_1,\ldots,y_t)
           }
         }
       }
@@ -99,7 +99,7 @@ ModelHMMR <- setRefClass(
           }
         }
 
-        # Probablities of the hidden process (segmentation)
+        # Smoothing probabilities of the hidden process (segmentation)
         plot.default(param$X, stat$tau_tk[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[n]) ~ ')'), col = colorsvec[1], lwd = 1.5, ylim = c(0, 1), ...)
         title(main = "Smoothing probabilities")
         if (param$K > 1) {

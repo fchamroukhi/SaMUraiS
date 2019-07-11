@@ -1,9 +1,10 @@
-#' emHMMR is used to fit a HMMR model.
+#' emHMMR inmplemens the EM (Baum-Welch) algorithm to fit a HMMR model.
 #'
-#' emHMMR is used to fit a HMMR model. The estimation method is performed by the
-#' Expectation-Maximization algorithm.
+#' emHMMR implements the maximum-likelihood parameter estimation of the HMMR model by the
+#' Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs. 
 #'
-#' @details emHMMR function implements the EM algorithm. This function starts
+#'
+#' @details emHMMR function implements the EM algorithm for the HMMR model. This function starts
 #'   with an initialization of the parameters done by the method `initParam` of
 #'   the class [ParamHMMR][ParamHMMR], then it alternates between the E-Step
 #'   (method of the class [StatHMMR][StatHMMR]) and the M-Step (method of the
@@ -15,11 +16,11 @@
 #'   \eqn{x_{1},\dots,x_{m}}.
 #' @param Y Numeric vector of length \emph{m} representing the observed
 #'   response/output \eqn{y_{1},\dots,y_{m}}.
-#' @param K The number of regimes (HMMR components).
+#' @param K The number of regimes/segments (HMMR components).
 #' @param p Optional. The order of the polynomial regression. By default, `p` is
 #'   set at 3.
 #' @param variance_type Optional character indicating if the model is
-#'   "homoskedastic" or "heteroskedastic". By default the model is
+#'   "homoskedastic" or "heteroskedastic" (i.e same variance or different variances for each of the K regmies). By default the model is
 #'   "heteroskedastic".
 #' @param n_tries Optional. Number of runs of the EM algorithm. The solution
 #'   providing the highest log-likelihood will be returned.
@@ -52,7 +53,7 @@ emHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoske
     total_nb_try <- total_nb_try + 1
 
     ## EM Initializaiton step
-    ## Initialization of the Markov chain params, the regression coeffs, and the variance(s)
+    ## Initialization of the Markov chain parameters, the regression coefficients, and the variance(s)
     variance_type <- match.arg(variance_type)
     param <- ParamHMMR$new(X = X, Y = Y, K = K, p = p, variance_type = variance_type)
     param$initParam(nb_good_try + 1)
@@ -66,8 +67,8 @@ emHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoske
 
     while ((iter <= max_iter) && !converged) {
 
-      # E step : calculate tge tau_tk (p(Zt=k|y1...ym;theta)) and xi t_kl (and the log-likelihood) by
-      #  forwards backwards (computes the alpha_tk et beta_tk)
+      # E step : calculate the tau_tk (p(Zt=k|y1...ym;theta)) and xi t_kl (and the log-likelihood) by
+      #  forwards backwards (computes the alpha_tk and beta_tk)
       stat$EStep(param)
 
       # M step

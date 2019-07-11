@@ -1,7 +1,7 @@
-#' selectMHMMR implements the model selection procedure.
+#' selectMHMMR implements a model selection procedure to select an optimal MHMMR model with unknown structure.
 #'
-#' @details selectMHMMR implements the model selection. This function runs every
-#'   MHMMR model by varying the number of regimes `K` from `Kmin` to `Kmax` and
+#' @details selectMHMMR selects the optimal MHMMR model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
+#' Information Criterion (BIC). This function first fits the different MHMMR model candidates by varying the number of regimes `K` from `Kmin` to `Kmax` and
 #'   the order of the polynomial regression `p` from `pmin` to `pmax`. The model
 #'   having the highest value of the chosen selection criterion is then
 #'   selected.

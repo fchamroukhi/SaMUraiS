@@ -1,7 +1,9 @@
 #' A Reference Class which contains statistics of a MHMMR model.
 #'
 #' StatMHMMR contains all the statistics associated to a [MHMMR][ParamMHMMR] model.
-#'
+#' It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables (ie the smoothing probabilities), 
+#' as well as the calculation of the prediction and filtering probabilities, the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+#' 
 #' @field tau_tk Matrix of size \eqn{(m, K)} giving the posterior probability
 #'   that the observation \eqn{Y_{i}} originates from the \eqn{k}-th regression
 #'   model.

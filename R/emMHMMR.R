@@ -1,7 +1,8 @@
-#' emMHMMR is used to fit a MHMMR model.
+#' emMHMMR inmplemens the EM (Baum-Welch) algorithm to fit a MHMMR model.
 #'
-#' emMHMMR is used to fit a MHMMR model. The estimation method is performed by
-#' the Expectation-Maximization algorithm.
+#' emMHMMR implements the maximum-likelihood parameter estimation of the MHMMR model by the
+#' Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs. 
+#'
 #'
 #' @details emMHMMR function implements the EM algorithm. This function starts
 #'   with an initialization of the parameters done by the method `initParam` of
@@ -57,7 +58,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
       total_nb_try <- total_nb_try + 1
 
       # EM Initializaiton step
-      # Initialization of the Markov chain params, the regression coeffs, and the variance(s)
+      # Initialization of the Markov chain parameters, the regression coefficients, and the variance(s)
       variance_type <- match.arg(variance_type)
       param <- ParamMHMMR$new(mData = mData, K = K, p = p, variance_type = variance_type)
       param$initParam(nb_good_try + 1)
@@ -70,7 +71,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
       stat <- StatMHMMR$new(paramMHMMR = param)
 
       while ((iter <= max_iter) && !converged) {
-        # E step : calculate tge tau_tk (p(Zt=k|y1...ym;theta)) and xi t_kl (and the log-likelihood) by
+        # E step : calculate the tau_tk (p(Zt=k|y1...ym;theta)) and xi t_kl (and the log-likelihood) by
         #  forwards backwards (computes the alpha_tk et beta_tk)
         stat$EStep(param)
 

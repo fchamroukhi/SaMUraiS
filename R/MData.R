@@ -4,7 +4,7 @@
 #' can be ordered by time (multivariate time series). In the last case, the
 #' field `X` represents the time.
 #'
-#' @field X Numeric vector of length \emph{n}.
+#' @field X Numeric vector of length \emph{m}.
 #' @field Y Matrix of size \eqn{(m, d)} representing a \eqn{d} dimension
 #'   function of `X` observed at points \eqn{1,\dots,m}.
 #' @export
