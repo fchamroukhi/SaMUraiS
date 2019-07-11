@@ -22,11 +22,10 @@ set at 3.}
 fitPWRFisher returns an object of class \link{ModelPWR}.
 }
 \description{
-fitPWRFisher is used to fit a Piecewise Regression (PWR) model. The
-estimation method is performed by the dynamic programming algorithm.
+fitPWRFisher fits a Piecewise Regression (PWR) model to a regime changing time-series (or a longitidunal data). The estimation method is performed by an optimized dynamic programming algorithm.
 }
 \details{
-fitPWRFisher function implements the dynamic programming algorithm.
+fitPWRFisher function implements the dynamic programming algorithm for piece-wise regression model.
 This function starts with the calculation of the "cost matrix" then it
 estimates the transition points given \code{K} the number of regimes thanks to
 the method \code{computeDynamicProgram} (method of the class

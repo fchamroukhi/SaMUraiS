@@ -45,12 +45,10 @@ the log-likelihood should be printed during EM iterations.}
 \value{
 EM returns an object of class \link{ModelHMMR}.
 }
-\description{
-emHMMR is used to fit a HMMR model. The estimation method is performed by the
-Expectation-Maximization algorithm.
+\description{emMHMMR implements the Expectation-Maximization (EM) (Baum-Welch in this context of HMMs) algorithm to perform the maximum-likelihood parameter estimation of the HMMR model.
 }
 \details{
-emHMMR function implements the EM algorithm. This function starts
+emHMMR function implements the EM algorithm for the HMMR model. This function starts
 with an initialization of the parameters done by the method \code{initParam} of
 the class \link{ParamHMMR}, then it alternates between the E-Step
 (method of the class \link{StatHMMR}) and the M-Step (method of the

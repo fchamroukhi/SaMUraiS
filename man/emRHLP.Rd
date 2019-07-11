@@ -53,11 +53,10 @@ the EM algorithm.}
 EM returns an object of class \link{ModelRHLP}.
 }
 \description{
-emRHLP is used to fit a RHLP model. The estimation method is performed by the
-Expectation-Maximization algorithm.
+emRHLP implements the Expectation-Maximization (EM) algorithm to perform the maximum-likelihood parameter estimation of the RHLP model.
 }
 \details{
-emRHLP function implements the EM algorithm. This function starts
+emRHLP function implements the EM algorithm for the RHLP model. This function starts
 with an initialization of the parameters done by the method \code{initParam} of
 the class \link{ParamRHLP}, then it alternates between the E-Step
 (method of the class \link{StatRHLP}) and the M-Step (method of the
