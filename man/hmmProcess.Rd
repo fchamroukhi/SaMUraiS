@@ -16,7 +16,7 @@ matrix of the Markov chain.}
 \item{n}{Numeric. Number of variables of the Markov chain.}
 }
 \value{
-Matrix of size \eqn{(n, K)} giving the distribution of process given the K-states Markov
+Matrix of size \eqn{(n, K)} giving the distribution of process given the K-state Markov
 chain parameters.
 }
 \description{

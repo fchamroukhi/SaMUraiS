@@ -81,7 +81,7 @@ provided by the object \code{paramRHLP} of class \link{ParamRHLP}
 \item{\code{MAP()}}{MAP calculates values of the fields \code{z_ik} and \code{klas}
       by applying the Maximum A Posteriori Bayes allocation rule.
 
-      \eqn{z_{ik} = 1 \\ \\textrm{if} \ k = \textrm{arg} \ \textrm{max}_{s}
+      \eqn{z_{ik} = 1 \ \textrm{if} \ k = \textrm{arg} \ \textrm{max}_{s}
       \ \pi_{s}(x_{i}; \boldsymbol{\Psi});\ 0 \ \textrm{otherwise}}{
       z_{ik} = 1 if z_ik = arg max_{s} \pi_{k}(x_{i}; \Psi); 0 otherwise}}
 }}
