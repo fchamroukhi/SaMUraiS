@@ -4,16 +4,6 @@
 
 using namespace Rcpp;
 
-// This is a simple example of exporting a C++ function to R. You can
-// source this function into an R session using the Rcpp::sourceCpp
-// function (or via the Source button on the editor toolbar). Learn
-// more about Rcpp at:
-//
-//   http://www.rcpp.org/
-//   http://adv-r.had.co.nz/Rcpp.html
-//   http://gallery.rcpp.org/
-//
-
 // [[Rcpp::export]]
 arma::mat costMatrix(arma::colvec& y, arma::mat& X, double Lmin = 1) {
 
@@ -38,7 +28,6 @@ arma::mat costMatrix(arma::colvec& y, arma::mat& X, double Lmin = 1) {
 
           double nk = b - a;
 
-          // arma::colvec beta = solve(X_ab.t() * X_ab, X_ab.t() * yab);
           arma::colvec beta = pinv(X_ab.t() * X_ab) * X_ab.t() * yab;
           arma::colvec z = yab - X_ab * beta;
           double sigma = arma::as_scalar(z.t() * z) / nk;

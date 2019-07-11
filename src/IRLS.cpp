@@ -5,16 +5,6 @@
 
 using namespace Rcpp;
 
-// This is a simple example of exporting a C++ function to R. You can
-// source this function into an R session using the Rcpp::sourceCpp
-// function (or via the Source button on the editor toolbar). Learn
-// more about Rcpp at:
-//
-//   http://www.rcpp.org/
-//   http://adv-r.had.co.nz/Rcpp.html
-//   http://gallery.rcpp.org/
-//
-
 // [[Rcpp::export]]
 List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool verbose = false) {
 
@@ -111,18 +101,7 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
   int n = Tau.n_rows;
   int K = Tau.n_cols;
 
-  // Checker nrow(X) = nrow(Tau) = n
-
   int q = X.n_cols; // q here is (q+1)
-
-  /* Handle NULL Winit and Gamma
-   *
-   * if nargin<4; Winit = zeros(q,K-1);end % if there is no a specified initialization
-   * if nargin<3; Gamma = ones(n,1);end % for standard weighted multinomial logistic regression
-   *
-   */
-
-
 
   double lambda = 1e-9; // if a MAP regularization (a gaussian prior on W) (L_2 penalization); lambda is a positive hyperparameter
   arma::mat I(q * (K - 1), q * (K - 1), arma::fill::eye); // Define an identity matrix
@@ -219,7 +198,7 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
     W = w;
     W.reshape(q, K - 1); // [(q+1)*(K-1)]
 
-    // Mise a jour des probas et de la loglik
+    // Update probabilities and loglik
     out = multinomialLogit(W, X, Tau, Gamma);
     loglik = out["loglik"];
     loglik = loglik - lambda * std::pow(arma::norm(W), 2.0);
@@ -228,7 +207,7 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
 
     // Check if Qw1(w^(t+1),w^(t))> Qw1(w^(t),w^(t))
     // (adaptive stepsize in case of troubles with stepsize 1) Newton Raphson : W(t+1) = W(t) - stepsize*H(W)^(-1)*g(W)
-    double stepsize = 1; // Initialisation pas d'adaptation de l'algo Newton raphson
+    double stepsize = 1; // Initialization, no adaptation of the Newton Raphson algo
     double alpha = 2;
     while (loglik < loglik_old) {
 
@@ -280,5 +259,4 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
   }
 
   return List::create(Named("W") = W, Named("LL") = LL, Named("loglik") = loglik, Named("piik") = piik, Named("reg_irls") = reg_irls);
-  // return ret;
 }
