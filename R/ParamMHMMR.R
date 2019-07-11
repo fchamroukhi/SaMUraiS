@@ -1,6 +1,8 @@
 #' A Reference Class which contains parameters of a MHMMR model.
 #'
-#' ParamMHMMR contains all the parameters of a MHMMR model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
+#' ParamMHMMR contains all the parameters of a MHMMR model. The paramerts are
+#' calculated by the initialization Method and then updated by the Method
+#' implementing the M-Step of the EM algorithm.
 #'
 #' @field mData [MData][MData] object representing the sample (covariates/inputs
 #'   `X` and observed multivariate responses/outputs `Y`).

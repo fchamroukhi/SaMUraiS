@@ -7,7 +7,10 @@
 \title{A Reference Class which contains statistics of a RHLP model.}
 \description{
 StatRHLP contains all the statistics associated to a \link[=ParamRHLP]{RHLP} model.
-It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables, as well as the calculation of the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+It mainly includes the E-Step of the EM algorithm calculating the posterior
+distribution of the hidden variables, as well as the calculation of the
+log-likelhood at each step of the algorithm and the obtained values of model
+selection criteria..
 }
 \section{Fields}{
 

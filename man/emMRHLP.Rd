@@ -13,8 +13,8 @@ emMRHLP(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic",
 \eqn{x_{1},\dots,x_{m}}.}
 
 \item{Y}{Matrix of size \eqn{(m, d)} representing a \eqn{d} dimension
-function of \code{X} observed at points \eqn{1,\dots,m}. \code{Y} is the
-observed response/output.}
+function of \code{X} observed at points \eqn{1,\dots,m}. \code{Y} is the observed
+response/output.}
 
 \item{K}{The number of regimes (MRHLP components).}
 
@@ -54,17 +54,17 @@ the EM algorithm.}
 EM returns an object of class \link{ModelMRHLP}.
 }
 \description{
-emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP model by the
-Expectation-Maximization (EM) algorithm.
+emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP
+model by the Expectation-Maximization (EM) algorithm.
 }
 \details{
-emMRHLP function implements the EM algorithm of the MRHLP model. This function starts
-with an initialization of the parameters done by the method \code{initParam} of
-the class \link{ParamMRHLP}, then it alternates between the E-Step
-(method of the class \link{StatMRHLP}) and the M-Step (method of the
-class \link{ParamMRHLP}) until convergence (until the relative
-variation of log-likelihood between two steps of the EM algorithm is less
-than the \code{threshold} parameter).
+emMRHLP function implements the EM algorithm of the MRHLP model.
+This function starts with an initialization of the parameters done by the
+method \code{initParam} of the class \link{ParamMRHLP}, then it
+alternates between the E-Step (method of the class \link{StatMRHLP})
+and the M-Step (method of the class \link{ParamMRHLP}) until
+convergence (until the relative variation of log-likelihood between two
+steps of the EM algorithm is less than the \code{threshold} parameter).
 }
 \seealso{
 \link{ModelMRHLP}, \link{ParamMRHLP}, \link{StatMRHLP}

@@ -11,8 +11,8 @@ ModelPWR represents an estimated PWR model.
 \section{Fields}{
 
 \describe{
-\item{\code{param}}{A \link{ParamPWR} object. It contains the estimated
-values of the parameters.}
+\item{\code{param}}{A \link{ParamPWR} object. It contains the estimated values
+of the parameters.}
 
 \item{\code{stat}}{A \link{StatPWR} object. It contains all the statistics
 associated to the PWR model.}

@@ -1,9 +1,11 @@
 #' A Reference Class which contains the parameters of a MRHLP model.
 #'
-#' ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
+#' ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are
+#' calculated by the initialization Method and then updated by the Method
+#' implementing the M-Step of the EM algorithm.
 #'
-#' @field mData [MData][MData] object representing the sample
-#'   (covariates/inputs `X` and observed responses/outputs `Y`).
+#' @field mData [MData][MData] object representing the sample (covariates/inputs
+#'   `X` and observed responses/outputs `Y`).
 #' @field K The number of regimes (MRHLP components).
 #' @field p The order of the polynomial regression.
 #' @field q The dimension of the logistic regression. For the purpose of

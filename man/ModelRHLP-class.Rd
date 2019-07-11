@@ -14,8 +14,8 @@ ModelRHLP represents an estimated RHLP model.
 \item{\code{param}}{A \link{ParamRHLP} object. It contains the estimated
 values of the parameters.}
 
-\item{\code{stat}}{A \link{StatRHLP} object. It contains all the
-statistics associated to the RHLP model.}
+\item{\code{stat}}{A \link{StatRHLP} object. It contains all the statistics
+associated to the RHLP model.}
 }}
 
 \section{Methods}{

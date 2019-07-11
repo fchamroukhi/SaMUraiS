@@ -2,7 +2,8 @@
 % Please edit documentation in R/selectMRHLP.R
 \name{selectMRHLP}
 \alias{selectMRHLP}
-\title{selecMRHLP implements a model selection procedure to select an optimal MRHLP model with unknown structure.}
+\title{selecMRHLP implements a model selection procedure to select an optimal MRHLP
+model with unknown structure.}
 \usage{
 selectMRHLP(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
   criterion = c("BIC", "AIC"))
@@ -12,8 +13,8 @@ selectMRHLP(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
 \eqn{x_{1},\dots,x_{m}}.}
 
 \item{Y}{Matrix of size \eqn{(m, d)} representing a \eqn{d} dimension
-function of \code{X} observed at points \eqn{1,\dots,m}. \code{Y} is the
-observed response/output.}
+function of \code{X} observed at points \eqn{1,\dots,m}. \code{Y} is the observed
+response/output.}
 
 \item{Kmin}{The minimum number of regimes (MRHLP components).}
 
@@ -30,13 +31,16 @@ selectMRHLP returns an object of class \link{ModelMRHLP}
 representing the selected MRHLP model according to the chosen \code{criterion}.
 }
 \description{
-selecMRHLP implements a model selection procedure to select an optimal MRHLP model with unknown structure.
+selecMRHLP implements a model selection procedure to select an optimal MRHLP
+model with unknown structure.
 }
 \details{
-selectMRHLP selects the optimal MRHLP model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
-Information Criterion (BIC). This function first fits the different MRHLP model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
-the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The model
-having the highest value of the chosen selection criterion is then
+selectMRHLP selects the optimal MRHLP model among a set of model
+candidates by optimizing a model selection criteria, including the Bayesian
+Information Criterion (BIC). This function first fits the different MRHLP
+model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax}
+and the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The
+model having the highest value of the chosen selection criterion is then
 selected.
 }
 \seealso{

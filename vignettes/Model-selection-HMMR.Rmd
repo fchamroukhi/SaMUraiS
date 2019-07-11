@@ -31,8 +31,8 @@ library(samurais)
 
 # Introduction
 
-In this package, it is possible to select an HMMR model based on information criteria such as 
-**BIC**, **AIC** and **ICL**.
+In this package, it is possible to select models based on information criteria 
+such as **BIC**, **AIC** and **ICL**.
 
 The selection is done on two parameters which are:
 

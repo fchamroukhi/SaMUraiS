@@ -32,11 +32,12 @@ library(samurais)
 # Introduction
 
 **MRHLP**: Flexible and user-friendly probabilistic joint segmentation of 
-multivariate time series (or multivariate structured longitudinal data) with smooth and/or 
-abrupt regime changes by a mixture model-based multiple regression approach 
-with a hidden logistic process, fitted by the EM algorithm.
+multivariate time series (or multivariate structured longitudinal data) with 
+smooth and/or abrupt regime changes by a mixture model-based multiple 
+regression approach with a hidden logistic process, fitted by the EM algorithm.
 
-It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production.
+It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr)
+package for production.
 
 See `help(package="samurais")` for further details and references provided by `citation("samurais")`.
 

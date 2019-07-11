@@ -32,10 +32,11 @@ library(samurais)
 # Introduction
 
 **HMMR**: Flexible and user-friendly probabilistic segmentation of time series 
-(or structured longitudinal data) with regime changes by a regression model governed by a 
-hidden Markov process, fitted by the EM (Baum-Welch) algorithm.
+(or structured longitudinal data) with regime changes by a regression model 
+governed by a hidden Markov process, fitted by the EM (Baum-Welch) algorithm.
 
-It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production.
+It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr)
+package for production.
 
 See `help(package="samurais")` for further details and references provided by `citation("samurais")`.
 

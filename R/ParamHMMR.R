@@ -1,6 +1,8 @@
 #' A Reference Class which contains parameters of a HMMR model.
 #'
-#' ParamHMMR contains all the parameters of a HMMR model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
+#' ParamHMMR contains all the parameters of a HMMR model. The paramerts are
+#' calculated by the initialization Method and then updated by the Method
+#' implementing the M-Step of the EM algorithm.
 #'
 #' @field X Numeric vector of length \emph{m} representing the covariates/inputs
 #'   \eqn{x_{1},\dots,x_{m}}.

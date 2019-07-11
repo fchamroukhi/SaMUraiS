@@ -2,7 +2,8 @@
 % Please edit documentation in R/fitPWRFisher.R
 \name{fitPWRFisher}
 \alias{fitPWRFisher}
-\title{fitPWRFisher implements an optimized dynamic programming algorithm to fit a PWR model.}
+\title{fitPWRFisher implements an optimized dynamic programming algorithm to fit a
+PWR model.}
 \usage{
 fitPWRFisher(X, Y, K, p = 3)
 }
@@ -22,15 +23,17 @@ set at 3.}
 fitPWRFisher returns an object of class \link{ModelPWR}.
 }
 \description{
-fitPWRFisher is used to fit a Piecewise Regression (PWR) model by maximum-likelihood via an optimized dynamic programming algorithm. The
-estimation performed by the dynamic programming algorithm provides an optimal segmentation of the time series.
+fitPWRFisher is used to fit a Piecewise Regression (PWR) model by
+maximum-likelihood via an optimized dynamic programming algorithm. The
+estimation performed by the dynamic programming algorithm provides an optimal
+segmentation of the time series.
 }
 \details{
-fitPWRFisher function implements an optimized dynamic programming algorithm of the PWR model.
-This function starts with the calculation of the "cost matrix" then it
-estimates the transition points given \code{K} the number of regimes thanks to
-the method \code{computeDynamicProgram} (method of the class
-\link{ParamPWR}).
+fitPWRFisher function implements an optimized dynamic programming
+algorithm of the PWR model. This function starts with the calculation of
+the "cost matrix" then it estimates the transition points given \code{K} the
+number of regimes thanks to the method \code{computeDynamicProgram} (method of
+the class \link{ParamPWR}).
 }
 \seealso{
 \link{ModelPWR}, \link{ParamPWR}, \link{StatPWR}

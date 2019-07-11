@@ -2,8 +2,8 @@
 #'
 #' ModelPWR represents an estimated PWR model.
 #'
-#' @field param A [ParamPWR][ParamPWR] object. It contains the estimated
-#'   values of the parameters.
+#' @field param A [ParamPWR][ParamPWR] object. It contains the estimated values
+#'   of the parameters.
 #' @field stat A [StatPWR][StatPWR] object. It contains all the statistics
 #'   associated to the PWR model.
 #' @seealso [ParamPWR], [StatPWR]

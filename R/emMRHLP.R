@@ -1,21 +1,21 @@
 #' emMRHLP implemens the EM algorithm to fit a MRHLP model.
 #'
-#' emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP model by the
-#' Expectation-Maximization (EM) algorithm.
+#' emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP
+#' model by the Expectation-Maximization (EM) algorithm.
 #'
-#' @details emMRHLP function implements the EM algorithm of the MRHLP model. This function starts
-#'   with an initialization of the parameters done by the method `initParam` of
-#'   the class [ParamMRHLP][ParamMRHLP], then it alternates between the E-Step
-#'   (method of the class [StatMRHLP][StatMRHLP]) and the M-Step (method of the
-#'   class [ParamMRHLP][ParamMRHLP]) until convergence (until the relative
-#'   variation of log-likelihood between two steps of the EM algorithm is less
-#'   than the `threshold` parameter).
+#' @details emMRHLP function implements the EM algorithm of the MRHLP model.
+#'   This function starts with an initialization of the parameters done by the
+#'   method `initParam` of the class [ParamMRHLP][ParamMRHLP], then it
+#'   alternates between the E-Step (method of the class [StatMRHLP][StatMRHLP])
+#'   and the M-Step (method of the class [ParamMRHLP][ParamMRHLP]) until
+#'   convergence (until the relative variation of log-likelihood between two
+#'   steps of the EM algorithm is less than the `threshold` parameter).
 #'
 #' @param X Numeric vector of length \emph{m} representing the covariates/inputs
 #'   \eqn{x_{1},\dots,x_{m}}.
 #' @param Y Matrix of size \eqn{(m, d)} representing a \eqn{d} dimension
-#'   function of `X` observed at points \eqn{1,\dots,m}. `Y` is the
-#'   observed response/output.
+#'   function of `X` observed at points \eqn{1,\dots,m}. `Y` is the observed
+#'   response/output.
 #' @param K The number of regimes (MRHLP components).
 #' @param p Optional. The order of the polynomial regression. By default, `p` is
 #'   set at 3.

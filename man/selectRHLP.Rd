@@ -2,7 +2,8 @@
 % Please edit documentation in R/selectRHLP.R
 \name{selectRHLP}
 \alias{selectRHLP}
-\title{selecRHLP implements a model selection procedure to select an optimal RHLP model with unknown structure.}
+\title{selecRHLP implements a model selection procedure to select an optimal RHLP
+model with unknown structure.}
 \usage{
 selectRHLP(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
   criterion = c("BIC", "AIC"))
@@ -29,13 +30,16 @@ selectRHLP returns an object of class \link{ModelRHLP}
 representing the selected RHLP model according to the chosen \code{criterion}.
 }
 \description{
-selecRHLP implements a model selection procedure to select an optimal RHLP model with unknown structure.
+selecRHLP implements a model selection procedure to select an optimal RHLP
+model with unknown structure.
 }
 \details{
-selectRHLP selects the optimal MRHLP model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
-Information Criterion (BIC). This function first fits the different RHLP model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
-the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The model
-having the highest value of the chosen selection criterion is then
+selectRHLP selects the optimal MRHLP model among a set of model
+candidates by optimizing a model selection criteria, including the Bayesian
+Information Criterion (BIC). This function first fits the different RHLP
+model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax}
+and the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The
+model having the highest value of the chosen selection criterion is then
 selected.
 }
 \seealso{

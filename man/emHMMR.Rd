@@ -21,7 +21,8 @@ response/output \eqn{y_{1},\dots,y_{m}}.}
 set at 3.}
 
 \item{variance_type}{Optional character indicating if the model is
-"homoskedastic" or "heteroskedastic" (i.e same variance or different variances for each of the K regmies). By default the model is
+"homoskedastic" or "heteroskedastic" (i.e same variance or different
+variances for each of the K regmies). By default the model is
 "heteroskedastic".}
 
 \item{n_tries}{Optional. Number of runs of the EM algorithm. The solution
@@ -46,17 +47,18 @@ the log-likelihood should be printed during EM iterations.}
 EM returns an object of class \link{ModelHMMR}.
 }
 \description{
-emHMMR implements the maximum-likelihood parameter estimation of the HMMR model by the
-Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs.
+emHMMR implements the maximum-likelihood parameter estimation of the HMMR
+model by the Expectation-Maximization (EM) algorithm, known as Baum-Welch
+algorithm in the context of HMMs.
 }
 \details{
-emHMMR function implements the EM algorithm for the HMMR model. This function starts
-with an initialization of the parameters done by the method \code{initParam} of
-the class \link{ParamHMMR}, then it alternates between the E-Step
-(method of the class \link{StatHMMR}) and the M-Step (method of the
-class \link{ParamHMMR}) until convergence (until the relative
-variation of log-likelihood between two steps of the EM algorithm is less
-than the \code{threshold} parameter).
+emHMMR function implements the EM algorithm for the HMMR model. This
+function starts with an initialization of the parameters done by the method
+\code{initParam} of the class \link{ParamHMMR}, then it alternates between
+the E-Step (method of the class \link{StatHMMR}) and the M-Step
+(method of the class \link{ParamHMMR}) until convergence (until the
+relative variation of log-likelihood between two steps of the EM algorithm
+is less than the \code{threshold} parameter).
 }
 \seealso{
 \link{ModelHMMR}, \link{ParamHMMR}, \link{StatHMMR}

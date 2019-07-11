@@ -2,10 +2,10 @@
 #'
 #' ModelMRHLP represents an estimated MRHLP model.
 #'
-#' @field param A [ParamMRHLP][ParamMRHLP] object. It contains the
-#'   estimated values of the parameters.
-#' @field stat A [StatMRHLP][StatMRHLP] object. It contains all the
-#'   statistics associated to the MRHLP model.
+#' @field param A [ParamMRHLP][ParamMRHLP] object. It contains the estimated
+#'   values of the parameters.
+#' @field stat A [StatMRHLP][StatMRHLP] object. It contains all the statistics
+#'   associated to the MRHLP model.
 #' @seealso [ParamMRHLP], [StatMRHLP]
 #' @export
 ModelMRHLP <- setRefClass(

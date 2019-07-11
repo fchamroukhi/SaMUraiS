@@ -1,4 +1,5 @@
-#' hmmProcess calculates the probability distribution of a random process following a Markov chain
+#' hmmProcess calculates the probability distribution of a random process
+#' following a Markov chain
 #'
 #' @details hmmProcess calculates the distribution
 #'   \eqn{P(Z_{1},\dots,Z_{n};\pi,A)} of a Markov chain
@@ -17,8 +18,8 @@
 #' @param trans_mat Matrix of size \eqn{(K, K)} representing the transition
 #'   matrix of the Markov chain.
 #' @param n Numeric. Number of variables of the Markov chain.
-#' @return Matrix of size \eqn{(n, K)} giving the distribution of process given the K-state Markov
-#'   chain parameters.
+#' @return Matrix of size \eqn{(n, K)} giving the distribution of process given
+#'   the K-state Markov chain parameters.
 hmmProcess <- function(prior, trans_mat, n) {
 
   K <- length(prior)

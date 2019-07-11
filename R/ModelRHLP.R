@@ -4,8 +4,8 @@
 #'
 #' @field param A [ParamRHLP][ParamRHLP] object. It contains the estimated
 #'   values of the parameters.
-#' @field stat A [StatRHLP][StatRHLP] object. It contains all the
-#'   statistics associated to the RHLP model.
+#' @field stat A [StatRHLP][StatRHLP] object. It contains all the statistics
+#'   associated to the RHLP model.
 #' @seealso [ParamRHLP], [StatRHLP]
 #' @export
 ModelRHLP <- setRefClass(

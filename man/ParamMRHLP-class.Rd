@@ -6,13 +6,15 @@
 \alias{ParamMRHLP}
 \title{A Reference Class which contains the parameters of a MRHLP model.}
 \description{
-ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
+ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are
+calculated by the initialization Method and then updated by the Method
+implementing the M-Step of the EM algorithm.
 }
 \section{Fields}{
 
 \describe{
-\item{\code{mData}}{\link{MData} object representing the sample
-(covariates/inputs \code{X} and observed responses/outputs \code{Y}).}
+\item{\code{mData}}{\link{MData} object representing the sample (covariates/inputs
+\code{X} and observed responses/outputs \code{Y}).}
 
 \item{\code{K}}{The number of regimes (MRHLP components).}
 

@@ -1,9 +1,12 @@
-#' selecRHLP implements a model selection procedure to select an optimal RHLP model with unknown structure.
+#' selecRHLP implements a model selection procedure to select an optimal RHLP
+#' model with unknown structure.
 #'
-#' @details selectRHLP selects the optimal MRHLP model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
-#' Information Criterion (BIC). This function first fits the different RHLP model candidates by varying the number of regimes `K` from `Kmin` to `Kmax` and
-#'   the order of the polynomial regression `p` from `pmin` to `pmax`. The model
-#'   having the highest value of the chosen selection criterion is then
+#' @details selectRHLP selects the optimal MRHLP model among a set of model
+#'   candidates by optimizing a model selection criteria, including the Bayesian
+#'   Information Criterion (BIC). This function first fits the different RHLP
+#'   model candidates by varying the number of regimes `K` from `Kmin` to `Kmax`
+#'   and the order of the polynomial regression `p` from `pmin` to `pmax`. The
+#'   model having the highest value of the chosen selection criterion is then
 #'   selected.
 #'
 #' @param X Numeric vector of length \emph{m} representing the covariates/inputs

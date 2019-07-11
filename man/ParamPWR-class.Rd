@@ -6,7 +6,9 @@
 \alias{ParamPWR}
 \title{A Reference Class which contains the parameters of a PWR model.}
 \description{
-ParamPWR contains all the parameters of a PWR model. The paramerts are calculated by the initialization Method and then updated by the Method dynamic programming (here dynamic programming)
+ParamPWR contains all the parameters of a PWR model. The paramerts are
+calculated by the initialization Method and then updated by the Method
+dynamic programming (here dynamic programming)
 }
 \section{Fields}{
 

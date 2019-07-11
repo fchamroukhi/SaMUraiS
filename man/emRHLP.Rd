@@ -53,17 +53,17 @@ the EM algorithm.}
 EM returns an object of class \link{ModelRHLP}.
 }
 \description{
-emRHLP implements the maximum-likelihood parameter estimation of the RHLP model by the
-Expectation-Maximization (EM) algorithm.
+emRHLP implements the maximum-likelihood parameter estimation of the RHLP
+model by the Expectation-Maximization (EM) algorithm.
 }
 \details{
-emRHLP function implements the EM algorithm for the RHLP model. This function starts
-with an initialization of the parameters done by the method \code{initParam} of
-the class \link{ParamRHLP}, then it alternates between the E-Step
-(method of the class \link{StatRHLP}) and the M-Step (method of the
-class \link{ParamRHLP}) until convergence (until the relative
-variation of log-likelihood between two steps of the EM algorithm is less
-than the \code{threshold} parameter).
+emRHLP function implements the EM algorithm for the RHLP model. This
+function starts with an initialization of the parameters done by the method
+\code{initParam} of the class \link{ParamRHLP}, then it alternates between
+the E-Step (method of the class \link{StatRHLP}) and the M-Step
+(method of the class \link{ParamRHLP}) until convergence (until the
+relative variation of log-likelihood between two steps of the EM algorithm
+is less than the \code{threshold} parameter).
 }
 \seealso{
 \link{ModelRHLP}, \link{ParamRHLP}, \link{StatRHLP}

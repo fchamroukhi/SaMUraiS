@@ -6,7 +6,9 @@
 \alias{ParamMHMMR}
 \title{A Reference Class which contains parameters of a MHMMR model.}
 \description{
-ParamMHMMR contains all the parameters of a MHMMR model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
+ParamMHMMR contains all the parameters of a MHMMR model. The paramerts are
+calculated by the initialization Method and then updated by the Method
+implementing the M-Step of the EM algorithm.
 }
 \section{Fields}{
 
