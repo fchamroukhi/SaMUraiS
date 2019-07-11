@@ -1,0 +1,67 @@
+---
+output: github_document
+bibliography: bibliography.bib
+nocite: '@*'
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.align = "center",
+  fig.path = "man/figures/README-"
+)
+```
+
+# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**tion of t**I**me **S**eries
+
+SaMUraiS is a toolbox including many flexible user-friendly and original 
+statistical latent variable models and unsupervised algorithms to segment and 
+represent, time-series data (univariate or multivariate), and more generally, 
+longitudinal data which include regime changes.
+
+Our SaMUraiS use mainly the following efficient "sword" packages to segment 
+data:
+
+* RHLP;
+* MRHLP;
+* HMM/HMMR;
+* MHMMR;
+* PWR.
+
+The models and algorithms are developed and written in Matlab by Faicel 
+Chamroukhi, and translated and designed into R packages by Florian Lecocq, 
+Marius Bartcus and Faicel Chamroukhi.
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+# Installation
+
+You can install the **samurais** package from [GitHub](https://github.com/) with:
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("fchamroukhi/SaMUraiS")
+```
+
+To build *vignettes* for examples of usage, type the command below instead:
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("fchamroukhi/SaMUraiS", 
+                         build_opts = c("--no-resave-data", "--no-manual"), 
+                         build_vignettes = TRUE)
+```
+
+Use the following command to display vignettes:
+
+```{r, eval = FALSE}
+browseVignettes("samurais")
+```
+
+# Usage
+
+# References

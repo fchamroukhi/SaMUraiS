@@ -1,33 +1,122 @@
-# SaMUraiS
-StAtistical Models for the UnsupeRvised segmentAtion of tIme Series
 
-SaMUraiS is a toolbox including many flexible user-friendly and original statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
-Our SaMUraiS use mainly the following efficient "sword" packages to segment data:
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-RHLP 
+# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**tion of t**I**me **S**eries
 
-MRHLP 
+SaMUraiS is a toolbox including many flexible user-friendly and original
+statistical latent variable models and unsupervised algorithms to
+segment and represent, time-series data (univariate or multivariate),
+and more generally, longitudinal data which include regime changes.
 
-HMM/HMMR 
+Our SaMUraiS use mainly the following efficient “sword” packages to
+segment data:
 
-MHMMR 
+  - RHLP;
+  - MRHLP;
+  - HMM/HMMR;
+  - MHMMR;
+  - PWR.
 
-PWR
+The models and algorithms are developed and written in Matlab by Faicel
+Chamroukhi, and translated and designed into R packages by Florian
+Lecocq, Marius Bartcus and Faicel Chamroukhi.
 
-The models and algorithms are developed and written in Matlab by Faicel Chamroukhi, and translated and designed into R packages by Florian Lecocq, Marius Bartcus and Faicel Chamroukhi.
+<!-- badges: start -->
 
-References
+<!-- badges: end -->
 
-Faicel Chamroukhi and Hien D. Nguyen. Model-Based Clustering and Classification of Functional Data. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, Jan., 2019
+# Installation
 
-Chamroukhi, F.. Statistical learning of latent data models for complex data analysis. Habilitation Thesis (HDR), Universite de Toulon, 07 December, 2015 
+You can install the **samurais** package from
+[GitHub](https://github.com/) with:
 
-F. Chamroukhi, D. Trabelsi, S. Mohammed, L. Oukhellou and Y. Amirat. Joint segmentation of multivariate time series with hidden process regression for human activity recognition. Neurocomputing Elsevier., Vol. 120, pages:633???644, November, 2013
+``` r
+# install.packages("devtools")
+devtools::install_github("fchamroukhi/SaMUraiS")
+```
 
-Trabelsi, D., Mohammed, S., Chamroukhi, F., Oukhellou, L. and Amirat, Y.. An unsupervised approach for automatic activity recognition based on Hidden Markov Model Regression. IEEE Transactions on Automation Science and Engineering, Vol. 3(10), pages:829???335, 2013
+To build *vignettes* for examples of usage, type the command below
+instead:
 
-Chamroukhi, F.. Hidden process regression for curve modeling, classification and tracking. Ph.D. Thesis, Universite de Technologie de Compiegne, 13 December, 2010
+``` r
+# install.packages("devtools")
+devtools::install_github("fchamroukhi/SaMUraiS", 
+                         build_opts = c("--no-resave-data", "--no-manual"), 
+                         build_vignettes = TRUE)
+```
 
-Chamroukhi, F., Sam??, A., Govaert, G. and Aknin, P.. A hidden process regression model for functional data description. Application to curve discrimination. Neurocomputing, Vol. 73(7-9), pages:1210--1221, 2010
+Use the following command to display vignettes:
 
-Chamroukhi, F., Sam??, A., Govaert, G. and Aknin, P.. Time series modeling by a regression approach based on a latent process. Neural Networks Elsevier Science Ltd.., Vol. 22(5-6), pages:593--602, 2009
+``` r
+browseVignettes("samurais")
+```
+
+# Usage
+
+# References
+
+<div id="refs" class="references">
+
+<div id="ref-item5">
+
+Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
+Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
+Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+
+</div>
+
+<div id="ref-item2">
+
+———. 2015. “Statistical Learning of Latent Data Models for Complex Data
+Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+
+</div>
+
+<div id="ref-item1">
+
+Chamroukhi, F., and Hien D. Nguyen. 2019. “Model-Based Clustering and
+Classification of Functional Data.” *Wiley Interdisciplinary Reviews:
+Data Mining and Knowledge Discovery*.
+<https://doi.org/10.1002/widm.1298>.
+
+</div>
+
+<div id="ref-item7">
+
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
+Modeling by a Regression Approach Based on a Latent Process.” *Neural
+Networks* 22 (5-6): 593–602.
+<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+
+</div>
+
+<div id="ref-item6">
+
+———. 2010. “A Hidden Process Regression Model for Functional Data
+Description. Application to Curve Discrimination.” *Neurocomputing* 73
+(7-9): 1210–21.
+<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+
+</div>
+
+<div id="ref-item3">
+
+Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat.
+2013. “Joint Segmentation of Multivariate Time Series with Hidden
+Process Regression for Human Activity Recognition.” *Neurocomputing*
+120: 633–44.
+<https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
+
+</div>
+
+<div id="ref-item4">
+
+Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
+2013. “An Unsupervised Approach for Automatic Activity Recognition Based
+on Hidden Markov Model Regression.” *IEEE Transactions on Automation
+Science and Engineering* 3 (10): 829–335.
+<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+
+</div>
+
+</div>
