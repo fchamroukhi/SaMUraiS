@@ -113,7 +113,7 @@ emRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", "
     cat(paste0("Max value of the log-likelihood: ", statSolution$loglik, "\n"))
   }
 
-  # Finish the computation of statistics
+  # End of the computation of the model statistics
   statSolution$computeStats(paramSolution)
 
   return(ModelRHLP$new(param = paramSolution, stat = statSolution))

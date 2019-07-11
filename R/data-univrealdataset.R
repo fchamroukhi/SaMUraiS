@@ -2,7 +2,7 @@
 #' operation
 #'
 #' This dataset is provided for illustration only; It is issued from the switch
-#' railway monitoring domain. The switch "mechanism" enables trains to be guided
+#' railway monitoring domain. The switch mechanism enables trains to be guided
 #' from one track to another at a railway junction. During each switch
 #' operation, a set of measurements are recorded. Each measurement represents
 #' the consumed electrical power. The resulting time series present regime changes.
