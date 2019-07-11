@@ -17,7 +17,7 @@
 #' @param trans_mat Matrix of size \eqn{(K, K)} representing the transition
 #'   matrix of the Markov chain.
 #' @param n Numeric. Number of variables of the Markov chain.
-#' @return Matrix of size \eqn{(n, K)} giving the distribution of process given the K-states Markov
+#' @return Matrix of size \eqn{(n, K)} giving the distribution of process given the K-state Markov
 #'   chain parameters.
 hmmProcess <- function(prior, trans_mat, n) {
 
