@@ -2,7 +2,7 @@
 % Please edit documentation in R/emHMMR.R
 \name{emHMMR}
 \alias{emHMMR}
-\title{emHMMR is used to fit a HMMR model.}
+\title{emHMMR implemens the EM (Baum-Welch) algorithm to fit a HMMR model.}
 \usage{
 emHMMR(X, Y, K, p = 3, variance_type = c("heteroskedastic",
   "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-06,
@@ -15,13 +15,13 @@ emHMMR(X, Y, K, p = 3, variance_type = c("heteroskedastic",
 \item{Y}{Numeric vector of length \emph{m} representing the observed
 response/output \eqn{y_{1},\dots,y_{m}}.}
 
-\item{K}{The number of regimes (HMMR components).}
+\item{K}{The number of regimes/segments (HMMR components).}
 
 \item{p}{Optional. The order of the polynomial regression. By default, \code{p} is
 set at 3.}
 
 \item{variance_type}{Optional character indicating if the model is
-"homoskedastic" or "heteroskedastic". By default the model is
+"homoskedastic" or "heteroskedastic" (i.e same variance or different variances for each of the K regmies). By default the model is
 "heteroskedastic".}
 
 \item{n_tries}{Optional. Number of runs of the EM algorithm. The solution
@@ -45,7 +45,9 @@ the log-likelihood should be printed during EM iterations.}
 \value{
 EM returns an object of class \link{ModelHMMR}.
 }
-\description{emMHMMR implements the Expectation-Maximization (EM) (Baum-Welch in this context of HMMs) algorithm to perform the maximum-likelihood parameter estimation of the HMMR model.
+\description{
+emHMMR implements the maximum-likelihood parameter estimation of the HMMR model by the
+Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs.
 }
 \details{
 emHMMR function implements the EM algorithm for the HMMR model. This function starts

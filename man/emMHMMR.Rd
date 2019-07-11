@@ -2,7 +2,7 @@
 % Please edit documentation in R/emMHMMR.R
 \name{emMHMMR}
 \alias{emMHMMR}
-\title{emMHMMR is used to fit a MHMMR model.}
+\title{emMHMMR implemens the EM (Baum-Welch) algorithm to fit a MHMMR model.}
 \usage{
 emMHMMR(X, Y, K, p = 3, variance_type = c("heteroskedastic",
   "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-06,
@@ -46,8 +46,8 @@ the log-likelihood should be printed during EM iterations.}
 EM returns an object of class \link{ModelMHMMR}.
 }
 \description{
-emMHMMR is used to fit a MHMMR model. The estimation method is performed by
-the Expectation-Maximization algorithm.
+emMHMMR implements the maximum-likelihood parameter estimation of the MHMMR model by the
+Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs.
 }
 \details{
 emMHMMR function implements the EM algorithm. This function starts

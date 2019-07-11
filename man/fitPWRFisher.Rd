@@ -2,7 +2,7 @@
 % Please edit documentation in R/fitPWRFisher.R
 \name{fitPWRFisher}
 \alias{fitPWRFisher}
-\title{fitPWRFisher is used to fit a PWR model.}
+\title{fitPWRFisher implements an optimized dynamic programming algorithm to fit a PWR model.}
 \usage{
 fitPWRFisher(X, Y, K, p = 3)
 }
@@ -13,7 +13,7 @@ fitPWRFisher(X, Y, K, p = 3)
 \item{Y}{Numeric vector of length \emph{m} representing the observed
 response/output \eqn{y_{1},\dots,y_{m}}.}
 
-\item{K}{The number of regimes (PWR components).}
+\item{K}{The number of regimes/segments (PWR components).}
 
 \item{p}{Optional. The order of the polynomial regression. By default, \code{p} is
 set at 3.}
@@ -22,10 +22,11 @@ set at 3.}
 fitPWRFisher returns an object of class \link{ModelPWR}.
 }
 \description{
-fitPWRFisher fits a Piecewise Regression (PWR) model to a regime changing time-series (or a longitidunal data). The estimation method is performed by an optimized dynamic programming algorithm.
+fitPWRFisher is used to fit a Piecewise Regression (PWR) model by maximum-likelihood via an optimized dynamic programming algorithm. The
+estimation performed by the dynamic programming algorithm provides an optimal segmentation of the time series.
 }
 \details{
-fitPWRFisher function implements the dynamic programming algorithm for piece-wise regression model.
+fitPWRFisher function implements an optimized dynamic programming algorithm of the PWR model.
 This function starts with the calculation of the "cost matrix" then it
 estimates the transition points given \code{K} the number of regimes thanks to
 the method \code{computeDynamicProgram} (method of the class

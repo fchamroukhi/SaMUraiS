@@ -2,7 +2,7 @@
 % Please edit documentation in R/emMRHLP.R
 \name{emMRHLP}
 \alias{emMRHLP}
-\title{emMRHLP is used to fit a MRHLP model.}
+\title{emMRHLP implemens the EM algorithm to fit a MRHLP model.}
 \usage{
 emMRHLP(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic",
   "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-06,
@@ -54,10 +54,11 @@ the EM algorithm.}
 EM returns an object of class \link{ModelMRHLP}.
 }
 \description{
-emMRHLP implements the Expectation-Maximization (EM) algorithm to perform the maximum-likelihood parameter estimation of the MRHLP model.
+emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP model by the
+Expectation-Maximization (EM) algorithm.
 }
 \details{
-emMRHLP function implements the EM algorithm for the MRHLP model. This function starts
+emMRHLP function implements the EM algorithm of the MRHLP model. This function starts
 with an initialization of the parameters done by the method \code{initParam} of
 the class \link{ParamMRHLP}, then it alternates between the E-Step
 (method of the class \link{StatMRHLP}) and the M-Step (method of the

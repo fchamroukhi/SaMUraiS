@@ -2,7 +2,7 @@
 % Please edit documentation in R/selectMHMMR.R
 \name{selectMHMMR}
 \alias{selectMHMMR}
-\title{selectMHMMR implements the model selection procedure.}
+\title{selectMHMMR implements a model selection procedure to select an optimal MHMMR model with unknown structure.}
 \usage{
 selectMHMMR(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
   criterion = c("BIC", "AIC"))
@@ -29,11 +29,11 @@ selectMHMMR returns an object of class \link{ModelMHMMR}
 representing the selected MHMMR model according to the chosen \code{criterion}.
 }
 \description{
-selectMHMMR implements the model selection procedure.
+selectMHMMR implements a model selection procedure to select an optimal MHMMR model with unknown structure.
 }
 \details{
-selectMHMMR implements the model selection. This function runs every
-MHMMR model by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
+selectMHMMR selects the optimal MHMMR model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
+Information Criterion (BIC). This function first fits the different MHMMR model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
 the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The model
 having the highest value of the chosen selection criterion is then
 selected.

@@ -41,7 +41,7 @@ statistics associated to the HMMR model.}
   }
   \item{\code{\dots}}{Other graphics parameters.}
 }
-By default, all the above graphs are produced.}
+By default, all the graphs mentioned above are produced.}
 
 \item{\code{summary(digits = getOption("digits"))}}{Summary method.
 \describe{

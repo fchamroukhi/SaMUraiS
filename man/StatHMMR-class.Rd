@@ -7,6 +7,8 @@
 \title{A Reference Class which contains statistics of a HMMR model.}
 \description{
 StatHMMR contains all the statistics associated to a \link[=ParamHMMR]{HMMR} model.
+It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables (ie the smoothing probabilities),
+as well as the calculation of the prediction and filtering probabilities, the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
 }
 \section{Fields}{
 

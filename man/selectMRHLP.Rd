@@ -2,7 +2,7 @@
 % Please edit documentation in R/selectMRHLP.R
 \name{selectMRHLP}
 \alias{selectMRHLP}
-\title{selectMRHLP implements the model selection procedure.}
+\title{selecMRHLP implements a model selection procedure to select an optimal MRHLP model with unknown structure.}
 \usage{
 selectMRHLP(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
   criterion = c("BIC", "AIC"))
@@ -30,11 +30,11 @@ selectMRHLP returns an object of class \link{ModelMRHLP}
 representing the selected MRHLP model according to the chosen \code{criterion}.
 }
 \description{
-selectMRHLP implements the model selection procedure.
+selecMRHLP implements a model selection procedure to select an optimal MRHLP model with unknown structure.
 }
 \details{
-selectMRHLP implements the model selection. This function runs every
-MRHLP model by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
+selectMRHLP selects the optimal MRHLP model among a set of model candidates by optimizing a model selection criteria, including the Bayesian
+Information Criterion (BIC). This function first fits the different MRHLP model candidates by varying the number of regimes \code{K} from \code{Kmin} to \code{Kmax} and
 the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The model
 having the highest value of the chosen selection criterion is then
 selected.

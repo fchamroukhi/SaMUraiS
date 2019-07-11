@@ -1,7 +1,7 @@
-#' emMRHLP inmplemens the EM algorithm to fit a MRHLP model.
+#' emMRHLP implemens the EM algorithm to fit a MRHLP model.
 #'
 #' emMRHLP implements the maximum-likelihood parameter estimation of the MRHLP model by the
-#' Expectation-Maximization (EM) algorithm. 
+#' Expectation-Maximization (EM) algorithm.
 #'
 #' @details emMRHLP function implements the EM algorithm of the MRHLP model. This function starts
 #'   with an initialization of the parameters done by the method `initParam` of

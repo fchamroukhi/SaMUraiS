@@ -1,4 +1,4 @@
-#' emRHLP inmplemens the EM algorithm to fit a RHLP model.
+#' emRHLP implemens the EM algorithm to fit a RHLP model.
 #'
 #' emRHLP implements the maximum-likelihood parameter estimation of the RHLP model by the
 #' Expectation-Maximization (EM) algorithm.

@@ -13,7 +13,7 @@ field \code{X} represents the time.
 \section{Fields}{
 
 \describe{
-\item{\code{X}}{Numeric vector of length \emph{n}.}
+\item{\code{X}}{Numeric vector of length \emph{m}.}
 
 \item{\code{Y}}{Matrix of size \eqn{(m, d)} representing a \eqn{d} dimension
 function of \code{X} observed at points \eqn{1,\dots,m}.}

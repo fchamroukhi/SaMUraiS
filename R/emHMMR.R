@@ -1,7 +1,7 @@
-#' emHMMR inmplemens the EM (Baum-Welch) algorithm to fit a HMMR model.
+#' emHMMR implemens the EM (Baum-Welch) algorithm to fit a HMMR model.
 #'
 #' emHMMR implements the maximum-likelihood parameter estimation of the HMMR model by the
-#' Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs. 
+#' Expectation-Maximization (EM) algorithm, known as Baum-Welch algorithm in the context of HMMs.
 #'
 #'
 #' @details emHMMR function implements the EM algorithm for the HMMR model. This function starts

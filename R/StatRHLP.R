@@ -2,7 +2,7 @@
 #'
 #' StatRHLP contains all the statistics associated to a [RHLP][ParamRHLP] model.
 #' It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables, as well as the calculation of the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
-#' 
+#'
 #' @field pi_ik Matrix of size \eqn{(m, K)} representing the prior/logistic
 #'   probabilities \eqn{\pi_{k}(x_{i}; \boldsymbol{\Psi}) = P(z_{i} = k |
 #'   \boldsymbol{x}; \Psi)}{\pi_{k}(x_{i}; \Psi) = P(z_{i} = k | x; \Psi)} of
@@ -86,7 +86,7 @@ StatRHLP <- setRefClass(
       "MAP calculates values of the fields \\code{z_ik} and \\code{klas}
       by applying the Maximum A Posteriori Bayes allocation rule.
 
-      \\eqn{z_{ik} = 1 \\ \textrm{if} \\ k = \\textrm{arg} \\ \\textrm{max}_{s}
+      \\eqn{z_{ik} = 1 \\ \\textrm{if} \\ k = \\textrm{arg} \\ \\textrm{max}_{s}
       \\ \\pi_{s}(x_{i}; \\boldsymbol{\\Psi});\\ 0 \\ \\textrm{otherwise}}{
       z_{ik} = 1 if z_ik = arg max_{s} \\pi_{k}(x_{i}; \\Psi); 0 otherwise}"
 

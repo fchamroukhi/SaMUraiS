@@ -2,7 +2,7 @@
 % Please edit documentation in R/hmmProcess.R
 \name{hmmProcess}
 \alias{hmmProcess}
-\title{hmmProcess calculates the distribution of a Markov chain}
+\title{hmmProcess calculates the probability distribution of a random process following a Markov chain}
 \usage{
 hmmProcess(prior, trans_mat, n)
 }
@@ -16,11 +16,11 @@ matrix of the Markov chain.}
 \item{n}{Numeric. Number of variables of the Markov chain.}
 }
 \value{
-Matrix of size \eqn{(n, K)} giving the distribution of the Markov
-chain.
+Matrix of size \eqn{(n, K)} giving the distribution of process given the K-states Markov
+chain parameters.
 }
 \description{
-hmmProcess calculates the distribution of a Markov chain
+hmmProcess calculates the probability distribution of a random process following a Markov chain
 }
 \details{
 hmmProcess calculates the distribution

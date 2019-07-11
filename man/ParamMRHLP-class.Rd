@@ -4,9 +4,9 @@
 \name{ParamMRHLP-class}
 \alias{ParamMRHLP-class}
 \alias{ParamMRHLP}
-\title{A Reference Class which contains parameters of a MRHLP model.}
+\title{A Reference Class which contains the parameters of a MRHLP model.}
 \description{
-ParamMRHLP contains all the parameters of a MRHLP model.
+ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are calculated by the initialization Method and then updated by the Method implementing the M-Step of the EM algorithm.
 }
 \section{Fields}{
 
