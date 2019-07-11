@@ -31,7 +31,7 @@ library(samurais)
 
 # Introduction
 
-**PWR**: Piecewise Regression (PWR) for time series (or structured data) 
+**PWR**: Piecewise Regression (PWR) for time series (or structured longitudinal data) 
 modeling and optimal segmentation by using dynamic programming.
 
 It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production.

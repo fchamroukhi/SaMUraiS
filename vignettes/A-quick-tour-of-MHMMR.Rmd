@@ -32,9 +32,9 @@ library(samurais)
 # Introduction
 
 **MHMMR**: Flexible and user-friendly probabilistic joint segmentation of 
-multivariate time series (or multivariate structured data) with regime changes 
+multivariate time series (or multivariate structured longitudinal data) with regime changes 
 by a multiple regression model governed by a hidden Markov process, fitted by 
-the Baum-Welch (EM) algorithm.
+the EM (Baum-Welch) algorithm.
 
 It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production.
 

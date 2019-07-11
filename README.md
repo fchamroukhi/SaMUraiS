@@ -20,14 +20,14 @@ References
 
 Faicel Chamroukhi and Hien D. Nguyen. Model-Based Clustering and Classification of Functional Data. Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, Jan., 2019
 
-Chamroukhi, F.. Statistical learning of latent data models for complex data analysis. Habilitation Thesis (HDR), Université de Toulon, 07 December, 2015 
+Chamroukhi, F.. Statistical learning of latent data models for complex data analysis. Habilitation Thesis (HDR), Universite de Toulon, 07 December, 2015 
 
-F. Chamroukhi, D. Trabelsi, S. Mohammed, L. Oukhellou and Y. Amirat. Joint segmentation of multivariate time series with hidden process regression for human activity recognition. Neurocomputing Elsevier., Vol. 120, pages:633–644, November, 2013
+F. Chamroukhi, D. Trabelsi, S. Mohammed, L. Oukhellou and Y. Amirat. Joint segmentation of multivariate time series with hidden process regression for human activity recognition. Neurocomputing Elsevier., Vol. 120, pages:633???644, November, 2013
 
-Trabelsi, D., Mohammed, S., Chamroukhi, F., Oukhellou, L. and Amirat, Y.. An unsupervised approach for automatic activity recognition based on Hidden Markov Model Regression. IEEE Transactions on Automation Science and Engineering, Vol. 3(10), pages:829–335, 2013
+Trabelsi, D., Mohammed, S., Chamroukhi, F., Oukhellou, L. and Amirat, Y.. An unsupervised approach for automatic activity recognition based on Hidden Markov Model Regression. IEEE Transactions on Automation Science and Engineering, Vol. 3(10), pages:829???335, 2013
 
-Chamroukhi, F.. Hidden process regression for curve modeling, classification and tracking. Ph.D. Thesis, Université de Technologie de Compiègne, 13 December, 2010
+Chamroukhi, F.. Hidden process regression for curve modeling, classification and tracking. Ph.D. Thesis, Universite de Technologie de Compiegne, 13 December, 2010
 
-Chamroukhi, F., Samé, A., Govaert, G. and Aknin, P.. A hidden process regression model for functional data description. Application to curve discrimination. Neurocomputing, Vol. 73(7-9), pages:1210–1221, 2010
+Chamroukhi, F., Sam??, A., Govaert, G. and Aknin, P.. A hidden process regression model for functional data description. Application to curve discrimination. Neurocomputing, Vol. 73(7-9), pages:1210--1221, 2010
 
-Chamroukhi, F., Samé, A., Govaert, G. and Aknin, P.. Time series modeling by a regression approach based on a latent process. Neural Networks Elsevier Science Ltd.., Vol. 22(5-6), pages:593–602, 2009
+Chamroukhi, F., Sam??, A., Govaert, G. and Aknin, P.. Time series modeling by a regression approach based on a latent process. Neural Networks Elsevier Science Ltd.., Vol. 22(5-6), pages:593--602, 2009

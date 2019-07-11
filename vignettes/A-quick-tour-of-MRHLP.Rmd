@@ -32,7 +32,7 @@ library(samurais)
 # Introduction
 
 **MRHLP**: Flexible and user-friendly probabilistic joint segmentation of 
-multivariate time series (or multivariate structured data) with smooth and/or 
+multivariate time series (or multivariate structured longitudinal data) with smooth and/or 
 abrupt regime changes by a mixture model-based multiple regression approach 
 with a hidden logistic process, fitted by the EM algorithm.
 

@@ -32,7 +32,7 @@ library(samurais)
 # Introduction
 
 **RHLP**: Flexible and user-friendly probabilistic segmentation of time series 
-(or structured data) with smooth and/or abrupt regime changes by a mixture 
+(or structured longitudinal data) with smooth and/or abrupt regime changes by a mixture 
 model-based regression approach with a hidden logistic process, fitted by the 
 EM algorithm.
 
