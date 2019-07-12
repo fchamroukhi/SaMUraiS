@@ -3,7 +3,7 @@
 
 # **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**tion of t**I**me **S**eries
 
-SaMUraiS is a toolbox including many flexible user-friendly and original
+SaMUraiS is a toolbox including many original and flexible user-friendly
 statistical latent variable models and unsupervised algorithms to
 segment and represent, time-series data (univariate or multivariate),
 and more generally, longitudinal data which include regime changes.
