@@ -527,22 +527,6 @@ pwr$plot()
 
 <div id="refs" class="references">
 
-<div id="ref-item5">
-
-Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
-Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
-Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
-
-</div>
-
-<div id="ref-item2">
-
-———. 2015. “Statistical Learning of Latent Data Models for Complex Data
-Analysis.” Habilitation Thesis (HDR), Université de Toulon.
-<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
-
-</div>
-
 <div id="ref-item1">
 
 Chamroukhi, F., and Hien D. Nguyen. 2019. “Model-Based Clustering and
@@ -552,21 +536,21 @@ Data Mining and Knowledge Discovery*.
 
 </div>
 
-<div id="ref-item7">
+<div id="ref-item2">
 
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
-Modeling by a Regression Approach Based on a Latent Process.” *Neural
-Networks* 22 (5-6): 593–602.
-<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
+Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
 
 </div>
 
-<div id="ref-item6">
+<div id="ref-item4">
 
-———. 2010. “A Hidden Process Regression Model for Functional Data
-Description. Application to Curve Discrimination.” *Neurocomputing* 73
-(7-9): 1210–21.
-<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
+2013. “An Unsupervised Approach for Automatic Activity Recognition Based
+on Hidden Markov Model Regression.” *IEEE Transactions on Automation
+Science and Engineering* 3 (10): 829–335.
+<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
 
 </div>
 
@@ -580,13 +564,28 @@ Process Regression for Human Activity Recognition.” *Neurocomputing*
 
 </div>
 
-<div id="ref-item4">
+<div id="ref-item6">
 
-Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
-2013. “An Unsupervised Approach for Automatic Activity Recognition Based
-on Hidden Markov Model Regression.” *IEEE Transactions on Automation
-Science and Engineering* 3 (10): 829–335.
-<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden
+Process Regression Model for Functional Data Description. Application to
+Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
+<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+
+</div>
+
+<div id="ref-item5">
+
+———. 2010. “Hidden Process Regression for Curve Modeling, Classification
+and Tracking.” Ph.D. Thesis, Université de Technologie de Compiègne.
+<https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+
+</div>
+
+<div id="ref-item7">
+
+———. 2009. “Time Series Modeling by a Regression Approach Based on a
+Latent Process.” *Neural Networks* 22 (5-6): 593–602.
+<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
 
 </div>
 

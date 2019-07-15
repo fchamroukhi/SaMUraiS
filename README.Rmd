@@ -1,6 +1,7 @@
 ---
 output: github_document
 bibliography: bibliography.bib
+csl: chicago-author-date.csl
 nocite: '@*'
 ---
 
