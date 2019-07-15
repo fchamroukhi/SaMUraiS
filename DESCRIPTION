@@ -9,12 +9,14 @@ Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
     email = "marius.bartcus@gmail.com"),
     person("Florian", "Lecocq", role = c("aut", "cre"),
     email = "florian.lecocq@outlook.com"))
-Description: A toolbox including many flexible user-friendly and 
-    original statistical latent variable models and unsupervised algorithms to 
-    segment and represent, time-series data (univariate or multivariate), and 
-    more generally, longitudinal data which include regime changes. Our 
-    SaMUraiS use mainly the following efficient 'sword' packages to segment 
-    data: 'RHLP', 'MRHLP', 'HMMR', 'MHMMR', 'PWR'.
+Description: SaMUraiS is a toolbox including many original and flexible 
+    user-friendly statistical latent variable models and efficient 
+    unsupervised algorithms to segment and represent time-series data 
+    (univariate or multivariate), and more generally, longitudinal data, which 
+    include regime changes. SaMUraiS is built upon the following packages, 
+    each if them is an autonomous time series segmentation approach: 'RHLP', 
+    'MRHLP', 'HMMR', 'MHMMR', 'PWR'. For the advantages/differences of each of 
+    them, the user is referred to our mentioned paper references.
 License: GPL (>= 3)
 Depends: 
     R (>= 2.10)
