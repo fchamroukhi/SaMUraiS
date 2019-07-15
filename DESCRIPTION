@@ -17,6 +17,7 @@ Description: SaMUraiS is a toolbox including many original and flexible
     each if them is an autonomous time series segmentation approach: 'RHLP', 
     'MRHLP', 'HMMR', 'MHMMR', 'PWR'. For the advantages/differences of each of 
     them, the user is referred to our mentioned paper references.
+URL: https://github.com/fchamroukhi/SaMUraiS
 License: GPL (>= 3)
 Depends: 
     R (>= 2.10)
