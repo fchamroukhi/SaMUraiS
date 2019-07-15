@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+
+<!-- badges: end -->
+
 # **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**tion of t**I**me **S**eries
 
 SaMUraiS is a toolbox including many original and flexible user-friendly
@@ -20,10 +24,6 @@ segment data:
 The models and algorithms are developed and written in Matlab by Faicel
 Chamroukhi, and translated and designed into R packages by Florian
 Lecocq, Marius Bartcus and Faicel Chamroukhi.
-
-<!-- badges: start -->
-
-<!-- badges: end -->
 
 # Installation
 
