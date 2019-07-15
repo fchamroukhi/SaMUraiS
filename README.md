@@ -68,7 +68,7 @@ Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
 <div id="ref-item2">
 
 ———. 2015. “Statistical Learning of Latent Data Models for Complex Data
-Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+Analysis.” Habilitation Thesis (HDR), Université de Toulon.  <https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>
 
 </div>
 
