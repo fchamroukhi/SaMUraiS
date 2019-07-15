@@ -21,7 +21,8 @@ associated to the MHMMR model.}
 \section{Methods}{
 
 \describe{
-\item{\code{plot(what = c("predicted", "filtered", "smoothed", "regressors"), ...)}}{Plot method.
+\item{\code{plot(what = c("predicted", "filtered", "smoothed", "regressors",
+  "loglikelihood"), ...)}}{Plot method.
 \describe{
   \item{\code{what}}{The type of graph requested:
     \itemize{
@@ -36,6 +37,9 @@ associated to the MHMMR model.}
         \link{StatMHMMR}).
       \item \code{"regressors" = } Polynomial regression components
         (fields \code{regressors} and \code{tau_tk} of class
+        \link{StatMHMMR}).
+      \item \code{"loglikelihood" = } Value of the log-likelihood for
+        each iteration (field \code{stored_loglik} of class
         \link{StatMHMMR}).
     }
   }

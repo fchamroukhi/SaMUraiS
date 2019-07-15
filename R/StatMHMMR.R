@@ -1,9 +1,12 @@
 #' A Reference Class which contains statistics of a MHMMR model.
 #'
-#' StatMHMMR contains all the statistics associated to a [MHMMR][ParamMHMMR] model.
-#' It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables (ie the smoothing probabilities), 
-#' as well as the calculation of the prediction and filtering probabilities, the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
-#' 
+#' StatMHMMR contains all the statistics associated to a [MHMMR][ParamMHMMR]
+#' model. It mainly includes the E-Step of the EM algorithm calculating the
+#' posterior distribution of the hidden variables (ie the smoothing
+#' probabilities), as well as the calculation of the prediction and filtering
+#' probabilities, the log-likelhood at each step of the algorithm and the
+#' obtained values of model selection criteria..
+#'
 #' @field tau_tk Matrix of size \eqn{(m, K)} giving the posterior probability
 #'   that the observation \eqn{Y_{i}} originates from the \eqn{k}-th regression
 #'   model.
@@ -22,8 +25,8 @@
 #' @field log_f_tk Matrix of size \eqn{(m, K)} giving the logarithm of the
 #'   cumulative distribution `f_tk`.
 #' @field loglik Numeric. Log-likelihood of the MHMMR model.
-#' @field stored_loglik List. Stored values of the log-likelihood at each
-#'   iteration of the EM algorithm.
+#' @field stored_loglik Numeric vector. Stored values of the log-likelihood at
+#'   each iteration of the EM algorithm.
 #' @field klas Column matrix of the labels issued from `z_ik`. Its elements are
 #'   \eqn{klas(i) = k}, \eqn{k = 1,\dots,K}.
 #' @field z_ik Hard segmentation logical matrix of dimension \eqn{(m, K)}
@@ -69,7 +72,7 @@ StatMHMMR <- setRefClass(
     f_tk = "matrix", # f_tk: [nxK] f(yt|zt=k)
     log_f_tk = "matrix", # log_f_tk: [nxK] log(f(yt|zt=k))
     loglik = "numeric", # loglik: log-likelihood at convergence
-    stored_loglik = "list", # stored_loglik: stored log-likelihood values during EM
+    stored_loglik = "numeric", # stored_loglik: stored log-likelihood values during EM
     klas = "matrix", # klas: [nx1 double]
     z_ik = "matrix", # z_ik: [nxK]
     state_probs = "matrix", # state_probs: [nxK]
@@ -93,7 +96,7 @@ StatMHMMR <- setRefClass(
       f_tk <<- matrix(NA, paramMHMMR$mData$m, paramMHMMR$K) # f_tk: [nxK] f(yt|zt=k)
       log_f_tk <<- matrix(NA, paramMHMMR$mData$m, paramMHMMR$K) # log_f_tk: [nxK] log(f(yt|zt=k))
       loglik <<- -Inf # loglik: log-likelihood at convergence
-      stored_loglik <<- list() # stored_loglik: stored log-likelihood values during EM
+      stored_loglik <<- numeric() # stored_loglik: stored log-likelihood values during EM
       klas <<- matrix(NA, paramMHMMR$mData$m, 1) # klas: [nx1 double]
       z_ik <<- matrix(NA, paramMHMMR$mData$m, paramMHMMR$K) # z_ik: [nxK]
       state_probs <<- matrix(NA, paramMHMMR$mData$m, paramMHMMR$K) # state_probs: [nxK]

@@ -7,9 +7,10 @@
 \title{A Reference Class which contains statistics of a MRHLP model.}
 \description{
 StatMRHLP contains all the statistics associated to a \link[=ParamMRHLP]{MRHLP}
-model.
-It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables,
-as well as the calculation of the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+model. It mainly includes the E-Step of the EM algorithm calculating the
+posterior distribution of the hidden variables, as well as the calculation of
+the log-likelhood at each step of the algorithm and the obtained values of
+model selection criteria..
 }
 \section{Fields}{
 
@@ -47,11 +48,11 @@ logistic probabilities \code{pi_ik}.}
 
 \item{\code{com_loglik}}{Numeric. Complete-data log-likelihood of the MRHLP model.}
 
-\item{\code{stored_loglik}}{List. Stored values of the log-likelihood at each EM
-iteration.}
+\item{\code{stored_loglik}}{Numeric vector. Stored values of the log-likelihood at
+each EM iteration.}
 
-\item{\code{stored_com_loglik}}{List. Stored values of the Complete log-likelihood
-at each EM iteration.}
+\item{\code{stored_com_loglik}}{Numeric vector. Stored values of the Complete
+log-likelihood at each EM iteration.}
 
 \item{\code{BIC}}{Numeric. Value of BIC (Bayesian Information Criterion).}
 

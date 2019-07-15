@@ -16,7 +16,7 @@ ModelRHLP <- setRefClass(
   ),
   methods = list(
 
-    plot = function(what = c("regressors", "estimatedsignal"), ...) {
+    plot = function(what = c("regressors", "estimatedsignal", "loglikelihood"), ...) {
       "Plot method.
       \\describe{
         \\item{\\code{what}}{The type of graph requested:
@@ -26,6 +26,9 @@ ModelRHLP <- setRefClass(
               \\link{StatRHLP}).
             \\item \\code{\"estimatedsignal\" = } Estimated signal (fields
             \\code{Ex} and \\code{klas} of class \\link{StatRHLP}).
+            \\item \\code{\"loglikelihood\" = } Value of the log-likelihood for
+              each iteration (field \\code{stored_loglik} of class
+              \\link{StatRHLP}).
           }
         }
         \\item{\\code{\\dots}}{Other graphics parameters.}
@@ -77,6 +80,12 @@ ModelRHLP <- setRefClass(
         # Probablities of the hidden process (segmentation)
         plot.default(param$X, stat$klas, type = "l", xlab = "x", ylab = "Estimated class labels", col = "red", lwd = 1.5, yaxt = "n", ...)
         axis(side = 2, at = 1:param$K, ...)
+      }
+
+      if (any(what == "loglikelihood")) {
+        par(mfrow = c(1, 1))
+        plot.default(1:length(stat$stored_loglik), stat$stored_loglik, type = "l", col = "blue", xlab = "EM iteration number", ylab = "Log-likelihood", ...)
+        title(main = "Log-likelihood")
       }
     },
 

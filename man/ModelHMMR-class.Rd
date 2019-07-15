@@ -21,7 +21,8 @@ statistics associated to the HMMR model.}
 \section{Methods}{
 
 \describe{
-\item{\code{plot(what = c("predicted", "filtered", "smoothed", "regressors"), ...)}}{Plot method.
+\item{\code{plot(what = c("predicted", "filtered", "smoothed", "regressors",
+  "loglikelihood"), ...)}}{Plot method.
 \describe{
   \item{\code{what}}{The type of graph requested:
     \itemize{
@@ -36,6 +37,9 @@ statistics associated to the HMMR model.}
         class {StatHMMR}).
       \item \code{"regressors" = } Polynomial regression components
         (fields \code{regressors} and \code{tau_tk} of class
+      \link{StatHMMR}).
+      \item \code{"loglikelihood" = } Value of the log-likelihood for
+        each iteration (field \code{stored_loglik} of class
         \link{StatHMMR}).
     }
   }
@@ -45,8 +49,8 @@ By default, all the graphs mentioned above are produced.}
 
 \item{\code{summary(digits = getOption("digits"))}}{Summary method.
 \describe{
-  \item{\code{digits}}{The number of significant digits to use when
-    printing.}
+\item{\code{digits}}{The number of significant digits to use when
+printing.}
 }}
 }}
 

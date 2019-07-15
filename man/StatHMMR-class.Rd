@@ -7,8 +7,11 @@
 \title{A Reference Class which contains statistics of a HMMR model.}
 \description{
 StatHMMR contains all the statistics associated to a \link[=ParamHMMR]{HMMR} model.
-It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables (ie the smoothing probabilities),
-as well as the calculation of the prediction and filtering probabilities, the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+It mainly includes the E-Step of the EM algorithm calculating the posterior
+distribution of the hidden variables (ie the smoothing probabilities), as
+well as the calculation of the prediction and filtering probabilities, the
+log-likelhood at each step of the algorithm and the obtained values of model
+selection criteria..
 }
 \section{Fields}{
 
@@ -38,8 +41,8 @@ cumulative distribution \code{f_tk}.}
 
 \item{\code{loglik}}{Numeric. Log-likelihood of the HMMR model.}
 
-\item{\code{stored_loglik}}{List. Stored values of the log-likelihood at each
-iteration of the EM algorithm.}
+\item{\code{stored_loglik}}{Numeric vector. Stored values of the log-likelihood at
+each iteration of the EM algorithm.}
 
 \item{\code{klas}}{Column matrix of the labels issued from \code{z_ik}. Its elements are
 \eqn{klas(i) = k}, \eqn{k = 1,\dots,K}.}

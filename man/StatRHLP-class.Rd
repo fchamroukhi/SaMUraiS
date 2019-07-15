@@ -44,11 +44,11 @@ logistic probabilities \code{pi_ik}.}
 
 \item{\code{com_loglik}}{Numeric. Complete-data log-likelihood of the RHLP model.}
 
-\item{\code{stored_loglik}}{List. Stored values of the log-likelihood at each EM
-iteration.}
+\item{\code{stored_loglik}}{Numeric vector. Stored values of the log-likelihood at
+each EM iteration.}
 
-\item{\code{stored_com_loglik}}{List. Stored values of the Complete log-likelihood
-at each EM iteration.}
+\item{\code{stored_com_loglik}}{Numeric vector. Stored values of the Complete
+log-likelihood at each EM iteration.}
 
 \item{\code{BIC}}{Numeric. Value of BIC (Bayesian Information Criterion).}
 

@@ -92,3 +92,9 @@ rhlp$plot(what = "regressors")
 ```{r}
 rhlp$plot(what = "estimatedsignal")
 ```
+
+## Log-likelihood
+
+```{r}
+rhlp$plot(what = "loglikelihood")
+```

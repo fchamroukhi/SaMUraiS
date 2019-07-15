@@ -15,7 +15,7 @@ ModelHMMR <- setRefClass(
     stat = "StatHMMR"
   ),
   methods = list(
-    plot = function(what = c("predicted", "filtered", "smoothed", "regressors"), ...) {
+    plot = function(what = c("predicted", "filtered", "smoothed", "regressors", "loglikelihood"), ...) {
       "Plot method.
       \\describe{
         \\item{\\code{what}}{The type of graph requested:
@@ -31,6 +31,9 @@ ModelHMMR <- setRefClass(
               class {StatHMMR}).
             \\item \\code{\"regressors\" = } Polynomial regression components
               (fields \\code{regressors} and \\code{tau_tk} of class
+            \\link{StatHMMR}).
+            \\item \\code{\"loglikelihood\" = } Value of the log-likelihood for
+              each iteration (field \\code{stored_loglik} of class
               \\link{StatHMMR}).
           }
         }
@@ -54,7 +57,7 @@ ModelHMMR <- setRefClass(
         lines(param$X, stat$predicted, type = "l", col = "red", lwd = 1.5, ...)
         title(main = "Original and predicted HMMR time series")
 
-        # Prediction probabilities of the hidden process 
+        # Prediction probabilities of the hidden process
         plot.default(param$X, stat$predict_prob[, 1], type = "l", xlab = "x", ylab = expression('P(Z'[t] == k ~ '|' ~ list(y[1],..., y[t - 1]) ~ ')'), col = colorsvec[1], lwd = 1.5, main = "Prediction probabilities", ylim = c(0, 1), ...)
         if (param$K > 1) {
           for (k in 2:param$K) {
@@ -126,13 +129,19 @@ ModelHMMR <- setRefClass(
         plot.default(param$X, stat$klas, type = "l", xlab = "x", ylab = "Estimated class labels", col = "red", lwd = 1.5, yaxt = "n", ...)
         axis(side = 2, at = 1:param$K, ...)
       }
-    },
+
+      if (any(what == "loglikelihood")) {
+        par(mfrow = c(1, 1))
+        plot.default(1:length(stat$stored_loglik), stat$stored_loglik, type = "l", col = "blue", xlab = "EM iteration number", ylab = "Log-likelihood", ...)
+        title(main = "Log-likelihood")
+      }
+      },
 
     summary = function(digits = getOption("digits")) {
       "Summary method.
       \\describe{
-        \\item{\\code{digits}}{The number of significant digits to use when
-          printing.}
+      \\item{\\code{digits}}{The number of significant digits to use when
+      printing.}
       }"
 
       title <- paste("Fitted HMMR model")
@@ -182,4 +191,4 @@ ModelHMMR <- setRefClass(
 
     }
   )
-)
+  )

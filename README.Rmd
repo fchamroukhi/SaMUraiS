@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**tion of t**I**me **S**eries
+# **SaMUraiS**: StAtistical Models for the UnsupeRvised segmentAtion of tIme Series
 
 SaMUraiS is a toolbox including many original and flexible user-friendly 
 statistical latent variable models and unsupervised algorithms to segment and 

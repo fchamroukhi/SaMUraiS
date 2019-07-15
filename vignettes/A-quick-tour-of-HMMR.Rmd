@@ -101,3 +101,9 @@ hmmr$plot(what = "regressors")
 ```{r}
 hmmr$plot(what = "smoothed")
 ```
+
+## Log-likelihood
+
+```{r}
+hmmr$plot(what = "loglikelihood")
+```

@@ -27,10 +27,10 @@
 #'   logistic probabilities `pi_ik`.
 #' @field loglik Numeric. Observed-data log-likelihood of the RHLP model.
 #' @field com_loglik Numeric. Complete-data log-likelihood of the RHLP model.
-#' @field stored_loglik List. Stored values of the log-likelihood at each EM
-#'   iteration.
-#' @field stored_com_loglik List. Stored values of the Complete log-likelihood
-#'   at each EM iteration.
+#' @field stored_loglik Numeric vector. Stored values of the log-likelihood at
+#'   each EM iteration.
+#' @field stored_com_loglik Numeric vector. Stored values of the Complete
+#'   log-likelihood at each EM iteration.
 #' @field BIC Numeric. Value of BIC (Bayesian Information Criterion).
 #' @field ICL Numeric. Value of ICL (Integrated Completed Likelihood).
 #' @field AIC Numeric. Value of AIC (Akaike Information Criterion).
@@ -53,8 +53,8 @@ StatRHLP <- setRefClass(
     Ex = "matrix",
     loglik = "numeric",
     com_loglik = "numeric",
-    stored_loglik = "list",
-    stored_com_loglik = "list",
+    stored_loglik = "numeric",
+    stored_com_loglik = "numeric",
     BIC = "numeric",
     ICL = "numeric",
     AIC = "numeric",
@@ -73,8 +73,8 @@ StatRHLP <- setRefClass(
       Ex <<- matrix(NA, paramRHLP$m, 1)
       loglik <<- -Inf
       com_loglik <<- -Inf
-      stored_loglik <<- list()
-      stored_com_loglik <<- list()
+      stored_loglik <<- numeric()
+      stored_com_loglik <<- numeric()
       BIC <<- -Inf
       ICL <<- -Inf
       AIC <<- -Inf

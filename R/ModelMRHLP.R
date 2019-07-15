@@ -16,7 +16,7 @@ ModelMRHLP <- setRefClass(
   ),
   methods = list(
 
-    plot = function(what = c("regressors", "estimatedsignal"), ...) {
+    plot = function(what = c("regressors", "estimatedsignal", "loglikelihood"), ...) {
       "Plot method.
       \\describe{
         \\item{\\code{what}}{The type of graph requested:
@@ -26,6 +26,9 @@ ModelMRHLP <- setRefClass(
               \\link{StatMRHLP}).
             \\item \\code{\"estimatedsignal\" = } Estimated signal (fields
               \\code{Ex} and \\code{klas} of class \\link{StatMRHLP}).
+            \\item \\code{\"loglikelihood\" = } Value of the log-likelihood for
+              each iteration (field \\code{stored_loglik} of class
+              \\link{StatMRHLP}).
           }
         }
         \\item{\\code{\\dots}}{Other graphics parameters.}
@@ -83,9 +86,11 @@ ModelMRHLP <- setRefClass(
         axis(side = 2, at = 1:param$K, ...)
       }
 
-      # # Model log-likelihood during EM
-      # par(mfrow = c(1, 1))
-      # plot.default(unlist(stat$stored_loglik), type = "l", xlab = "EM iteration number", ylab = "log-lokelihodd", col = "blue")
+      if (any(what == "loglikelihood")) {
+        par(mfrow = c(1, 1))
+        plot.default(1:length(stat$stored_loglik), stat$stored_loglik, type = "l", col = "blue", xlab = "EM iteration number", ylab = "Log-likelihood", ...)
+        title(main = "Log-likelihood")
+      }
     },
 
     summary = function(digits = getOption("digits")) {

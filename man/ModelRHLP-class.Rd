@@ -21,7 +21,7 @@ associated to the RHLP model.}
 \section{Methods}{
 
 \describe{
-\item{\code{plot(what = c("regressors", "estimatedsignal"), ...)}}{Plot method.
+\item{\code{plot(what = c("regressors", "estimatedsignal", "loglikelihood"), ...)}}{Plot method.
 \describe{
   \item{\code{what}}{The type of graph requested:
     \itemize{
@@ -30,6 +30,9 @@ associated to the RHLP model.}
         \link{StatRHLP}).
       \item \code{"estimatedsignal" = } Estimated signal (fields
       \code{Ex} and \code{klas} of class \link{StatRHLP}).
+      \item \code{"loglikelihood" = } Value of the log-likelihood for
+        each iteration (field \code{stored_loglik} of class
+        \link{StatRHLP}).
     }
   }
   \item{\code{\dots}}{Other graphics parameters.}

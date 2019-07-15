@@ -24,6 +24,7 @@
 #'   "homoskedastic" or "heteroskedastic" (i.e same variance or different
 #'   variances for each of the K regmies). By default the model is
 #'   "heteroskedastic".
+#'
 #' @param n_tries Optional. Number of runs of the EM algorithm. The solution
 #'   providing the highest log-likelihood will be returned.
 #'
@@ -101,7 +102,7 @@ emHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoske
       } # Basically for the first iteration when prev_loglik is Inf
 
       prev_loglik <- stat$loglik
-      stat$stored_loglik[iter] <- stat$loglik
+      stat$stored_loglik <- c(stat$stored_loglik, stat$loglik)
 
     } # End of the EM loop
 

@@ -104,7 +104,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
         } # Basically for the first iteration when prev_loglik is Inf
 
         prev_loglik <- stat$loglik
-        stat$stored_loglik[iter] <- stat$loglik
+        stat$stored_loglik <- c(stat$stored_loglik, stat$loglik)
 
       } # End of the EM loop
 

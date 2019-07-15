@@ -1,9 +1,10 @@
 #' A Reference Class which contains statistics of a MRHLP model.
 #'
 #' StatMRHLP contains all the statistics associated to a [MRHLP][ParamMRHLP]
-#' model.
-#' It mainly includes the E-Step of the EM algorithm calculating the posterior distribution of the hidden variables,
-#' as well as the calculation of the log-likelhood at each step of the algorithm and the obtained values of model selection criteria..
+#' model. It mainly includes the E-Step of the EM algorithm calculating the
+#' posterior distribution of the hidden variables, as well as the calculation of
+#' the log-likelhood at each step of the algorithm and the obtained values of
+#' model selection criteria..
 #'
 #' @field pi_ik Matrix of size \eqn{(m, K)} representing the prior/logistic
 #'   probabilities \eqn{\pi_{k}(x_{i}; \boldsymbol{\Psi}) = P(z_{i} = k |
@@ -29,10 +30,10 @@
 #'   logistic probabilities `pi_ik`.
 #' @field loglik Numeric. Observed-data log-likelihood of the MRHLP model.
 #' @field com_loglik Numeric. Complete-data log-likelihood of the MRHLP model.
-#' @field stored_loglik List. Stored values of the log-likelihood at each EM
-#'   iteration.
-#' @field stored_com_loglik List. Stored values of the Complete log-likelihood
-#'   at each EM iteration.
+#' @field stored_loglik Numeric vector. Stored values of the log-likelihood at
+#'   each EM iteration.
+#' @field stored_com_loglik Numeric vector. Stored values of the Complete
+#'   log-likelihood at each EM iteration.
 #' @field BIC Numeric. Value of BIC (Bayesian Information Criterion).
 #' @field ICL Numeric. Value of ICL (Integrated Completed Likelihood).
 #' @field AIC Numeric. Value of AIC (Akaike Information Criterion).
@@ -55,8 +56,8 @@ StatMRHLP <- setRefClass(
     Ex = "matrix",
     loglik = "numeric",
     com_loglik = "numeric",
-    stored_loglik = "list",
-    stored_com_loglik = "list",
+    stored_loglik = "numeric",
+    stored_com_loglik = "numeric",
     BIC = "numeric",
     ICL = "numeric",
     AIC = "numeric",
@@ -74,8 +75,8 @@ StatMRHLP <- setRefClass(
       Ex <<- matrix(NA, paramMRHLP$mData$m, paramMRHLP$mData$d)
       loglik <<- -Inf
       com_loglik <<- -Inf
-      stored_loglik <<- list()
-      stored_com_loglik <<- list()
+      stored_loglik <<- numeric()
+      stored_com_loglik <<- numeric()
       BIC <<- -Inf
       ICL <<- -Inf
       AIC <<- -Inf

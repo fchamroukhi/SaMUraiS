@@ -15,7 +15,7 @@ ModelMHMMR <- setRefClass(
     stat = "StatMHMMR"
   ),
   methods = list(
-    plot = function(what = c("predicted", "filtered", "smoothed", "regressors"), ...) {
+    plot = function(what = c("predicted", "filtered", "smoothed", "regressors", "loglikelihood"), ...) {
       "Plot method.
       \\describe{
         \\item{\\code{what}}{The type of graph requested:
@@ -31,6 +31,9 @@ ModelMHMMR <- setRefClass(
               \\link{StatMHMMR}).
             \\item \\code{\"regressors\" = } Polynomial regression components
               (fields \\code{regressors} and \\code{tau_tk} of class
+              \\link{StatMHMMR}).
+            \\item \\code{\"loglikelihood\" = } Value of the log-likelihood for
+              each iteration (field \\code{stored_loglik} of class
               \\link{StatMHMMR}).
           }
         }
@@ -133,6 +136,12 @@ ModelMHMMR <- setRefClass(
         # Probablities of the hidden process (segmentation)
         plot.default(param$mData$X, stat$klas, type = "l", xlab = "x", ylab = "Estimated class labels", col = "red", lwd = 1.5, yaxt = "n", ...)
         axis(side = 2, at = 1:param$K)
+      }
+
+      if (any(what == "loglikelihood")) {
+        par(mfrow = c(1, 1))
+        plot.default(1:length(stat$stored_loglik), stat$stored_loglik, type = "l", col = "blue", xlab = "EM iteration number", ylab = "Log-likelihood", ...)
+        title(main = "Log-likelihood")
       }
     },
 

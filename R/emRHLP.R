@@ -92,7 +92,7 @@ emRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", "
       } # Basically for the first iteration when prev_loglik is Inf
 
       prev_loglik <- stat$loglik
-      stat$stored_loglik[iter] <- stat$loglik
+      stat$stored_loglik <- c(stat$stored_loglik, stat$loglik)
     } # End of the EM loop
 
     if (stat$loglik > best_loglik) {
