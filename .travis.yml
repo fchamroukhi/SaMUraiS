@@ -2,3 +2,8 @@
 
 language: R
 cache: packages
+notifications:
+  email:
+    - faicel.chamroukhi@unicaen.fr
+    - florian.lecocq@outlook.com
+    - marius.bartcus@gmail.com
