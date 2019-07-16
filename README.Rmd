@@ -30,10 +30,10 @@ Our SaMUraiS use mainly the following efficient "sword" packages to segment
 data:
 
 * RHLP;
-* MRHLP;
 * HMM/HMMR;
-* MHMMR;
-* PWR.
+* PWR;
+* MRHLP;
+* MHMMR.
 
 The models and algorithms are developed and written in Matlab by Faicel 
 Chamroukhi, and translated and designed into R packages by Florian Lecocq, 
@@ -98,6 +98,55 @@ rhlp$plot()
 <br />
 
 <details>
+  <summary>HMMR</summary>
+
+```{r, message = FALSE}
+library(samurais)
+
+data("univtoydataset")
+
+K <- 5 # Number of regimes (states)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+
+hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
+               n_tries, max_iter, threshold, verbose)
+
+hmmr$summary()
+
+hmmr$plot()
+```
+
+</details>
+
+<br />
+
+<details>
+  <summary>PWR</summary>
+
+```{r, message = FALSE}
+library(samurais)
+
+data("univtoydataset")
+
+K <- 5 # Number of segments
+p <- 3 # Polynomial degree
+
+pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+
+pwr$plot()
+```
+
+</details>
+
+<br />
+
+<details>
 <summary>MRHLP</summary>
 
 ```{r, message = FALSE}
@@ -130,35 +179,6 @@ mrhlp$plot()
 <br />
 
 <details>
-  <summary>HMMR</summary>
-
-```{r, message = FALSE}
-library(samurais)
-
-data("univtoydataset")
-
-K <- 5 # Number of regimes (states)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
-variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
-
-n_tries <- 1
-max_iter <- 1500
-threshold <- 1e-6
-verbose <- TRUE
-
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
-               n_tries, max_iter, threshold, verbose)
-
-hmmr$summary()
-
-hmmr$plot()
-```
-
-</details>
-
-<br />
-
-<details>
   <summary>MHMMR</summary>
 
 ```{r, message = FALSE}
@@ -181,26 +201,6 @@ mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[, c("y1", "y2", "y3")],
 mhmmr$summary()
 
 mhmmr$plot()
-```
-
-</details>
-
-<br />
-
-<details>
-  <summary>PWR</summary>
-
-```{r, message = FALSE}
-library(samurais)
-
-data("univtoydataset")
-
-K <- 5 # Number of segments
-p <- 3 # Polynomial degree
-
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
-
-pwr$plot()
 ```
 
 </details>

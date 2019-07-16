@@ -15,7 +15,7 @@ Description: SaMUraiS is a toolbox including many original and flexible
     (univariate or multivariate), and more generally, longitudinal data, which 
     include regime changes. SaMUraiS is built upon the following packages, 
     each of them is an autonomous time series segmentation approach: 'RHLP', 
-    'MRHLP', 'HMMR', 'MHMMR', 'PWR'. For the advantages/differences of each of 
+    'HMMR', 'PWR', 'MRHLP', 'MHMMR'. For the advantages/differences of each of 
     them, the user is referred to our mentioned paper references.
 URL: https://github.com/fchamroukhi/SaMUraiS
 License: GPL (>= 3)

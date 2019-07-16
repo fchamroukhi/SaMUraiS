@@ -17,10 +17,10 @@ data:
 
 \itemize{
 \item RHLP;
-\item MRHLP;
 \item HMM/HMMR;
+\item PWR;
+\item MRHLP;
 \item MHMMR;
-\item PWR.
 }
 
 To learn more about \code{samurais}, start with the vignettes:

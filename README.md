@@ -16,10 +16,10 @@ Our SaMUraiS use mainly the following efficient “sword” packages to
 segment data:
 
   - RHLP;
-  - MRHLP;
   - HMM/HMMR;
-  - MHMMR;
-  - PWR.
+  - PWR;
+  - MRHLP;
+  - MHMMR.
 
 The models and algorithms are developed and written in Matlab by Faicel
 Chamroukhi, and translated and designed into R packages by Florian
@@ -141,6 +141,91 @@ rhlp$plot()
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-5-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-5-3.png" style="display: block; margin: auto;" />
+
+</details>
+
+<br />
+
+<details>
+
+<summary>HMMR</summary>
+
+``` r
+library(samurais)
+
+data("univtoydataset")
+
+K <- 5 # Number of regimes (states)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+
+hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
+               n_tries, max_iter, threshold, verbose)
+#> EM: Iteration : 1 || log-likelihood : -1556.39696825601
+#> EM: Iteration : 2 || log-likelihood : -1022.47935723687
+#> EM: Iteration : 3 || log-likelihood : -1019.51830707432
+#> EM: Iteration : 4 || log-likelihood : -1019.51780361388
+
+hmmr$summary()
+#> ---------------------
+#> Fitted HMMR model
+#> ---------------------
+#> 
+#> HMMR model with K = 5 components:
+#> 
+#>  log-likelihood nu       AIC       BIC
+#>       -1019.518 49 -1068.518 -1178.946
+#> 
+#> Clustering table (Number of observations in each regimes):
+#> 
+#>   1   2   3   4   5 
+#> 100 120 200 100 150 
+#> 
+#> Regression coefficients:
+#> 
+#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#> 1    6.031872e-02   -5.326689    -2.65064    120.8612    3.858683
+#> X^1 -7.424715e+00  157.189455    43.13601   -474.9870   13.757279
+#> X^2  2.931651e+02 -643.706204   -92.68115    598.3726  -34.384734
+#> X^3 -1.823559e+03  855.171715    66.18499   -244.5175   20.632196
+#> 
+#> Variances:
+#> 
+#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
+#>       1.220624      1.111487      1.080043     0.9779724      1.028399
+
+hmmr$plot()
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-5.png" style="display: block; margin: auto;" />
+
+</details>
+
+<br />
+
+<details>
+
+<summary>PWR</summary>
+
+``` r
+library(samurais)
+
+data("univtoydataset")
+
+K <- 5 # Number of segments
+p <- 3 # Polynomial degree
+
+pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+
+pwr$plot()
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -304,69 +389,7 @@ mrhlp$summary()
 mrhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" />
-
-</details>
-
-<br />
-
-<details>
-
-<summary>HMMR</summary>
-
-``` r
-library(samurais)
-
-data("univtoydataset")
-
-K <- 5 # Number of regimes (states)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
-variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
-
-n_tries <- 1
-max_iter <- 1500
-threshold <- 1e-6
-verbose <- TRUE
-
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
-               n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -1556.39696825601
-#> EM: Iteration : 2 || log-likelihood : -1022.47935723687
-#> EM: Iteration : 3 || log-likelihood : -1019.51830707432
-#> EM: Iteration : 4 || log-likelihood : -1019.51780361388
-
-hmmr$summary()
-#> ---------------------
-#> Fitted HMMR model
-#> ---------------------
-#> 
-#> HMMR model with K = 5 components:
-#> 
-#>  log-likelihood nu       AIC       BIC
-#>       -1019.518 49 -1068.518 -1178.946
-#> 
-#> Clustering table (Number of observations in each regimes):
-#> 
-#>   1   2   3   4   5 
-#> 100 120 200 100 150 
-#> 
-#> Regression coefficients:
-#> 
-#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
-#> 1    6.031872e-02   -5.326689    -2.65064    120.8612    3.858683
-#> X^1 -7.424715e+00  157.189455    43.13601   -474.9870   13.757279
-#> X^2  2.931651e+02 -643.706204   -92.68115    598.3726  -34.384734
-#> X^3 -1.823559e+03  855.171715    66.18499   -244.5175   20.632196
-#> 
-#> Variances:
-#> 
-#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
-#>       1.220624      1.111487      1.080043     0.9779724      1.028399
-
-hmmr$plot()
-```
-
-<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-5.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -496,30 +519,7 @@ mhmmr$summary()
 mhmmr$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-5.png" style="display: block; margin: auto;" />
-
-</details>
-
-<br />
-
-<details>
-
-<summary>PWR</summary>
-
-``` r
-library(samurais)
-
-data("univtoydataset")
-
-K <- 5 # Number of segments
-p <- 3 # Polynomial degree
-
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
-
-pwr$plot()
-```
-
-<img src="man/figures/README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-2.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-5.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -575,16 +575,17 @@ Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
 
 <div id="ref-item5">
 
-———. 2010. “Hidden Process Regression for Curve Modeling, Classification
-and Tracking.” Ph.D. Thesis, Université de Technologie de Compiègne.
-<https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
+Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
+Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
 
 </div>
 
 <div id="ref-item7">
 
-———. 2009. “Time Series Modeling by a Regression Approach Based on a
-Latent Process.” *Neural Networks* 22 (5-6): 593–602.
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
+Modeling by a Regression Approach Based on a Latent Process.” *Neural
+Networks* 22 (5-6): 593–602.
 <https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
 
 </div>
