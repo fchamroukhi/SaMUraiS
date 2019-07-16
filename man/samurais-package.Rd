@@ -42,7 +42,7 @@ Chamroukhi, F., A. Same, G. Govaert, and P. Aknin. 2010. \emph{A Hidden Process 
 
 Chamroukhi, F. 2010. \emph{Hidden Process Regression for Curve Modeling, Classification and Tracking.} Ph.D. Thesis, Universite de Technologie de Compiegne. \url{https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf}.
 
-Chamroukhi, F. 2009. \emph{Time Series Modeling by a Regression Approach Based on a Latent Process.} Neural Networks 22 (5-6): 593--602. \url{https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf}.
+Chamroukhi, F., A. Same, G. Govaert, and P. Aknin. 2009. \emph{Time Series Modeling by a Regression Approach Based on a Latent Process.} Neural Networks 22 (5-6): 593--602. \url{https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf}.
 }
 \seealso{
 Useful links:
