@@ -19,8 +19,8 @@ arma::mat normalizeMat(arma::mat M) {
 // [[Rcpp::export]]
 List forwardsBackwards(arma::vec& prior, arma::mat& transmat, arma::mat& f_tk) {
   // [tau_tk, xi_ikl, alpha, beta, loglik] = forwardsBackwards(prior, transmat, fik, filter_only)
-  // forwardsBackwards : calculates the E-step of the EM algorithm for an HMM
-  // (Gaussian HMM)
+  // forwardsBackwards : calculates the E-step of the EM algorithm for an HMMR
+  // (Gaussian HMMR)
 
   // Inputs :
   //
@@ -44,7 +44,7 @@ List forwardsBackwards(arma::vec& prior, arma::mat& transmat, arma::mat& f_tk) {
   double N = f_tk.n_cols;
   double K = f_tk.n_rows;
 
-  arma::mat scale(1, N, arma::fill::ones); // pour que loglik = sum(log(scale)) part de zero
+  arma::mat scale(1, N, arma::fill::ones); // so that loglik = sum(log(scale)) starts at zero
   arma::mat tau_tk(K, N, arma::fill::zeros);
   arma::cube xi_tkl(K, K, N - 1, arma::fill::zeros);
 
