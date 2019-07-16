@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
 <!-- badges: end -->
 
 # **SaMUraiS**: StAtistical Models for the UnsupeRvised segmentAtion of tIme Series
