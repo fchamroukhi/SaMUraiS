@@ -1,13 +1,12 @@
-#' SaMUraiS: StAtistical Models for the UnsupeRvised segmentAtion of tIme Series
+#' SaMUraiS: Statistical Models for the Unsupervised segmentation of time Series
 #'
-#' @description SaMUraiS is a toolbox including many original and flexible
+#' @description `samurais` is a toolbox including many original and flexible
 #' user-friendly statistical latent variable models and efficient unsupervised
 #' algorithms to segment and represent time-series data (univariate or
 #' multivariate), and more generally, longitudinal data, which include regime
 #' changes.
 #'
-#' Our SaMUraiS use mainly the following efficient "sword" models to segment
-#' data:
+#' `samurais` contains the following time series segmentation models:
 #'
 #' \itemize{
 #' \item RHLP;
@@ -17,11 +16,11 @@
 #' \item MHMMR;
 #' }
 #'
-#' To learn more about `samurais`, start with the vignettes:
-#' `browseVignettes(package = "samurais")`
-#'
 #' For the advantages/differences of each of them, the user is referred to our
 #' mentioned paper references.
+#'
+#' To learn more about `samurais`, start with the vignettes:
+#' `browseVignettes(package = "samurais")`
 #'
 #' @references
 #'

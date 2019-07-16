@@ -16,18 +16,18 @@ knitr::opts_chunk$set(
 )
 ```
 
+# **SaMUraiS**: Statistical Models for the Unsupervised segmentation of time Series
+
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
 <!-- badges: end -->
 
-# **SaMUraiS**: StAtistical Models for the UnsupeRvised segmentAtion of tIme Series
-
-SaMUraiS is a toolbox including many original and flexible user-friendly 
+samurais is a toolbox including many original and flexible user-friendly 
 statistical latent variable models and unsupervised algorithms to segment and 
 represent, time-series data (univariate or multivariate), and more generally, 
 longitudinal data which include regime changes.
 
-Our SaMUraiS use mainly the following efficient "sword" packages to segment 
+Our samurais use mainly the following efficient "sword" packages to segment 
 data:
 
 * RHLP;

@@ -4,16 +4,15 @@
 \name{samurais-package}
 \alias{samurais}
 \alias{samurais-package}
-\title{SaMUraiS: StAtistical Models for the UnsupeRvised segmentAtion of tIme Series}
+\title{SaMUraiS: Statistical Models for the Unsupervised segmentation of time Series}
 \description{
-SaMUraiS is a toolbox including many original and flexible
+\code{samurais} is a toolbox including many original and flexible
 user-friendly statistical latent variable models and efficient unsupervised
 algorithms to segment and represent time-series data (univariate or
 multivariate), and more generally, longitudinal data, which include regime
 changes.
 
-Our SaMUraiS use mainly the following efficient "sword" models to segment
-data:
+\code{samurais} contains the following time series segmentation models:
 
 \itemize{
 \item RHLP;
@@ -23,11 +22,11 @@ data:
 \item MHMMR;
 }
 
-To learn more about \code{samurais}, start with the vignettes:
-\code{browseVignettes(package = "samurais")}
-
 For the advantages/differences of each of them, the user is referred to our
 mentioned paper references.
+
+To learn more about \code{samurais}, start with the vignettes:
+\code{browseVignettes(package = "samurais")}
 }
 \references{
 Chamroukhi, F., and Hien D. Nguyen. 2019. \emph{Model-Based Clustering and Classification of Functional Data.} Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery. \url{https://doi.org/10.1002/widm.1298}.
