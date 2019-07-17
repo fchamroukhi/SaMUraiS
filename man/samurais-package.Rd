@@ -4,7 +4,7 @@
 \name{samurais-package}
 \alias{samurais}
 \alias{samurais-package}
-\title{SaMUraiS: Statistical Models for the Unsupervised segmentation of time Series}
+\title{SaMUraiS: StAtistical Models for the UnsupeRvised segmentAtIon of time-Series}
 \description{
 \code{samurais} is a toolbox including many original and flexible
 user-friendly statistical latent variable models and efficient unsupervised
