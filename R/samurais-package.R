@@ -1,4 +1,4 @@
-#' SaMUraiS: Statistical Models for the Unsupervised segmentation of time Series
+#' SaMUraiS: StAtistical Models for the UnsupeRvised segmentAtIon of time-Series
 #'
 #' @description `samurais` is a toolbox including many original and flexible
 #' user-friendly statistical latent variable models and efficient unsupervised
