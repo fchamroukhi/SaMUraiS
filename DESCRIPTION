@@ -9,7 +9,7 @@ Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
     email = "marius.bartcus@gmail.com"),
     person("Florian", "Lecocq", role = c("aut", "cre"),
     email = "florian.lecocq@outlook.com"))
-Description: samurais is a toolbox including many original and flexible 
+Description: samurais is a open source toolbox including many original and flexible 
     user-friendly statistical latent variable models and efficient 
     unsupervised algorithms to segment and represent time-series data 
     (univariate or multivariate), and more generally, longitudinal data, which 

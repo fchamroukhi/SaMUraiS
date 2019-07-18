@@ -1,12 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<p align="center">
+<img  align="middle" src="./media/samurais-bel.jpg" alt="SaMUraiS" width="200"/>
+</p>
+<!--![SaMUraiS](./media/samurais-bel.jpg| width=100) -->
 **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
 =================================================================================================================
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS) <!-- badges: end -->
 
-samurais is a toolbox including many original and flexible user-friendly statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
+samurais is an open source toolbox including many original and flexible user-friendly statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
 
 Our samurais use mainly the following efficient "sword" packages to segment data:
 
