@@ -1,4 +1,21 @@
-citHeader("To cite the package samurais in publications use:")
+citHeader("To cite the toolbox samurais in a publication please use the
+following reference. To cite the corresponding paper for a specific package
+from samurais (e.g RHLP, HMMR, PWR, etc), please choose the reference(s)
+from the list provided below.")
+
+citEntry(
+  entry = "Manual",
+  title = "samurais: Statistical Models for the Unsupervised segmentatIon of Time-Series (SaMUraiS)",
+  author = personList(person(given="F.", family="Chamroukhi"),
+                      person(given="M.", family="Bartcus"),
+                      person(given="F.", family="Lecocq")),
+  year = "2019",
+  note = "R package version 0.1.0",
+  url = "https://github.com/fchamroukhi/SaMUraiS",
+  textVersion = "Faicel Chamroukhi, Marius Bartcus and Florian Lecocq (2019).
+  samurais: Statistical Models for the Unsupervised segmentatIon of Time-Series
+  (SaMUraiS). R package version 0.1.0. https://github.com/fchamroukhi/SaMUraiS"
+)
 
 citEntry(
   entry = "Article",
