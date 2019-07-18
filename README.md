@@ -1,9 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<html>
 <p align="center">
 <img  align="middle" src="./media/samurais-bel.jpg" alt="SaMUraiS" width="200"/>
 </p>
-<!--![SaMUraiS](./media/samurais-bel.jpg| width=100) -->
+</html>
 **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
 =================================================================================================================
 
