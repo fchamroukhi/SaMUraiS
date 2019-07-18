@@ -2,7 +2,7 @@
 % Please edit documentation in R/emRHLP.R
 \name{emRHLP}
 \alias{emRHLP}
-\title{emRHLP implemens the EM algorithm to fit a RHLP model.}
+\title{emRHLP implements the EM algorithm to fit a RHLP model.}
 \usage{
 emRHLP(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic",
   "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-06,
