@@ -542,8 +542,8 @@ Reviews: Data Mining and Knowledge Discovery*.
 <div id="ref-Chamroukhi-HDR-2015">
 
 Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
-Complex Data Analysis.” Habilitation Thesis (HDR), Université de
-Toulon.[/Dossier/FChamroukhi-Habilitation.pdf](./Dossier/FChamroukhi-Habilitation.pdf).
+Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
 
 </div>
 
