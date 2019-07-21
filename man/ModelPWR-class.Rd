@@ -42,6 +42,24 @@ By default, all the graphs mentioned above are produced.}
 }}
 }}
 
+\examples{
+data(univtoydataset)
+
+pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K = 5, p = 1)
+
+# pwr is a ModelPWR object. It contains some methods such as 'summary' and 'plot'
+pwr$summary()
+pwr$plot()
+
+# pwr has also two fields, stat and param which are reference classes as well
+
+# Value of the objective function:
+pwr$stat$objective
+
+# Parameters of the polynomial regressions:
+pwr$param$beta
+
+}
 \seealso{
 \link{ParamPWR}, \link{StatPWR}
 }

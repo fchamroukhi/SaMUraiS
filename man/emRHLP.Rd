@@ -65,6 +65,16 @@ the E-Step (method of the class \link{StatRHLP}) and the M-Step
 relative variation of log-likelihood between two steps of the EM algorithm
 is less than the \code{threshold} parameter).
 }
+\examples{
+data(univtoydataset)
+
+rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
+
+rhlp$summary()
+
+rhlp$plot()
+
+}
 \seealso{
 \link{ModelRHLP}, \link{ParamRHLP}, \link{StatRHLP}
 }

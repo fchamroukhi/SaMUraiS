@@ -70,7 +70,7 @@ verbose_IRLS <- FALSE
 
 ```{r}
 rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K, p, q, 
-                   variance_type, n_tries, max_iter, threshold, verbose, verbose_IRLS)
+               variance_type, n_tries, max_iter, threshold, verbose, verbose_IRLS)
 ```
 
 # Summary

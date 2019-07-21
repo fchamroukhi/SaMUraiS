@@ -46,6 +46,25 @@ By default, all the graphs mentioned above are produced.}
 }}
 }}
 
+\examples{
+data(multivtoydataset)
+
+mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
+                 K = 5, p = 1, verbose = TRUE)
+
+# mrhlp is a ModelMRHLP object. It contains some methods such as 'summary' and 'plot'
+mrhlp$summary()
+mrhlp$plot()
+
+# mrhlp has also two fields, stat and param which are reference classes as well
+
+# Log-likelihood:
+mrhlp$stat$loglik
+
+# Parameters of the polynomial regressions:
+mrhlp$param$beta
+
+}
 \seealso{
 \link{ParamMRHLP}, \link{StatMRHLP}
 }

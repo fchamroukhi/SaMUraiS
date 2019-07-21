@@ -42,6 +42,15 @@
 #'   the EM algorithm.
 #' @return EM returns an object of class [ModelRHLP][ModelRHLP].
 #' @seealso [ModelRHLP], [ParamRHLP], [StatRHLP]
+#' @examples
+#' data(univtoydataset)
+#'
+#' rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
+#'
+#' rhlp$summary()
+#'
+#' rhlp$plot()
+#'
 #' @export
 emRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-6, verbose = FALSE, verbose_IRLS = FALSE) {
 

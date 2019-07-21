@@ -7,6 +7,23 @@
 #' @field stat A [StatRHLP][StatRHLP] object. It contains all the statistics
 #'   associated to the RHLP model.
 #' @seealso [ParamRHLP], [StatRHLP]
+#' @examples
+#' data(univtoydataset)
+#'
+#' rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
+#'
+#' # rhlp is a ModelMHMMR object. It contains some methods such as 'summary' and 'plot'
+#' rhlp$summary()
+#' rhlp$plot()
+#'
+#' # rhlp has also two fields, stat and param which are reference classes as well
+#'
+#' # Log-likelihood:
+#' rhlp$stat$loglik
+#'
+#' # Parameters of the polynomial regressions:
+#' rhlp$param$beta
+#'
 #' @export
 ModelRHLP <- setRefClass(
   "ModelRHLP",

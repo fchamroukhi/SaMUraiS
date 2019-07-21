@@ -54,6 +54,24 @@ printing.}
 }}
 }}
 
+\examples{
+data(univtoydataset)
+
+hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+
+# hmmr is a ModelHMMR object. It contains some methods such as 'summary' and 'plot'
+hmmr$summary()
+hmmr$plot()
+
+# hmmr has also two fields, stat and param which are reference classes as well
+
+# Log-likelihood:
+hmmr$stat$loglik
+
+# Parameters of the polynomial regressions:
+hmmr$param$beta
+
+}
 \seealso{
 \link{ParamHMMR}, \link{StatHMMR}
 }

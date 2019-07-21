@@ -7,6 +7,24 @@
 #' @field stat A [StatMHMMR][StatMHMMR] object. It contains all the statistics
 #'   associated to the MHMMR model.
 #' @seealso [ParamMHMMR], [StatMHMMR]
+#' @examples
+#' data(multivtoydataset)
+#'
+#' mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
+#'                  K = 5, p = 1, verbose = TRUE)
+#'
+#' # mhmmr is a ModelMHMMR object. It contains some methods such as 'summary' and 'plot'
+#' mhmmr$summary()
+#' mhmmr$plot()
+#'
+#' # mhmmr has also two fields, stat and param which are reference classes as well
+#'
+#' # Log-likelihood:
+#' mhmmr$stat$loglik
+#'
+#' # Parameters of the polynomial regressions:
+#' mhmmr$param$beta
+#'
 #' @export
 ModelMHMMR <- setRefClass(
   "ModelMHMMR",

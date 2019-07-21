@@ -18,11 +18,20 @@
 #' @param pmin The minimum order of the polynomial regression.
 #' @param pmax The maximum order of the polynomial regression.
 #' @param criterion The criterion used to select the RHLP model ("BIC", "AIC").
+#' @param verbose Optional. A logical value indicating whether or not a summary
+#'   of the selected model should be displayed.
 #' @return selectRHLP returns an object of class [ModelRHLP][ModelRHLP]
 #'   representing the selected RHLP model according to the chosen `criterion`.
 #' @seealso [ModelRHLP]
+#' @examples
+#' data(univtoydataset)
+#'
+#' selectedrhlp <- selectRHLP(X = univtoydataset$x, Y = univtoydataset$y,
+#'                            Kmin = 4, Kmax = 5, pmin = 0, pmax = 1)
+#'
+#' selectedrhlp$summary()
 #' @export
-selectRHLP <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC")) {
+selectRHLP <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 
   criterion <- match.arg(criterion)
 
@@ -42,12 +51,14 @@ selectRHLP <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion 
 
   selected <- rhlp[which(results == max(results), arr.ind = T)][[1]]
 
-  cat(paste0("The RHLP model selected via the \"", criterion, "\" has K = ",
-             selected$param$K, " regimes \n and the order of the ",
-             "polynomial regression is p = ", selected$param$p, "."))
-  cat("\n")
-  cat(paste0("BIC = ", selected$stat$BIC, "\n"))
-  cat(paste0("AIC = ", selected$stat$AIC, "\n"))
+  if (verbose) {
+    cat(paste0("The RHLP model selected via the \"", criterion, "\" has K = ",
+               selected$param$K, " regimes \n and the order of the ",
+               "polynomial regression is p = ", selected$param$p, "."))
+    cat("\n")
+    cat(paste0("BIC = ", selected$stat$BIC, "\n"))
+    cat(paste0("AIC = ", selected$stat$AIC, "\n"))
+  }
 
   return(selected)
 

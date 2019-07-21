@@ -6,7 +6,7 @@
 \alias{ParamMRHLP}
 \title{A Reference Class which contains the parameters of a MRHLP model.}
 \description{
-ParamMRHLP contains all the parameters of a MRHLP model. The paramerts are
+ParamMRHLP contains all the parameters of a MRHLP model. The parameters are
 calculated by the initialization Method and then updated by the Method
 implementing the M-Step of the EM algorithm.
 }
