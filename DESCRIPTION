@@ -16,7 +16,7 @@ Description:  Provides a variety of original and flexible user-friendly
     'samurais' is built upon the following packages, each of them is an 
     autonomous time-series segmentation approach: Regression with Hidden 
     Logistic Process ('RHLP'), Hidden Markov Model Regression ('HMMR'), 
-    Multivariate 'RHLP' ('MRHLP'), Multivariate 'HMMR' ('MHMMR'), piecewise 
+    Multivariate 'RHLP' ('MRHLP'), Multivariate 'HMMR' ('MHMMR'), Piece-Wise 
     regression ('PWR'). For the advantages/differences of each of them, the 
     user is referred to our mentioned paper references.
 URL: https://github.com/fchamroukhi/SaMUraiS

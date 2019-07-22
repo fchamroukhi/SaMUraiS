@@ -28,13 +28,8 @@ to segment and represent, time-series data (univariate or multivariate),
 and more generally, longitudinal data which include regime changes.
 
 Our samurais use mainly the following efficient "sword" packages to segment 
-data:
-
-* RHLP;
-* HMM/HMMR;
-* PWR;
-* MRHLP;
-* MHMMR.
+data: Regression with Hidden Logistic Process (**RHLP**), Hidden Markov Model Regression (**HMMR**), Piece-Wise 
+    regression (**PWR**), Multivariate 'RHLP' (**MRHLP**), and Multivariate 'HMMR' (**MHMMR**).
 
 The models and algorithms are developed and written in Matlab by Faicel 
 Chamroukhi, and translated and designed into R packages by Florian Lecocq, 
@@ -72,7 +67,8 @@ browseVignettes("samurais")
 ```{r, message = FALSE}
 library(samurais)
 
-data("univrealdataset")
+# Application to a toy data set
+data("univtoydataset")
 
 K <- 5 # Number of regimes (mixture components)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -85,7 +81,7 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-rhlp <- emRHLP(univrealdataset$x, univrealdataset$y1, K, p, q, 
+rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K, p, q, 
                variance_type, n_tries, max_iter, threshold, 
                verbose, verbose_IRLS)
 
@@ -94,6 +90,30 @@ rhlp$summary()
 rhlp$plot()
 ```
 
+```{r, message = FALSE}
+
+# Application to a real data set
+data("univrealdataset")
+
+K <- 5 # Number of regimes (mixture components)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter = 1500
+threshold <- 1e-6
+verbose <- FALSE
+verbose_IRLS <- FALSE
+
+rhlp <- emRHLP(univrealdataset$x, univrealdataset$y2, K, p, q, 
+               variance_type, n_tries, max_iter, threshold, 
+               verbose, verbose_IRLS)
+
+rhlp$summary()
+
+rhlp$plot()
+```
 </details>
 
 <details>
@@ -101,6 +121,33 @@ rhlp$plot()
 
 ```{r, message = FALSE}
 library(samurais)
+
+# Application to a toy data set
+
+data("univtoydataset")
+
+K <- 5 # Number of regimes (states)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+
+hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
+               n_tries, max_iter, threshold, verbose)
+
+hmmr$summary()
+
+hmmr$plot()
+```
+
+
+```{r, message = FALSE}
+library(samurais)
+
+# Application to a real data set
 
 data("univrealdataset")
 
@@ -113,7 +160,7 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-hmmr <- emHMMR(univrealdataset$x, univrealdataset$y1, K, p, variance_type, 
+hmmr <- emHMMR(univrealdataset$x, univrealdataset$y2, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
 
 hmmr$summary()
@@ -129,12 +176,30 @@ hmmr$plot()
 ```{r, message = FALSE}
 library(samurais)
 
+# Application to a toy data set
+
+data("univtoydataset")
+
+K <- 5 # Number of segments
+p <- 1 # Polynomial degree
+
+pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+
+pwr$plot()
+```
+
+
+```{r, message = FALSE}
+library(samurais)
+
+# Application to a real data set
+
 data("univrealdataset")
 
 K <- 5 # Number of segments
 p <- 3 # Polynomial degree
 
-pwr <- fitPWRFisher(univrealdataset$x, univrealdataset$y1, K, p)
+pwr <- fitPWRFisher(univrealdataset$x, univrealdataset$y2, K, p)
 
 pwr$plot()
 ```
@@ -147,7 +212,9 @@ pwr$plot()
 ```{r, message = FALSE}
 library(samurais)
 
-data("multivrealdataset")
+# Application to a toy data set
+
+data("multivtoydataset")
 
 K <- 5 # Number of regimes (mixture components)
 p <- 1 # Dimension of beta (order of the polynomial regressors)
@@ -158,6 +225,61 @@ n_tries <- 1
 max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
+verbose_IRLS <- FALSE
+
+mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
+                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
+                 verbose_IRLS)
+
+mrhlp$summary()
+
+mrhlp$plot()
+```
+
+```{r, message = FALSE}
+library(samurais)
+
+# Application to a real data set (human activity recogntion data)
+data("multivrealdataset")
+
+K <- 5 # Number of regimes (mixture components)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+verbose_IRLS <- FALSE
+
+mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
+                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
+                 verbose_IRLS)
+
+mrhlp$summary()
+
+mrhlp$plot()
+```
+</details>
+
+
+```{r, message = FALSE}
+library(samurais)
+
+# Application to a real data set (human activity recognition data)
+
+data("multivrealdataset")
+
+K <- 5 # Number of regimes (mixture components)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
+q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- FALSE
 verbose_IRLS <- FALSE
 
 mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
@@ -177,10 +299,35 @@ mrhlp$plot()
 ```{r, message = FALSE}
 library(samurais)
 
-data("multivrealdataset")
+# Application to a simulated data set
+data("multivtoydataset")
 
 K <- 5 # Number of regimes (states)
 p <- 1 # Dimension of beta (order of the polynomial regressors)
+variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
+
+n_tries <- 1
+max_iter <- 1500
+threshold <- 1e-6
+verbose <- TRUE
+
+mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[, c("y1", "y2", "y3")],
+                 K, p, variance_type, n_tries, max_iter, threshold, verbose)
+
+mhmmr$summary()
+
+mhmmr$plot()
+```
+
+```{r, message = FALSE}
+library(samurais)
+
+# Application to a real data set (human activity recognition data)
+
+data("multivrealdataset")
+
+K <- 5 # Number of regimes (states)
+p <- 3 # Dimension of beta (order of the polynomial regressors)
 variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
 
 n_tries <- 1
