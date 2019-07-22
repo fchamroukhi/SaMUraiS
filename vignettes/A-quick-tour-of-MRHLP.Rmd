@@ -70,8 +70,9 @@ verbose_IRLS <- FALSE
 ## Estimation
 
 ```{r}
-mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], K, p, q, 
-                 variance_type, n_tries, max_iter, threshold, verbose, verbose_IRLS)
+mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
+                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
+                 verbose_IRLS)
 ```
 
 ## Summary

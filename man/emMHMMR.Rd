@@ -59,6 +59,17 @@ class \link{ParamMHMMR}) until convergence (until the relative
 variation of log-likelihood between two steps of the EM algorithm is less
 than the \code{threshold} parameter).
 }
+\examples{
+data(multivtoydataset)
+
+mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
+                 K = 5, p = 1, verbose = TRUE)
+
+mhmmr$summary()
+
+mhmmr$plot()
+
+}
 \seealso{
 \link{ModelMHMMR}, \link{ParamMHMMR}, \link{StatMHMMR}
 }

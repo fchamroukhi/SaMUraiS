@@ -1,6 +1,6 @@
 #' A Reference Class which contains parameters of a RHLP model.
 #'
-#' ParamRHLP contains all the parameters of a RHLP model. The paramerts are
+#' ParamRHLP contains all the parameters of a RHLP model. The parameters are
 #' calculated by the initialization Method and then updated by the Method
 #' implementing the M-Step of the EM algorithm.
 #'
@@ -111,7 +111,7 @@ ParamRHLP <- setRefClass(
 
           Phi_ij <- phi$XBeta[i:j, ]
 
-          bk <-  solve(t(Phi_ij) %*% Phi_ij) %*% t(Phi_ij) %*% yij
+          bk <-  solve(t(Phi_ij) %*% Phi_ij, tol = 0) %*% t(Phi_ij) %*% yij
           beta[, k] <<- bk
 
           if (variance_type == "homoskedastic") {
@@ -183,7 +183,7 @@ ParamRHLP <- setRefClass(
         epps <- 1e-9
         M <- M + epps * diag(p + 1)
 
-        beta[, k] <<- solve(M) %*% t(Xk) %*% yk # Maximization w.r.t betak
+        beta[, k] <<- solve(M, tol = 0) %*% t(Xk) %*% yk # Maximization w.r.t betak
         z <- sqrt(weights) * (Y - phi$XBeta %*% beta[, k])
 
         # Maximisation w.r.t sigmak (the variances)

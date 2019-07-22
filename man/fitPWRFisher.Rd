@@ -35,6 +35,16 @@ the "cost matrix" then it estimates the transition points given \code{K} the
 number of regimes thanks to the method \code{computeDynamicProgram} (method of
 the class \link{ParamPWR}).
 }
+\examples{
+data(univtoydataset)
+
+pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K = 5, p = 1)
+
+pwr$summary()
+
+pwr$plot()
+
+}
 \seealso{
 \link{ModelPWR}, \link{ParamPWR}, \link{StatPWR}
 }

@@ -9,14 +9,16 @@ Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
     email = "marius.bartcus@gmail.com"),
     person("Florian", "Lecocq", role = c("aut", "cre"),
     email = "florian.lecocq@outlook.com"))
-Description: samurais is an open source toolbox (available in R and in Matlab)
-    including many original and flexible user-friendly statistical latent variable models 
-    and efficient unsupervised algorithms to segment and represent time-series data 
-    (univariate or multivariate), and more generally, longitudinal data, which 
-    include regime changes. samurais is built upon the following packages, 
-    each of them is an autonomous time series segmentation approach: 'RHLP', 
-    'HMMR', 'PWR', 'MRHLP', 'MHMMR'. For the advantages/differences of each of 
-    them, the user is referred to our mentioned paper references.
+Description:  Provides a variety of original and flexible user-friendly 
+    statistical latent variable models and unsupervised learning algorithms to 
+    segment and represent time-series data (univariate or multivariate), and 
+    more generally, longitudinal data, which include regime changes. 
+    'samurais' is built upon the following packages, each of them is an 
+    autonomous time-series segmentation approach: Regression with Hidden 
+    Logistic Process ('RHLP'), Hidden Markov Model Regression ('HMMR'), 
+    Multivariate 'RHLP' ('MRHLP'), Multivariate 'HMMR' ('MHMMR'), piecewise 
+    regression ('PWR'). For the advantages/differences of each of them, the 
+    user is referred to our mentioned paper references.
 URL: https://github.com/fchamroukhi/SaMUraiS
 License: GPL (>= 3)
 Depends: 

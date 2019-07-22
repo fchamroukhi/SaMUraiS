@@ -6,7 +6,7 @@
 model with unknown structure.}
 \usage{
 selectMHMMR(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
-  criterion = c("BIC", "AIC"))
+  criterion = c("BIC", "AIC"), verbose = TRUE)
 }
 \arguments{
 \item{X}{Numeric vector of length \emph{m} representing the covariates/inputs
@@ -24,6 +24,9 @@ series observed at points \eqn{1,\dots,m}.}
 \item{pmax}{The maximum order of the polynomial regression.}
 
 \item{criterion}{The criterion used to select the MHMMR model ("BIC", "AIC").}
+
+\item{verbose}{Optional. A logical value indicating whether or not a summary
+of the selected model should be displayed.}
 }
 \value{
 selectMHMMR returns an object of class \link{ModelMHMMR}
@@ -41,6 +44,16 @@ model candidates by varying the number of regimes \code{K} from \code{Kmin} to \
 and the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The
 model having the highest value of the chosen selection criterion is then
 selected.
+}
+\examples{
+data(multivtoydataset)
+x = multivtoydataset$x
+y = multivtoydataset[, c("y1", "y2", "y3")]
+
+selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6,
+                             pmin = 0, pmax = 2)
+
+selectedmhmmr$summary()
 }
 \seealso{
 \link{ModelMHMMR}

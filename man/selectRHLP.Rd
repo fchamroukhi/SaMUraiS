@@ -6,7 +6,7 @@
 model with unknown structure.}
 \usage{
 selectRHLP(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4,
-  criterion = c("BIC", "AIC"))
+  criterion = c("BIC", "AIC"), verbose = TRUE)
 }
 \arguments{
 \item{X}{Numeric vector of length \emph{m} representing the covariates/inputs
@@ -24,6 +24,9 @@ response/output \eqn{y_{1},\dots,y_{m}}.}
 \item{pmax}{The maximum order of the polynomial regression.}
 
 \item{criterion}{The criterion used to select the RHLP model ("BIC", "AIC").}
+
+\item{verbose}{Optional. A logical value indicating whether or not a summary
+of the selected model should be displayed.}
 }
 \value{
 selectRHLP returns an object of class \link{ModelRHLP}
@@ -41,6 +44,14 @@ model candidates by varying the number of regimes \code{K} from \code{Kmin} to \
 and the order of the polynomial regression \code{p} from \code{pmin} to \code{pmax}. The
 model having the highest value of the chosen selection criterion is then
 selected.
+}
+\examples{
+data(univtoydataset)
+
+selectedrhlp <- selectRHLP(X = univtoydataset$x, Y = univtoydataset$y,
+                           Kmin = 4, Kmax = 5, pmin = 0, pmax = 1)
+
+selectedrhlp$summary()
 }
 \seealso{
 \link{ModelRHLP}

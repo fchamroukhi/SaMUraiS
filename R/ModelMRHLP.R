@@ -7,6 +7,24 @@
 #' @field stat A [StatMRHLP][StatMRHLP] object. It contains all the statistics
 #'   associated to the MRHLP model.
 #' @seealso [ParamMRHLP], [StatMRHLP]
+#' @examples
+#' data(multivtoydataset)
+#'
+#' mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
+#'                  K = 5, p = 1, verbose = TRUE)
+#'
+#' # mrhlp is a ModelMRHLP object. It contains some methods such as 'summary' and 'plot'
+#' mrhlp$summary()
+#' mrhlp$plot()
+#'
+#' # mrhlp has also two fields, stat and param which are reference classes as well
+#'
+#' # Log-likelihood:
+#' mrhlp$stat$loglik
+#'
+#' # Parameters of the polynomial regressions:
+#' mrhlp$param$beta
+#'
 #' @export
 ModelMRHLP <- setRefClass(
   "ModelMRHLP",
@@ -117,8 +135,8 @@ ModelMRHLP <- setRefClass(
       cat("\n")
 
       tab <- data.frame("log-likelihood" = stat$loglik, "nu" = param$nu,
-                   "AIC" = stat$AIC,"BIC" = stat$BIC, "ICL" = stat$ICL,
-                   row.names = "", check.names = FALSE)
+                        "AIC" = stat$AIC,"BIC" = stat$BIC, "ICL" = stat$ICL,
+                        row.names = "", check.names = FALSE)
       print(tab, digits = digits)
 
       cat("\nClustering table:")

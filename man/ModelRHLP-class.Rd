@@ -46,6 +46,24 @@ By default, all the graphs mentioned above are produced.}
 }}
 }}
 
+\examples{
+data(univtoydataset)
+
+rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
+
+# rhlp is a ModelMHMMR object. It contains some methods such as 'summary' and 'plot'
+rhlp$summary()
+rhlp$plot()
+
+# rhlp has also two fields, stat and param which are reference classes as well
+
+# Log-likelihood:
+rhlp$stat$loglik
+
+# Parameters of the polynomial regressions:
+rhlp$param$beta
+
+}
 \seealso{
 \link{ParamRHLP}, \link{StatRHLP}
 }

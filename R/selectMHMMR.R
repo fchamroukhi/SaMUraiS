@@ -18,16 +18,27 @@
 #' @param pmin The minimum order of the polynomial regression.
 #' @param pmax The maximum order of the polynomial regression.
 #' @param criterion The criterion used to select the MHMMR model ("BIC", "AIC").
+#' @param verbose Optional. A logical value indicating whether or not a summary
+#'   of the selected model should be displayed.
 #' @return selectMHMMR returns an object of class [ModelMHMMR][ModelMHMMR]
 #'   representing the selected MHMMR model according to the chosen `criterion`.
 #' @seealso [ModelMHMMR]
+#' @examples
+#' data(multivtoydataset)
+#' x = multivtoydataset$x
+#' y = multivtoydataset[, c("y1", "y2", "y3")]
+#'
+#' selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6,
+#'                              pmin = 0, pmax = 2)
+#'
+#' selectedmhmmr$summary()
 #' @export
-selectMHMMR <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC")) {
+selectMHMMR <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 
   criterion <- match.arg(criterion)
 
   vmhmmr <- Vectorize(function(K, p, X1 = X, Y1 = Y) emMHMMR(X = X1, Y = Y1, K, p),
-                     vectorize.args = c("K", "p"))
+                      vectorize.args = c("K", "p"))
 
   mhmmr <- outer(Kmin:Kmax, pmin:pmax, vmhmmr)
 
@@ -42,12 +53,14 @@ selectMHMMR <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion
 
   selected <- mhmmr[which(results == max(results), arr.ind = T)][[1]]
 
-  cat(paste0("The MHMMR model selected via the \"", criterion, "\" has K = ",
-             selected$param$K, " regimes \n and the order of the ",
-             "polynomial regression is p = ", selected$param$p, "."))
-  cat("\n")
-  cat(paste0("BIC = ", selected$stat$BIC, "\n"))
-  cat(paste0("AIC = ", selected$stat$AIC, "\n"))
+  if (verbose) {
+    cat(paste0("The MHMMR model selected via the \"", criterion, "\" has K = ",
+               selected$param$K, " regimes \n and the order of the ",
+               "polynomial regression is p = ", selected$param$p, "."))
+    cat("\n")
+    cat(paste0("BIC = ", selected$stat$BIC, "\n"))
+    cat(paste0("AIC = ", selected$stat$AIC, "\n"))
+  }
 
   return(selected)
 

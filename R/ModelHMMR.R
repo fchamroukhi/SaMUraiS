@@ -7,6 +7,23 @@
 #' @field stat An object of class [StatHMMR][StatHMMR]. It contains all the
 #'   statistics associated to the HMMR model.
 #' @seealso [ParamHMMR], [StatHMMR]
+#' @examples
+#' data(univtoydataset)
+#'
+#' hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+#'
+#' # hmmr is a ModelHMMR object. It contains some methods such as 'summary' and 'plot'
+#' hmmr$summary()
+#' hmmr$plot()
+#'
+#' # hmmr has also two fields, stat and param which are reference classes as well
+#'
+#' # Log-likelihood:
+#' hmmr$stat$loglik
+#'
+#' # Parameters of the polynomial regressions:
+#' hmmr$param$beta
+#'
 #' @export
 ModelHMMR <- setRefClass(
   "ModelHMMR",
@@ -135,7 +152,7 @@ ModelHMMR <- setRefClass(
         plot.default(1:length(stat$stored_loglik), stat$stored_loglik, type = "l", col = "blue", xlab = "EM iteration number", ylab = "Log-likelihood", ...)
         title(main = "Log-likelihood")
       }
-      },
+    },
 
     summary = function(digits = getOption("digits")) {
       "Summary method.
@@ -191,4 +208,4 @@ ModelHMMR <- setRefClass(
 
     }
   )
-  )
+)

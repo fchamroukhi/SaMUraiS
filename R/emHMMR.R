@@ -41,6 +41,14 @@
 #'   the log-likelihood should be printed during EM iterations.
 #' @return EM returns an object of class [ModelHMMR][ModelHMMR].
 #' @seealso [ModelHMMR], [ParamHMMR], [StatHMMR]
+#' @examples
+#' data(univtoydataset)
+#' hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+#'
+#' hmmr$summary()
+#'
+#' hmmr$plot()
+#'
 #' @export
 emHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-6, verbose = FALSE) {
 
