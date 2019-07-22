@@ -140,7 +140,7 @@ hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type,
 
 hmmr$summary()
 
-hmmr$plot()
+hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
 
@@ -165,7 +165,7 @@ hmmr <- emHMMR(univrealdataset$x, univrealdataset$y2, K, p, variance_type,
 
 hmmr$summary()
 
-hmmr$plot()
+hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
 </details>
@@ -263,36 +263,6 @@ mrhlp$plot()
 ```
 </details>
 
-
-```{r, message = FALSE}
-library(samurais)
-
-# Application to a real data set (human activity recognition data)
-
-data("multivrealdataset")
-
-K <- 5 # Number of regimes (mixture components)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
-q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
-variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
-
-n_tries <- 1
-max_iter <- 1500
-threshold <- 1e-6
-verbose <- FALSE
-verbose_IRLS <- FALSE
-
-mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
-                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
-                 verbose_IRLS)
-
-mrhlp$summary()
-
-mrhlp$plot()
-```
-
-</details>
-
 <details>
   <summary>MHMMR</summary>
 
@@ -316,7 +286,7 @@ mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[, c("y1", "y2", "y3")],
 
 mhmmr$summary()
 
-mhmmr$plot()
+mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
 ```{r, message = FALSE}
@@ -340,7 +310,7 @@ mhmmr <- emMHMMR(multivrealdataset$x, multivrealdataset[, c("y1", "y2", "y3")],
 
 mhmmr$summary()
 
-mhmmr$plot()
+mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
 </details>
@@ -350,10 +320,10 @@ mhmmr$plot()
 In this package, it is possible to select models based on information criteria 
 such as **BIC**, **AIC** and **ICL**.
 
-The selection can be done for the two folliwng parameters:
+The selection can be done for the two following parameters:
 
  * **K**: The number of regimes;
- * **p**: The order of the polyniomial regression.
+ * **p**: The order of the polynomial regression.
 
 <details>
   <summary>RHLP</summary>

@@ -57,7 +57,7 @@ ModelRHLP <- setRefClass(
       oldpar <- par(no.readonly = TRUE)
       on.exit(par(oldpar), add = TRUE)
 
-      yaxislim <- c(mean(param$Y) - sd(param$Y), mean(param$Y) + sd(param$Y))
+      yaxislim <- c(mean(param$Y) - 2 * sd(param$Y), mean(param$Y) + 2 * sd(param$Y))
 
       if (any(what == "regressors")) {
         # Data, regressors, and segmentation
