@@ -1,34 +1,45 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
-=================================================================================================================
+
+# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS) <!-- badges: end -->
 
-samurais is an open source toolbox (available in R and in Matlab) including many original and flexible user-friendly statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
+[![Travis build
+status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
+<!-- badges: end -->
 
-Our samurais use mainly the following efficient "sword" packages to segment data:
+samurais is an open source toolbox (available in R and in Matlab)
+including many original and flexible user-friendly statistical latent
+variable models and unsupervised algorithms to segment and represent,
+time-series data (univariate or multivariate), and more generally,
+longitudinal data which include regime changes.
 
--   RHLP;
--   HMM/HMMR;
--   PWR;
--   MRHLP;
--   MHMMR.
+Our samurais use mainly the following efficient “sword” packages to
+segment data:
 
-The models and algorithms are developed and written in Matlab by Faicel Chamroukhi, and translated and designed into R packages by Florian Lecocq, Marius Bartcus and Faicel Chamroukhi.
+  - RHLP;
+  - HMM/HMMR;
+  - PWR;
+  - MRHLP;
+  - MHMMR.
 
-Installation
-============
+The models and algorithms are developed and written in Matlab by Faicel
+Chamroukhi, and translated and designed into R packages by Florian
+Lecocq, Marius Bartcus and Faicel Chamroukhi.
 
-You can install the **samurais** package from [GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
+# Installation
+
+You can install the **samurais** package from
+[GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("fchamroukhi/SaMUraiS")
 ```
 
-To build *vignettes* for examples of usage, type the command below instead:
+To build *vignettes* for examples of usage, type the command below
+instead:
 
 ``` r
 # install.packages("devtools")
@@ -43,15 +54,16 @@ Use the following command to display vignettes:
 browseVignettes("samurais")
 ```
 
-Usage
-=====
+# Usage
 
-<details> <summary>RHLP</summary>
+<details>
+
+<summary>RHLP</summary>
 
 ``` r
 library(samurais)
 
-data("univtoydataset")
+data("univrealdataset")
 
 K <- 5 # Number of regimes (mixture components)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -64,41 +76,68 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K, p, q, 
+rhlp <- emRHLP(univrealdataset$x, univrealdataset$y1, K, p, q, 
                variance_type, n_tries, max_iter, threshold, 
                verbose, verbose_IRLS)
-#> EM: Iteration : 1 || log-likelihood : -2119.27308534609
-#> EM: Iteration : 2 || log-likelihood : -1149.01040321999
-#> EM: Iteration : 3 || log-likelihood : -1118.20384281234
-#> EM: Iteration : 4 || log-likelihood : -1096.88260636121
-#> EM: Iteration : 5 || log-likelihood : -1067.55719357295
-#> EM: Iteration : 6 || log-likelihood : -1037.26620122646
-#> EM: Iteration : 7 || log-likelihood : -1022.71743069484
-#> EM: Iteration : 8 || log-likelihood : -1006.11825447077
-#> EM: Iteration : 9 || log-likelihood : -1001.18491883952
-#> EM: Iteration : 10 || log-likelihood : -1000.91250763556
-#> EM: Iteration : 11 || log-likelihood : -1000.62280600209
-#> EM: Iteration : 12 || log-likelihood : -1000.3030988811
-#> EM: Iteration : 13 || log-likelihood : -999.932334880131
-#> EM: Iteration : 14 || log-likelihood : -999.484219706691
-#> EM: Iteration : 15 || log-likelihood : -998.928118038989
-#> EM: Iteration : 16 || log-likelihood : -998.234244664472
-#> EM: Iteration : 17 || log-likelihood : -997.359536276056
-#> EM: Iteration : 18 || log-likelihood : -996.152654857298
-#> EM: Iteration : 19 || log-likelihood : -994.697863447307
-#> EM: Iteration : 20 || log-likelihood : -993.186583974542
-#> EM: Iteration : 21 || log-likelihood : -991.81352379631
-#> EM: Iteration : 22 || log-likelihood : -990.611295217008
-#> EM: Iteration : 23 || log-likelihood : -989.539226273251
-#> EM: Iteration : 24 || log-likelihood : -988.55311887915
-#> EM: Iteration : 25 || log-likelihood : -987.539963690533
-#> EM: Iteration : 26 || log-likelihood : -986.073920116541
-#> EM: Iteration : 27 || log-likelihood : -983.263549878169
-#> EM: Iteration : 28 || log-likelihood : -979.340492188909
-#> EM: Iteration : 29 || log-likelihood : -977.468559852711
-#> EM: Iteration : 30 || log-likelihood : -976.653534236095
-#> EM: Iteration : 31 || log-likelihood : -976.5893387433
-#> EM: Iteration : 32 || log-likelihood : -976.589338067237
+#> EM: Iteration : 1 || log-likelihood : -3126.08247039135
+#> EM: Iteration : 2 || log-likelihood : -2121.08808475682
+#> EM: Iteration : 3 || log-likelihood : -2009.82191410209
+#> EM: Iteration : 4 || log-likelihood : -1977.8268328881
+#> EM: Iteration : 5 || log-likelihood : -1963.18709732032
+#> EM: Iteration : 6 || log-likelihood : -1960.27086117413
+#> EM: Iteration : 7 || log-likelihood : -1957.77924311816
+#> EM: Iteration : 8 || log-likelihood : -1955.69467955559
+#> EM: Iteration : 9 || log-likelihood : -1954.25503722788
+#> EM: Iteration : 10 || log-likelihood : -1953.29827499857
+#> EM: Iteration : 11 || log-likelihood : -1952.61600575654
+#> EM: Iteration : 12 || log-likelihood : -1952.10190938655
+#> EM: Iteration : 13 || log-likelihood : -1951.69825006943
+#> EM: Iteration : 14 || log-likelihood : -1951.36567847189
+#> EM: Iteration : 15 || log-likelihood : -1951.07978474725
+#> EM: Iteration : 16 || log-likelihood : -1950.82780856721
+#> EM: Iteration : 17 || log-likelihood : -1950.60425518221
+#> EM: Iteration : 18 || log-likelihood : -1950.40725884911
+#> EM: Iteration : 19 || log-likelihood : -1950.23584879763
+#> EM: Iteration : 20 || log-likelihood : -1950.08827638532
+#> EM: Iteration : 21 || log-likelihood : -1949.96160365021
+#> EM: Iteration : 22 || log-likelihood : -1949.85221438829
+#> EM: Iteration : 23 || log-likelihood : -1949.75653203975
+#> EM: Iteration : 24 || log-likelihood : -1949.67146000455
+#> EM: Iteration : 25 || log-likelihood : -1949.59449248517
+#> EM: Iteration : 26 || log-likelihood : -1949.52364662512
+#> EM: Iteration : 27 || log-likelihood : -1949.45734905189
+#> EM: Iteration : 28 || log-likelihood : -1949.39433644626
+#> EM: Iteration : 29 || log-likelihood : -1949.3335831177
+#> EM: Iteration : 30 || log-likelihood : -1949.2742523533
+#> EM: Iteration : 31 || log-likelihood : -1949.21566603931
+#> EM: Iteration : 32 || log-likelihood : -1949.15728868703
+#> EM: Iteration : 33 || log-likelihood : -1949.09872356854
+#> EM: Iteration : 34 || log-likelihood : -1949.0397187378
+#> EM: Iteration : 35 || log-likelihood : -1948.98018045989
+#> EM: Iteration : 36 || log-likelihood : -1948.92019061405
+#> EM: Iteration : 37 || log-likelihood : -1948.86002356788
+#> EM: Iteration : 38 || log-likelihood : -1948.80015719481
+#> EM: Iteration : 39 || log-likelihood : -1948.74127166771
+#> EM: Iteration : 40 || log-likelihood : -1948.68422833399
+#> EM: Iteration : 41 || log-likelihood : -1948.63001891506
+#> EM: Iteration : 42 || log-likelihood : -1948.57967535124
+#> EM: Iteration : 43 || log-likelihood : -1948.53413681682
+#> EM: Iteration : 44 || log-likelihood : -1948.49408479379
+#> EM: Iteration : 45 || log-likelihood : -1948.45979102243
+#> EM: Iteration : 46 || log-likelihood : -1948.43107654236
+#> EM: Iteration : 47 || log-likelihood : -1948.40743469776
+#> EM: Iteration : 48 || log-likelihood : -1948.38819781592
+#> EM: Iteration : 49 || log-likelihood : -1948.37266281603
+#> EM: Iteration : 50 || log-likelihood : -1948.36017537649
+#> EM: Iteration : 51 || log-likelihood : -1948.35016121357
+#> EM: Iteration : 52 || log-likelihood : -1948.34213239846
+#> EM: Iteration : 53 || log-likelihood : -1948.33568501763
+#> EM: Iteration : 54 || log-likelihood : -1948.33049023448
+#> EM: Iteration : 55 || log-likelihood : -1948.32628245578
+#> EM: Iteration : 56 || log-likelihood : -1948.32284798604
+#> EM: Iteration : 57 || log-likelihood : -1948.32001550363
+#> EM: Iteration : 58 || log-likelihood : -1948.31764845638
+#> EM: Iteration : 59 || log-likelihood : -1948.31582473301
 
 rhlp$summary()
 #> ---------------------
@@ -108,25 +147,25 @@ rhlp$summary()
 #> RHLP model with K = 5 components:
 #> 
 #>  log-likelihood nu       AIC       BIC       ICL
-#>       -976.5893 33 -1009.589 -1083.959 -1083.176
+#>       -1948.316 33 -1981.316 -2052.786 -2059.316
 #> 
 #> Clustering table (Number of observations in each regimes):
 #> 
 #>   1   2   3   4   5 
-#> 100 120 200 100 150 
+#>  17 195 103 109 138 
 #> 
 #> Regression coefficients:
 #> 
-#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
-#> 1    6.031875e-02   -5.434903   -2.770416    120.7699    4.027542
-#> X^1 -7.424718e+00  158.705091   43.879453   -474.5888   13.194261
-#> X^2  2.931652e+02 -650.592347  -94.194780    597.7948  -33.760603
-#> X^3 -1.823560e+03  865.329795   67.197059   -244.2386   20.402153
+#>     Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#> 1      2522.036   336.96621   5699.1039  -5721.3556 -4817.09484
+#> X^1  -24060.047  -122.01672  -6567.9294   5042.8424  3162.53179
+#> X^2   59578.506   101.03978   2645.5878  -1394.9529  -634.63462
+#> X^3   33531.140   -21.71512   -350.1586    127.6111    42.30305
 #> 
 #> Variances:
 #> 
 #>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
-#>       1.220624      1.110243      1.079394     0.9779734      1.028332
+#>       57117.35      18.05642      121.0056      83.72835      62.43077
 
 rhlp$plot()
 ```
@@ -135,14 +174,14 @@ rhlp$plot()
 
 </details>
 
-<br />
+<details>
 
-<details> <summary>HMMR</summary>
+<summary>HMMR</summary>
 
 ``` r
 library(samurais)
 
-data("univtoydataset")
+data("univrealdataset")
 
 K <- 5 # Number of regimes (states)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -153,12 +192,17 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
+hmmr <- emHMMR(univrealdataset$x, univrealdataset$y1, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -1556.39696825601
-#> EM: Iteration : 2 || log-likelihood : -1022.47935723687
-#> EM: Iteration : 3 || log-likelihood : -1019.51830707432
-#> EM: Iteration : 4 || log-likelihood : -1019.51780361388
+#> EM: Iteration : 1 || log-likelihood : -2593.44708549198
+#> EM: Iteration : 2 || log-likelihood : -2018.06962245479
+#> EM: Iteration : 3 || log-likelihood : -1997.35729174242
+#> EM: Iteration : 4 || log-likelihood : -1991.38180069617
+#> EM: Iteration : 5 || log-likelihood : -1987.93095329436
+#> EM: Iteration : 6 || log-likelihood : -1986.82098028493
+#> EM: Iteration : 7 || log-likelihood : -1986.73005989788
+#> EM: Iteration : 8 || log-likelihood : -1986.72355427528
+#> EM: Iteration : 9 || log-likelihood : -1986.72301568463
 
 hmmr$summary()
 #> ---------------------
@@ -168,25 +212,25 @@ hmmr$summary()
 #> HMMR model with K = 5 components:
 #> 
 #>  log-likelihood nu       AIC       BIC
-#>       -1019.518 49 -1068.518 -1178.946
+#>       -1986.723 49 -2035.723 -2141.845
 #> 
 #> Clustering table (Number of observations in each regimes):
 #> 
 #>   1   2   3   4   5 
-#> 100 120 200 100 150 
+#>  16 196 104 108 138 
 #> 
 #> Regression coefficients:
 #> 
-#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
-#> 1    6.031872e-02   -5.326689    -2.65064    120.8612    3.858683
-#> X^1 -7.424715e+00  157.189455    43.13601   -474.9870   13.757279
-#> X^2  2.931651e+02 -643.706204   -92.68115    598.3726  -34.384734
-#> X^3 -1.823559e+03  855.171715    66.18499   -244.5175   20.632196
+#>     Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#> 1      2525.893   338.55102   5457.3609  -5601.7830 -4817.09482
+#> X^1  -24327.950  -126.65560  -6288.0316   4946.9507  3162.53178
+#> X^2   63827.570   104.96669   2538.2113  -1369.4132  -634.63462
+#> X^3   15377.918   -22.72144   -336.5095    125.3517    42.30305
 #> 
 #> Variances:
 #> 
 #>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
-#>       1.220624      1.111487      1.080043     0.9779724      1.028399
+#>       57713.62      18.91993      120.6112      84.52908      62.43077
 
 hmmr$plot()
 ```
@@ -195,19 +239,19 @@ hmmr$plot()
 
 </details>
 
-<br />
+<details>
 
-<details> <summary>PWR</summary>
+<summary>PWR</summary>
 
 ``` r
 library(samurais)
 
-data("univtoydataset")
+data("univrealdataset")
 
 K <- 5 # Number of segments
 p <- 3 # Polynomial degree
 
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+pwr <- fitPWRFisher(univrealdataset$x, univrealdataset$y1, K, p)
 
 pwr$plot()
 ```
@@ -216,17 +260,17 @@ pwr$plot()
 
 </details>
 
-<br />
+<details>
 
-<details> <summary>MRHLP</summary>
+<summary>MRHLP</summary>
 
 ``` r
 library(samurais)
 
-data("multivtoydataset")
+data("multivrealdataset")
 
 K <- 5 # Number of regimes (mixture components)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
+p <- 1 # Dimension of beta (order of the polynomial regressors)
 q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
 variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
 
@@ -236,44 +280,44 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
+mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
                  K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
                  verbose_IRLS)
-#> EM: Iteration : 1 || log-likelihood : -4975.54177550763
-#> EM: Iteration : 2 || log-likelihood : -3108.34368262058
-#> EM: Iteration : 3 || log-likelihood : -3083.17524290617
-#> EM: Iteration : 4 || log-likelihood : -3052.50226046505
-#> EM: Iteration : 5 || log-likelihood : -3020.60866761548
-#> EM: Iteration : 6 || log-likelihood : -2967.37662637476
-#> EM: Iteration : 7 || log-likelihood : -2948.61300516787
-#> EM: Iteration : 8 || log-likelihood : -2945.45995948196
-#> EM: Iteration : 9 || log-likelihood : -2937.99296980136
-#> EM: Iteration : 10 || log-likelihood : -2924.28973590932
-#> EM: Iteration : 11 || log-likelihood : -2901.25080505023
-#> EM: Iteration : 12 || log-likelihood : -2859.88249265728
-#> EM: Iteration : 13 || log-likelihood : -2858.05147227319
-#> EM: Iteration : 14 || log-likelihood : -2856.38015373797
-#> EM: Iteration : 15 || log-likelihood : -2854.68196733762
-#> EM: Iteration : 16 || log-likelihood : -2852.69581368828
-#> EM: Iteration : 17 || log-likelihood : -2849.93140687413
-#> EM: Iteration : 18 || log-likelihood : -2846.34467342533
-#> EM: Iteration : 19 || log-likelihood : -2843.82658697638
-#> EM: Iteration : 20 || log-likelihood : -2842.75921489778
-#> EM: Iteration : 21 || log-likelihood : -2842.2361309076
-#> EM: Iteration : 22 || log-likelihood : -2841.91343876731
-#> EM: Iteration : 23 || log-likelihood : -2841.66202744546
-#> EM: Iteration : 24 || log-likelihood : -2841.41784741157
-#> EM: Iteration : 25 || log-likelihood : -2841.14668922972
-#> EM: Iteration : 26 || log-likelihood : -2840.82033081985
-#> EM: Iteration : 27 || log-likelihood : -2840.39141033072
-#> EM: Iteration : 28 || log-likelihood : -2839.74532802897
-#> EM: Iteration : 29 || log-likelihood : -2838.62532237046
-#> EM: Iteration : 30 || log-likelihood : -2836.64319641069
-#> EM: Iteration : 31 || log-likelihood : -2833.87378876047
-#> EM: Iteration : 32 || log-likelihood : -2831.75584262499
-#> EM: Iteration : 33 || log-likelihood : -2831.16293539695
-#> EM: Iteration : 34 || log-likelihood : -2831.0646784204
-#> EM: Iteration : 35 || log-likelihood : -2831.06467491195
+#> EM: Iteration : 1 || log-likelihood : -2414.87940344822
+#> EM: Iteration : 2 || log-likelihood : 4632.58736384998
+#> EM: Iteration : 3 || log-likelihood : 4928.80026570238
+#> EM: Iteration : 4 || log-likelihood : 4996.05553353626
+#> EM: Iteration : 5 || log-likelihood : 5046.29697086142
+#> EM: Iteration : 6 || log-likelihood : 5084.79275279454
+#> EM: Iteration : 7 || log-likelihood : 5127.04823021165
+#> EM: Iteration : 8 || log-likelihood : 5177.17854192874
+#> EM: Iteration : 9 || log-likelihood : 5251.60304260159
+#> EM: Iteration : 10 || log-likelihood : 5411.53018332612
+#> EM: Iteration : 11 || log-likelihood : 5509.20261051683
+#> EM: Iteration : 12 || log-likelihood : 5622.20732348158
+#> EM: Iteration : 13 || log-likelihood : 5818.25190029294
+#> EM: Iteration : 14 || log-likelihood : 6376.04766759408
+#> EM: Iteration : 15 || log-likelihood : 6800.27305524325
+#> EM: Iteration : 16 || log-likelihood : 6891.37311243118
+#> EM: Iteration : 17 || log-likelihood : 6914.88945778289
+#> EM: Iteration : 18 || log-likelihood : 6929.20461554767
+#> EM: Iteration : 19 || log-likelihood : 6941.69455968455
+#> EM: Iteration : 20 || log-likelihood : 6947.62917902526
+#> EM: Iteration : 21 || log-likelihood : 6950.06280906134
+#> EM: Iteration : 22 || log-likelihood : 6951.8789194167
+#> EM: Iteration : 23 || log-likelihood : 6953.36046723855
+#> EM: Iteration : 24 || log-likelihood : 6954.26976267522
+#> EM: Iteration : 25 || log-likelihood : 6954.70141122738
+#> EM: Iteration : 26 || log-likelihood : 6955.01178030263
+#> EM: Iteration : 27 || log-likelihood : 6955.25709649339
+#> EM: Iteration : 28 || log-likelihood : 6955.43885029394
+#> EM: Iteration : 29 || log-likelihood : 6955.56652464812
+#> EM: Iteration : 30 || log-likelihood : 6955.65222638282
+#> EM: Iteration : 31 || log-likelihood : 6955.70733330664
+#> EM: Iteration : 32 || log-likelihood : 6955.74144813767
+#> EM: Iteration : 33 || log-likelihood : 6955.76190923217
+#> EM: Iteration : 34 || log-likelihood : 6955.77387298254
+#> EM: Iteration : 35 || log-likelihood : 6955.78073083417
 
 mrhlp$summary()
 #> ----------------------
@@ -282,12 +326,12 @@ mrhlp$summary()
 #> 
 #> MRHLP model with K = 5 regimes
 #> 
-#>  log-likelihood nu       AIC       BIC       ICL
-#>       -2831.065 98 -2929.065 -3149.921 -3149.146
+#>  log-likelihood nu      AIC    BIC     ICL
+#>        6955.781 68 6887.781 6693.3 6319.27
 #> 
 #> Clustering table:
 #>   1   2   3   4   5 
-#> 100 120 200 100 150 
+#> 340 346 660 399 508 
 #> 
 #> 
 #> ------------------
@@ -295,81 +339,71 @@ mrhlp$summary()
 #> 
 #> Regression coefficients:
 #> 
-#>       Beta(d = 1)   Beta(d = 2) Beta(d = 3)
-#> 1       0.4466558     0.8104534    -2.36719
-#> X^1   -25.5100013   -20.5995360    32.75195
-#> X^2   413.8717640   498.0085618  -541.38904
-#> X^3 -1811.4612012 -2477.5546420  2523.64723
+#>      Beta(d = 1)   Beta(d = 2)   Beta(d = 3)
+#> 1   1.5655726676  2.4365352267  9.3759721272
+#> X^1 0.0008584123 -0.0006950667 -0.0002275129
 #> 
 #> Covariance matrix:
-#>                                   
-#>  1.17712613  0.1114059  0.07303969
-#>  0.11140591  0.8394152 -0.02442220
-#>  0.07303969 -0.0244222  0.85240361
+#>                                           
+#>   2.444648e-04 -3.776537e-05 -1.240531e-05
+#>  -3.776537e-05  1.597999e-04 -1.770244e-05
+#>  -1.240531e-05 -1.770244e-05  6.795277e-05
 #> ------------------
 #> Regime 2 (K = 2):
 #> 
 #> Regression coefficients:
 #> 
 #>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1      21.30187   -4.108239    1.838238
-#> X^1  -199.86512  112.953325  112.257782
-#> X^2   905.60445 -449.623857 -493.914613
-#> X^3 -1316.42937  581.197948  694.872075
+#> 1    -11.449373    6.886771    24.79762
+#> X^1    3.359132   -0.971987    -3.78487
 #> 
 #> Covariance matrix:
-#>                                     
-#>   1.0409982 -0.180821350 0.137568024
-#>  -0.1808214  1.042169409 0.009699162
-#>   0.1375680  0.009699162 0.754147599
+#>                                  
+#>   1.4131210 -0.2398835 -0.4414113
+#>  -0.2398835  0.3673257  0.5298175
+#>  -0.4414113  0.5298175  1.4293619
 #> ------------------
 #> Regime 3 (K = 3):
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1     4.4721830    9.349642    6.349724
-#> X^1   0.7467282  -33.315977   17.837763
-#> X^2 -11.9302818   96.730621  -51.086769
-#> X^3  16.1571109  -85.951201   42.760070
+#>      Beta(d = 1)  Beta(d = 2) Beta(d = 3)
+#> 1    9.702557879  0.108543116 -1.38934903
+#> X^1 -0.006923171 -0.007615064 -0.04387679
 #> 
 #> Covariance matrix:
-#>                                     
-#>   1.02026230 -0.04094457 -0.02544812
-#>  -0.04094457  1.15656511  0.02852275
-#>  -0.02544812  0.02852275  0.99750511
+#>                                          
+#>   7.027328e-04 -5.681562e-05 0.0006938858
+#>  -5.681562e-05  1.097491e-03 0.0004845222
+#>   6.938858e-04  4.845222e-04 0.0041729751
 #> ------------------
 #> Regime 4 (K = 4):
 #> 
 #> Regression coefficients:
 #> 
 #>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1      1267.288   -840.5119   -10.37768
-#> X^1   -5458.816   3613.7273    19.40201
-#> X^2    7813.122  -5184.1100    14.37103
-#> X^3   -3718.619   2475.7168   -29.55020
+#> 1     42.944505 -10.1981492  -44.112944
+#> X^1   -2.341173   0.7620024    3.178738
 #> 
 #> Covariance matrix:
-#>                                       
-#>   0.822157811  0.006792726 -0.03667011
-#>   0.006792726  1.093351047 -0.07477892
-#>  -0.036670114 -0.074778924  0.85425249
+#>                                 
+#>  0.48966379 0.03647078 0.3432766
+#>  0.03647078 0.09653375 0.1680003
+#>  0.34327664 0.16800029 0.6802696
 #> ------------------
 #> Regime 5 (K = 5):
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1      194.7894    12.88268    483.8383
-#> X^1   -658.4685   -45.73544  -1634.9482
-#> X^2    753.1086    61.92925   1858.1529
-#> X^3   -286.1078   -27.37495   -702.9064
+#>     Beta(d = 1) Beta(d = 2)   Beta(d = 3)
+#> 1    2.03078633  2.19469161  9.3719043899
+#> X^1 -0.02219263  0.01545918 -0.0008534339
 #> 
 #> Covariance matrix:
-#>                                 
-#>  1.1282728 0.25684915 0.02034990
-#>  0.2568491 1.21055927 0.04414336
-#>  0.0203499 0.04414336 0.77644297
+#>                                           
+#>   1.003890e-02 -0.0005305506 -8.931278e-05
+#>  -5.305506e-04  0.0050246096 -4.619546e-04
+#>  -8.931278e-05 -0.0004619546  6.249837e-04
 
 mrhlp$plot()
 ```
@@ -378,17 +412,17 @@ mrhlp$plot()
 
 </details>
 
-<br />
+<details>
 
-<details> <summary>MHMMR</summary>
+<summary>MHMMR</summary>
 
 ``` r
 library(samurais)
 
-data("multivtoydataset")
+data("multivrealdataset")
 
 K <- 5 # Number of regimes (states)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
+p <- 1 # Dimension of beta (order of the polynomial regressors)
 variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
 
 n_tries <- 1
@@ -396,12 +430,14 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[, c("y1", "y2", "y3")],
+mhmmr <- emMHMMR(multivrealdataset$x, multivrealdataset[, c("y1", "y2", "y3")],
                  K, p, variance_type, n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -4425.29307889945
-#> EM: Iteration : 2 || log-likelihood : -2876.80418310609
-#> EM: Iteration : 3 || log-likelihood : -2876.69073409991
-#> EM: Iteration : 4 || log-likelihood : -2876.69055273039
+#> EM: Iteration : 1 || log-likelihood : -699.82669350535
+#> EM: Iteration : 2 || log-likelihood : 4503.5649112489
+#> EM: Iteration : 3 || log-likelihood : 4570.84656361448
+#> EM: Iteration : 4 || log-likelihood : 4573.36305958236
+#> EM: Iteration : 5 || log-likelihood : 4573.35631540917
+#> EM: Iteration : 6 || log-likelihood : 4573.35221234535
 
 mhmmr$summary()
 #> ----------------------
@@ -410,12 +446,12 @@ mhmmr$summary()
 #> 
 #> MHMMR model with K = 5 regimes
 #> 
-#>  log-likelihood  nu       AIC       BIC
-#>       -2876.691 114 -2990.691 -3247.605
+#>  log-likelihood nu      AIC      BIC
+#>        4573.352 84 4489.352 4249.111
 #> 
 #> Clustering table:
 #>   1   2   3   4   5 
-#> 100 120 200 100 150 
+#> 460 282 601 424 486 
 #> 
 #> 
 #> ------------------
@@ -424,80 +460,70 @@ mhmmr$summary()
 #> Regression coefficients:
 #> 
 #>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1     0.1595884   0.4201364  -1.9684451
-#> X^1  -1.7145325  11.7544140  -0.3006142
-#> X^2  10.6877091 -50.1877444  18.6445441
-#> X^3   2.3981783 -11.3098522   4.1479356
+#> 1    1.59304318   2.2699600  9.39687713
+#> X^1 -0.02611982   0.1241324 -0.01608293
 #> 
 #> Covariance matrix:
-#>                                    
-#>  1.19029438  0.12929675  0.05476253
-#>  0.12929675  0.86375075 -0.04927306
-#>  0.05476253 -0.04927306  0.87780108
+#>                                       
+#>   0.12723543 -0.013491878 -0.019419885
+#>  -0.01349188  0.127449223 -0.003811883
+#>  -0.01941988 -0.003811883  0.026817544
 #> ------------------
 #> Regime 2 (K = 2):
 #> 
 #> Regression coefficients:
 #> 
 #>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1       5.15889     3.33862   10.451892
-#> X^1    15.56177    13.57089   -2.723323
-#> X^2   -23.21384   -21.11255    1.987222
-#> X^3   -19.14783   -17.33469    2.005997
+#> 1     -3.619306    8.348820    28.60558
+#> X^1    2.003056   -1.204563    -4.37674
 #> 
 #> Covariance matrix:
-#>                                   
-#>   1.0610207 -0.18930477 0.12778054
-#>  -0.1893048  1.04687322 0.01497034
-#>   0.1277805  0.01497034 0.76036609
+#>                                  
+#>   1.1550078 -0.3157136 -0.7975206
+#>  -0.3157136  0.1246530  0.2672996
+#>  -0.7975206  0.2672996  0.7775560
 #> ------------------
 #> Regime 3 (K = 3):
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1      4.795937    9.292094    6.795783
-#> X^1   -1.263151  -32.958041   15.068148
-#> X^2   -7.837624   96.000594  -45.446277
-#> X^3   13.420270  -85.462348   38.987695
+#>      Beta(d = 1)  Beta(d = 2) Beta(d = 3)
+#> 1    9.671687460  0.088037867 -1.52223823
+#> X^1 -0.004240303 -0.005861211 -0.03232071
 #> 
 #> Covariance matrix:
-#>                                     
-#>   1.02087804 -0.04142857 -0.02435233
-#>  -0.04142857  1.15623166  0.02795799
-#>  -0.02435233  0.02795799  0.99869029
+#>                                          
+#>   4.920826e-04 -9.897154e-05 0.0001653579
+#>  -9.897154e-05  7.259411e-04 0.0002208547
+#>   1.653579e-04  2.208547e-04 0.0018241747
 #> ------------------
 #> Regime 4 (K = 4):
 #> 
 #> Regression coefficients:
 #> 
 #>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1     -7.021181    4.833214  -11.605950
-#> X^1   11.317211  -15.023656   24.674451
-#> X^2    3.910821   -3.672965    6.844172
-#> X^3  -10.872747   16.089951  -25.976569
+#> 1     42.976813  -9.3686461  -41.876216
+#> X^1   -2.344991   0.7059697    3.027183
 #> 
 #> Covariance matrix:
-#>                                     
-#>   0.87900680 -0.03091285 -0.03661533
-#>  -0.03091285  1.11837399 -0.07481527
-#>  -0.03661533 -0.07481527  0.85426254
+#>                                 
+#>  0.48603729 0.04475679 0.3572282
+#>  0.04475679 0.11898945 0.2346444
+#>  0.35722821 0.23464436 0.8530879
 #> ------------------
 #> Regime 5 (K = 5):
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1    -0.8791755   -2.313216 -0.09479267
-#> X^1   5.9187901    5.861810  8.23344181
-#> X^2   3.5548127    3.717845  4.33488866
-#> X^3  -5.1244038   -5.553392 -7.97025598
+#>     Beta(d = 1) Beta(d = 2)   Beta(d = 3)
+#> 1    2.02058968 2.321096774  9.3565997678
+#> X^1 -0.02168755 0.009406563 -0.0001209832
 #> 
 #> Covariance matrix:
-#>                                  
-#>  1.13188125 0.25712861 0.02924967
-#>  0.25712861 1.21059097 0.04483453
-#>  0.02924967 0.04483453 0.79846413
+#>                                           
+#>   0.0076403200 -0.0016315369  0.0001313694
+#>  -0.0016315369  0.0040541310 -0.0003375291
+#>   0.0001313694 -0.0003375291  0.0005909725
 
 mhmmr$plot()
 ```
@@ -506,19 +532,205 @@ mhmmr$plot()
 
 </details>
 
-References
-==========
+# Model selection
 
-Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering and Classification of Functional Data.” *Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery*, jan. <https://chamroukhi.com/papers/MBCC-FDA.pdf>.
+In this package, it is possible to select models based on information
+criteria such as **BIC**, **AIC** and **ICL**.
 
-Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon. <https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
+The selection can be done for the two folliwng parameters:
 
-Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat. 2013. “Joint Segmentation of Multivariate Time Series with Hidden Process Regression for Human Activity Recognition.” *Neurocomputing* 120 (november): 633–44. <https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
+  - **K**: The number of regimes;
+  - **p**: The order of the polyniomial regression.
 
-Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat. 2013. “An Unsupervised Approach for Automatic Activity Recognition Based on Hidden Markov Model Regression.” *IEEE Transactions on Automation Science and Engineering* 3 (10): 829–335. <https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+<details>
 
-Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling, Classification and Tracking.” Ph.D. Thesis, Université de Technologie de Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+<summary>RHLP</summary>
 
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden Process Regression Model for Functional Data Description. Application to Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21. <https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+Let’s select a RHLP model for the following time series **Y**:
 
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series Modeling by a Regression Approach Based on a Latent Process.” *Neural Networks* 22 (5-6): 593–602. <https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+``` r
+data("univtoydataset")
+x = univtoydataset$x
+y = univtoydataset$y
+
+plot(x, y, type = "l", xlab = "x", ylab = "Y")
+```
+
+<img src="man/figures/README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+
+``` r
+selectedrhlp <- selectRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+#> The RHLP model selected via the "BIC" has K = 5 regimes 
+#>  and the order of the polynomial regression is p = 0.
+#> BIC = -1041.40789532438
+#> AIC = -1000.84239591291
+
+selectedrhlp$plot(what = "estimatedsignal")
+```
+
+<img src="man/figures/README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+
+</details>
+
+<details>
+
+<summary>HMMR</summary>
+
+Let’s select a HMMR model for the following time series **Y**:
+
+``` r
+data("univtoydataset")
+x = univtoydataset$x
+y = univtoydataset$y
+
+plot(x, y, type = "l", xlab = "x", ylab = "Y")
+```
+
+<img src="man/figures/README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
+``` r
+selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+#> The HMMR model selected via the "BIC" has K = 5 regimes 
+#>  and the order of the polynomial regression is p = 0.
+#> BIC = -1136.39152222095
+#> AIC = -1059.76780111041
+
+selectedhmmr$plot(what = "smoothed")
+```
+
+<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+
+</details>
+
+<details>
+
+<summary>MRHLP</summary>
+
+Let’s select a MRHLP model for the following multivariate time series
+**Y**:
+
+<br />
+
+``` r
+data("multivtoydataset")
+x <- multivtoydataset$x
+y <- multivtoydataset[, c("y1", "y2", "y3")]
+matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
+```
+
+<img src="man/figures/README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+
+``` r
+selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+#> Warning in emMRHLP(X = X1, Y = Y1, K, p): EM log-likelihood is decreasing
+#> from -3105.78591044952to -3105.78627830471 !
+#> The MRHLP model selected via the "BIC" has K = 5 regimes 
+#>  and the order of the polynomial regression is p = 0.
+#> BIC = -3033.20042397111
+#> AIC = -2913.75756459291
+
+selectedmrhlp$plot(what = "estimatedsignal")
+```
+
+<img src="man/figures/README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+
+</details>
+
+<details>
+
+<summary>MHMMR</summary>
+
+Let’s select a MHMMR model for the following multivariate time series
+**Y**:
+
+``` r
+data("multivtoydataset")
+x <- multivtoydataset$x
+y <- multivtoydataset[, c("y1", "y2", "y3")]
+matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
+```
+
+<img src="man/figures/README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+
+``` r
+selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+#> The MHMMR model selected via the "BIC" has K = 5 regimes 
+#>  and the order of the polynomial regression is p = 0.
+#> BIC = -3118.9815385353
+#> AIC = -2963.48045745801
+
+selectedmhmmr$plot(what = "smoothed")
+```
+
+<img src="man/figures/README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+
+</details>
+
+# References
+
+<div id="refs" class="references">
+
+<div id="ref-Chamroukhi-FDA-2018">
+
+Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering
+and Classification of Functional Data.” *Wiley Interdisciplinary
+Reviews: Data Mining and Knowledge Discovery*.
+<https://chamroukhi.com/papers/MBCC-FDA.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi-HDR-2015">
+
+Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
+Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi-MHMMR-2013">
+
+Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
+2013. “An Unsupervised Approach for Automatic Activity Recognition Based
+on Hidden Markov Model Regression.” *IEEE Transactions on Automation
+Science and Engineering* 3 (10): 829–335.
+<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi-MRHLP-2013">
+
+Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat.
+2013. “Joint Segmentation of Multivariate Time Series with Hidden
+Process Regression for Human Activity Recognition.” *Neurocomputing*
+120: 633–44.
+<https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
+
+</div>
+
+<div id="ref-chamroukhi_et_al_neurocomp2010">
+
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden
+Process Regression Model for Functional Data Description. Application to
+Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
+<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi_PhD_2010">
+
+Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
+Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
+Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+
+</div>
+
+<div id="ref-chamroukhi_et_al_NN2009">
+
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
+Modeling by a Regression Approach Based on a Latent Process.” *Neural
+Networks* 22 (5-6): 593–602.
+<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+
+</div>
+
+</div>

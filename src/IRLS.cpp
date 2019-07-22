@@ -145,7 +145,7 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
   arma::mat W(q, K - 1, arma::fill::zeros);
 
   if (verbose == true) {
-    Rcout << "IRLS : Iteration : "  + std::to_string(iter) + "; Log-lik : " + std::to_string(loglik_old) + "\n";
+    Rcout << "IRLS : Iteration : "  + std::to_string(iter) + "; Log-lik: " + std::to_string(loglik_old) + "\n";
   }
 
   // IRLS
@@ -238,19 +238,19 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
     loglik_old = loglik;
 
     if (verbose == true) {
-      Rcout << "IRLS : Iteration : "  + std::to_string(iter) + "; Log-lik" + std::to_string(loglik_old) + "\n";
+      Rcout << "IRLS : Iteration : "  + std::to_string(iter) + "; Log-lik: " + std::to_string(loglik_old) + "\n";
     }
   } // End of IRLS
 
   if (converge == true) {
     if (verbose == true) {
       Rcout << "\n";
-      Rcout << "IRLS convergence OK ; nbr of iteration "  + std::to_string(iter) + "\n";
+      Rcout << "IRLS convergence OK ; number of iterations: "  + std::to_string(iter) + "\n";
       Rcout << "\n";
     }
   } else {
     Rcout << "\n";
-    Rcout << "IRLS : doesn't converged (augment the number of iterations > "  + std::to_string(iter) + "\n";
+    Rcout << "IRLS : doesn't converged (increase the number of iterations > "  + std::to_string(iter) + ")\n";
   }
 
   double reg_irls = 0;

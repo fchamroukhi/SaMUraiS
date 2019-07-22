@@ -202,7 +202,7 @@ ParamHMMR <- setRefClass(
 
         # Regression coefficients
         lambda <- 1e-9 # If a bayesian prior on the beta's
-        bk <- (solve(t(Xk) %*% Xk + lambda * diag(p + 1)) %*% t(Xk)) %*% yk
+        bk <- (solve(t(Xk) %*% Xk + lambda * diag(p + 1), tol = 0) %*% t(Xk)) %*% yk
         beta[, k] <<- bk
 
         # Variance(s)

@@ -177,7 +177,7 @@ ParamMRHLP <- setRefClass(
         epps <- 1e-9
         M <- M + epps * diag(p + 1)
 
-        beta[, , k] <<- solve(M) %*% t(Xk) %*% yk # Maximization w.r.t betak
+        beta[, , k] <<- solve(M, tol = FALSE) %*% t(Xk) %*% yk # Maximization w.r.t betak
         z <- (mData$Y - phi$XBeta %*% beta[, , k]) * (sqrt(weights) %*% ones(1, mData$d))
 
         # Maximisation w.r.t sigmak (the variances)

@@ -41,7 +41,7 @@ The selection is done on two parameters which are:
 
 # Data
 
-Let's select a MHMMR model for the following time series $Y$:
+Let's select a MHMMR model for the following multivariate time series $Y$:
 
 ```{r}
 data("multivtoydataset")
