@@ -1,28 +1,41 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
-=================================================================================================================
+
+# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS) <!-- badges: end -->
 
-samurais is an open source toolbox (available in R and in Matlab) including many original and flexible user-friendly statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
+[![Travis build
+status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
+<!-- badges: end -->
 
-Our samurais use mainly the following efficient "sword" packages to segment data: Regression with Hidden Logistic Process (**RHLP**), Hidden Markov Model Regression (**HMMR**), Piece-Wise regression (**PWR**), Multivariate 'RHLP' (**MRHLP**), and Multivariate 'HMMR' (**MHMMR**).
+samurais is an open source toolbox (available in R and in Matlab)
+including many original and flexible user-friendly statistical latent
+variable models and unsupervised algorithms to segment and represent,
+time-series data (univariate or multivariate), and more generally,
+longitudinal data which include regime changes.
 
-The models and algorithms are developed and written in Matlab by Faicel Chamroukhi, and translated and designed into R packages by Florian Lecocq, Marius Bartcus and Faicel Chamroukhi.
+Our samurais use mainly the following efficient “sword” packages to
+segment data: Regression with Hidden Logistic Process (**RHLP**), Hidden
+Markov Model Regression (**HMMR**), Piece-Wise regression (**PWR**),
+Multivariate ‘RHLP’ (**MRHLP**), and Multivariate ‘HMMR’ (**MHMMR**).
 
-Installation
-============
+The models and algorithms are developed and written in Matlab by Faicel
+Chamroukhi, and translated and designed into R packages by Florian
+Lecocq, Marius Bartcus and Faicel Chamroukhi.
 
-You can install the **samurais** package from [GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
+# Installation
+
+You can install the **samurais** package from
+[GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("fchamroukhi/SaMUraiS")
 ```
 
-To build *vignettes* for examples of usage, type the command below instead:
+To build *vignettes* for examples of usage, type the command below
+instead:
 
 ``` r
 # install.packages("devtools")
@@ -37,10 +50,11 @@ Use the following command to display vignettes:
 browseVignettes("samurais")
 ```
 
-Usage
-=====
+# Usage
 
-<details> <summary>RHLP</summary>
+<details>
+
+<summary>RHLP</summary>
 
 ``` r
 library(samurais)
@@ -179,9 +193,13 @@ rhlp$summary()
 rhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" /> </details>
+<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" />
 
-<details> <summary>HMMR</summary>
+</details>
+
+<details>
+
+<summary>HMMR</summary>
 
 ``` r
 library(samurais)
@@ -234,10 +252,10 @@ hmmr$summary()
 #>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
 #>       1.220624      1.111487      1.080043     0.9779724      1.028399
 
-hmmr$plot()
+hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-5.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" />
 
 ``` r
 library(samurais)
@@ -301,14 +319,16 @@ hmmr$summary()
 #>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
 #>       9828.793      125.3346      58.71053      105.8328      15.66317
 
-hmmr$plot()
+hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-5.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" />
 
 </details>
 
-<details> <summary>PWR</summary>
+<details>
+
+<summary>PWR</summary>
 
 ``` r
 library(samurais)
@@ -346,7 +366,9 @@ pwr$plot()
 
 </details>
 
-<details> <summary>MRHLP</summary>
+<details>
+
+<summary>MRHLP</summary>
 
 ``` r
 library(samurais)
@@ -626,134 +648,13 @@ mrhlp$summary()
 mrhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-3.png" style="display: block; margin: auto;" /> </details>
-
-``` r
-library(samurais)
-
-# Application to a real data set (human activity recognition data)
-
-data("multivrealdataset")
-
-K <- 5 # Number of regimes (mixture components)
-p <- 3 # Dimension of beta (order of the polynomial regressors)
-q <- 1 # Dimension of w (order of the logistic regression: to be set to 1 for segmentation)
-variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
-
-n_tries <- 1
-max_iter <- 1500
-threshold <- 1e-6
-verbose <- FALSE
-verbose_IRLS <- FALSE
-
-mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
-                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
-                 verbose_IRLS)
-
-mrhlp$summary()
-#> ----------------------
-#> Fitted MRHLP model
-#> ----------------------
-#> 
-#> MRHLP model with K = 5 regimes
-#> 
-#>  log-likelihood nu      AIC      BIC      ICL
-#>        7524.977 98 7426.977 7146.696 7147.535
-#> 
-#> Clustering table:
-#>   1   2   3   4   5 
-#> 413 344 588 423 485 
-#> 
-#> 
-#> ------------------
-#> Regime 1 (K = 1):
-#> 
-#> Regression coefficients:
-#> 
-#>     Beta(d = 1) Beta(d = 2) Beta(d = 3)
-#> 1    1.64847721  2.33823068  9.40173242
-#> X^1 -0.31396583  0.38235782 -0.10031616
-#> X^2  0.23954454 -0.30105177  0.07812145
-#> X^3 -0.04725267  0.06166899 -0.01586579
-#> 
-#> Covariance matrix:
-#>                                          
-#>   0.0200740364 -0.004238036  0.0004011388
-#>  -0.0042380363  0.006082904 -0.0012973026
-#>   0.0004011388 -0.001297303  0.0013201963
-#> ------------------
-#> Regime 2 (K = 2):
-#> 
-#> Regression coefficients:
-#> 
-#>      Beta(d = 1) Beta(d = 2)  Beta(d = 3)
-#> 1   -106.0250571 -31.4671946 -107.9697464
-#> X^1   45.2035210  21.2126134   72.0220177
-#> X^2   -5.7330338  -4.1285514  -13.9857795
-#> X^3    0.2343552   0.2485377    0.8374817
-#> 
-#> Covariance matrix:
-#>                                     
-#>   0.11899225 -0.03866052 -0.06693441
-#>  -0.03866052  0.17730401  0.04036629
-#>  -0.06693441  0.04036629  0.11983979
-#> ------------------
-#> Regime 3 (K = 3):
-#> 
-#> Regression coefficients:
-#> 
-#>       Beta(d = 1)  Beta(d = 2)  Beta(d = 3)
-#> 1    9.0042249443 -1.247752962 -2.492119515
-#> X^1  0.2191555621  0.418071041  0.310449523
-#> X^2 -0.0242080660 -0.043802827 -0.039012607
-#> X^3  0.0008494208  0.001474635  0.001427627
-#> 
-#> Covariance matrix:
-#>                                          
-#>   4.103351e-04 -0.0001330363 5.289199e-05
-#>  -1.330363e-04  0.0006297205 2.027763e-04
-#>   5.289199e-05  0.0002027763 1.374405e-03
-#> ------------------
-#> Regime 4 (K = 4):
-#> 
-#> Regression coefficients:
-#> 
-#>       Beta(d = 1) Beta(d = 2)  Beta(d = 3)
-#> 1   -1029.9071752 334.4975068  466.0981076
-#> X^1   199.9531885 -68.7252041 -105.6436899
-#> X^2   -12.6550086   4.6489685    7.6555642
-#> X^3     0.2626998  -0.1032161   -0.1777453
-#> 
-#> Covariance matrix:
-#>                                       
-#>   0.058674116 -0.017661572 0.002139975
-#>  -0.017661572  0.047588713 0.007867532
-#>   0.002139975  0.007867532 0.067150809
-#> ------------------
-#> Regime 5 (K = 5):
-#> 
-#> Regression coefficients:
-#> 
-#>      Beta(d = 1)   Beta(d = 2)  Beta(d = 3)
-#> 1   27.247199195 -14.393798357 19.741283724
-#> X^1 -3.530625667   2.282492947 -1.511225702
-#> X^2  0.161234880  -0.101613670  0.073003292
-#> X^3 -0.002446104   0.001490288 -0.001171127
-#> 
-#> Covariance matrix:
-#>                                          
-#>   6.900384e-03 -0.001176838  2.966199e-05
-#>  -1.176838e-03  0.003596238 -2.395420e-04
-#>   2.966199e-05 -0.000239542  5.573451e-04
-
-mrhlp$plot()
-```
-
-<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-3.png" style="display: block; margin: auto;" />
 
 </details>
 
-<details> <summary>MHMMR</summary>
+<details>
+
+<summary>MHMMR</summary>
 
 ``` r
 library(samurais)
@@ -865,10 +766,10 @@ mhmmr$summary()
 #>  0.25869951 1.21231741 0.04746018
 #>  0.03163467 0.04746018 0.80242715
 
-mhmmr$plot()
+mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-5.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" />
 
 ``` r
 library(samurais)
@@ -998,26 +899,28 @@ mhmmr$summary()
 #>  -0.000696446  0.003732296 0.001056145
 #>   0.006008102  0.001056145 0.016144263
 
-mhmmr$plot()
+mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-3.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-4.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-5.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-3.png" style="display: block; margin: auto;" />
 
 </details>
 
-Model selection
-===============
+# Model selection
 
-In this package, it is possible to select models based on information criteria such as **BIC**, **AIC** and **ICL**.
+In this package, it is possible to select models based on information
+criteria such as **BIC**, **AIC** and **ICL**.
 
 The selection can be done for the two folliwng parameters:
 
--   **K**: The number of regimes;
--   **p**: The order of the polyniomial regression.
+  - **K**: The number of regimes;
+  - **p**: The order of the polyniomial regression.
 
-<details> <summary>RHLP</summary>
+<details>
 
-Let's select a RHLP model for the following time series **Y**:
+<summary>RHLP</summary>
+
+Let’s select a RHLP model for the following time series **Y**:
 
 ``` r
 data("univtoydataset")
@@ -1027,7 +930,7 @@ y = univtoydataset$y
 plot(x, y, type = "l", xlab = "x", ylab = "Y")
 ```
 
-<img src="man/figures/README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedrhlp <- selectRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1039,13 +942,15 @@ selectedrhlp <- selectRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 selectedrhlp$plot(what = "estimatedsignal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 </details>
 
-<details> <summary>HMMR</summary>
+<details>
 
-Let's select a HMMR model for the following time series **Y**:
+<summary>HMMR</summary>
+
+Let’s select a HMMR model for the following time series **Y**:
 
 ``` r
 data("univtoydataset")
@@ -1055,7 +960,7 @@ y = univtoydataset$y
 plot(x, y, type = "l", xlab = "x", ylab = "Y")
 ```
 
-<img src="man/figures/README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1067,13 +972,16 @@ selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 selectedhmmr$plot(what = "smoothed")
 ```
 
-<img src="man/figures/README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 </details>
 
-<details> <summary>MRHLP</summary>
+<details>
 
-Let's select a MRHLP model for the following multivariate time series **Y**:
+<summary>MRHLP</summary>
+
+Let’s select a MRHLP model for the following multivariate time series
+**Y**:
 
 <br />
 
@@ -1084,7 +992,7 @@ y <- multivtoydataset[, c("y1", "y2", "y3")]
 matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1098,13 +1006,16 @@ selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 
 selectedmrhlp$plot(what = "estimatedsignal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 </details>
 
-<details> <summary>MHMMR</summary>
+<details>
 
-Let's select a MHMMR model for the following multivariate time series **Y**:
+<summary>MHMMR</summary>
+
+Let’s select a MHMMR model for the following multivariate time series
+**Y**:
 
 ``` r
 data("multivtoydataset")
@@ -1113,7 +1024,7 @@ y <- multivtoydataset[, c("y1", "y2", "y3")]
 matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1125,23 +1036,75 @@ selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 
 selectedmhmmr$plot(what = "smoothed")
 ```
 
-<img src="man/figures/README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 </details>
 
-References
-==========
+# References
 
-Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering and Classification of Functional Data.” *Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery*, jan. <https://chamroukhi.com/papers/MBCC-FDA.pdf>.
+<div id="refs" class="references">
 
-Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon. <https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
+<div id="ref-Chamroukhi-FDA-2018">
 
-Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat. 2013. “Joint Segmentation of Multivariate Time Series with Hidden Process Regression for Human Activity Recognition.” *Neurocomputing* 120 (november): 633–44. <https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
+Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering
+and Classification of Functional Data.” *Wiley Interdisciplinary
+Reviews: Data Mining and Knowledge Discovery*.
+<https://chamroukhi.com/papers/MBCC-FDA.pdf>.
 
-Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat. 2013. “An Unsupervised Approach for Automatic Activity Recognition Based on Hidden Markov Model Regression.” *IEEE Transactions on Automation Science and Engineering* 3 (10): 829–335. <https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+</div>
 
-Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling, Classification and Tracking.” Ph.D. Thesis, Université de Technologie de Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+<div id="ref-Chamroukhi-HDR-2015">
 
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden Process Regression Model for Functional Data Description. Application to Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21. <https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
+Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
+<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
 
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series Modeling by a Regression Approach Based on a Latent Process.” *Neural Networks* 22 (5-6): 593–602. <https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+</div>
+
+<div id="ref-Chamroukhi-MHMMR-2013">
+
+Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
+2013. “An Unsupervised Approach for Automatic Activity Recognition Based
+on Hidden Markov Model Regression.” *IEEE Transactions on Automation
+Science and Engineering* 3 (10): 829–335.
+<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi-MRHLP-2013">
+
+Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat.
+2013. “Joint Segmentation of Multivariate Time Series with Hidden
+Process Regression for Human Activity Recognition.” *Neurocomputing*
+120: 633–44.
+<https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
+
+</div>
+
+<div id="ref-chamroukhi_et_al_neurocomp2010">
+
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden
+Process Regression Model for Functional Data Description. Application to
+Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
+<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
+
+</div>
+
+<div id="ref-Chamroukhi_PhD_2010">
+
+Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
+Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
+Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+
+</div>
+
+<div id="ref-chamroukhi_et_al_NN2009">
+
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
+Modeling by a Regression Approach Based on a Latent Process.” *Neural
+Networks* 22 (5-6): 593–602.
+<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
+
+</div>
+
+</div>

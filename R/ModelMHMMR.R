@@ -72,7 +72,7 @@ ModelMHMMR <- setRefClass(
         # Predicted time series and predicted regime probabilities
         par(mfrow = c(2, 1), mai = c(0.6, 1, 0.5, 0.5), mgp = c(2, 1, 0))
         matplot(param$mData$X, param$mData$Y, type = "l", ylim = yaxislim, xlab = "x", ylab = "y", col = gray.colors(param$mData$d), lty = 1, ...)
-        title(main = "Original and predicted HMMR time series")
+        title(main = "Original and predicted MHMMR time series")
 
         for (d in 1:param$mData$d) {
           lines(param$mData$X, stat$predicted[, d], col = "red", lwd = 1.5, ...)
@@ -91,7 +91,7 @@ ModelMHMMR <- setRefClass(
         # Filtered time series and filtering regime probabilities
         par(mfrow = c(2, 1), mai = c(0.6, 1, 0.5, 0.5), mgp = c(2, 1, 0))
         matplot(param$mData$X, param$mData$Y, type = "l", ylim = yaxislim, xlab = "x", ylab = "y", col = gray.colors(param$mData$d), lty = 1, ...)
-        title(main = "Original and filtered HMMR time series")
+        title(main = "Original and filtered MHMMR time series")
         for (d in 1:param$mData$d) {
           lines(param$mData$X, stat$filtered[, d], col = "red", lwd = 1.5, ...)
         }
@@ -140,7 +140,7 @@ ModelMHMMR <- setRefClass(
         # Data, regression model, and segmentation
         par(mfrow = c(2, 1), mai = c(0.6, 1, 0.5, 0.5), mgp = c(2, 1, 0))
         matplot(param$mData$X, param$mData$Y, type = "l", ylim = yaxislim, xlab = "x", ylab = "y", col = gray.colors(param$mData$d), lty = 1, ...)
-        title(main = "Original, smoothed HMMR time series, and segmentation")
+        title(main = "Original, smoothed MHMMR time series, and segmentation")
         for (d in 1:param$mData$d) {
           lines(param$mData$X, stat$smoothed[, d], col = "red" , lwd = 1.5, ...)
         }
