@@ -47,14 +47,16 @@ model having the highest value of the chosen selection criterion is then
 selected.
 }
 \examples{
+\dontrun{
 data(multivtoydataset)
 x = multivtoydataset$x
 y = multivtoydataset[, c("y1", "y2", "y3")]
 
-selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 4, Kmax = 5,
+selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6,
                              pmin = 0, pmax = 2)
 
 selectedmrhlp$summary()
+}
 }
 \seealso{
 \link{ModelMRHLP}

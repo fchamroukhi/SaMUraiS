@@ -24,12 +24,14 @@
 #'   representing the selected RHLP model according to the chosen `criterion`.
 #' @seealso [ModelRHLP]
 #' @examples
+#' \dontrun{
 #' data(univtoydataset)
 #'
 #' selectedrhlp <- selectRHLP(X = univtoydataset$x, Y = univtoydataset$y,
-#'                            Kmin = 4, Kmax = 5, pmin = 0, pmax = 1)
+#'                            Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
 #'
 #' selectedrhlp$summary()
+#' }
 #' @export
 selectRHLP <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 

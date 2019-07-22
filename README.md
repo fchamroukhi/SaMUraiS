@@ -52,13 +52,15 @@ browseVignettes("samurais")
 
 # Usage
 
+``` r
+library(samurais)
+```
+
 <details>
 
 <summary>RHLP</summary>
 
 ``` r
-library(samurais)
-
 # Application to a toy data set
 data("univtoydataset")
 
@@ -140,10 +142,9 @@ rhlp$summary()
 rhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-5-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-5-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" />
 
 ``` r
-
 # Application to a real data set
 data("univrealdataset")
 
@@ -193,7 +194,7 @@ rhlp$summary()
 rhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-6-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -202,10 +203,7 @@ rhlp$plot()
 <summary>HMMR</summary>
 
 ``` r
-library(samurais)
-
 # Application to a toy data set
-
 data("univtoydataset")
 
 K <- 5 # Number of regimes (states)
@@ -255,13 +253,10 @@ hmmr$summary()
 hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" />
 
 ``` r
-library(samurais)
-
 # Application to a real data set
-
 data("univrealdataset")
 
 K <- 5 # Number of regimes (states)
@@ -322,7 +317,7 @@ hmmr$summary()
 hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-8-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-3.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -331,10 +326,7 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 <summary>PWR</summary>
 
 ``` r
-library(samurais)
-
 # Application to a toy data set
-
 data("univtoydataset")
 
 K <- 5 # Number of segments
@@ -345,13 +337,10 @@ pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
 pwr$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-9-2.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-10-2.png" style="display: block; margin: auto;" />
 
 ``` r
-library(samurais)
-
 # Application to a real data set
-
 data("univrealdataset")
 
 K <- 5 # Number of segments
@@ -362,7 +351,7 @@ pwr <- fitPWRFisher(univrealdataset$x, univrealdataset$y2, K, p)
 pwr$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-10-2.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-11-2.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -371,10 +360,7 @@ pwr$plot()
 <summary>MRHLP</summary>
 
 ``` r
-library(samurais)
-
 # Application to a toy data set
-
 data("multivtoydataset")
 
 K <- 5 # Number of regimes (mixture components)
@@ -501,11 +487,9 @@ mrhlp$summary()
 mrhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-11-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-11-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-3.png" style="display: block; margin: auto;" />
 
 ``` r
-library(samurais)
-
 # Application to a real data set (human activity recogntion data)
 data("multivrealdataset")
 
@@ -648,7 +632,7 @@ mrhlp$summary()
 mrhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-12-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-12-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -657,8 +641,6 @@ mrhlp$plot()
 <summary>MHMMR</summary>
 
 ``` r
-library(samurais)
-
 # Application to a simulated data set
 data("multivtoydataset")
 
@@ -769,13 +751,10 @@ mhmmr$summary()
 mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-3.png" style="display: block; margin: auto;" />
 
 ``` r
-library(samurais)
-
 # Application to a real data set (human activity recognition data)
-
 data("multivrealdataset")
 
 K <- 5 # Number of regimes (states)
@@ -902,7 +881,7 @@ mhmmr$summary()
 mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-14-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-15-3.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -930,7 +909,7 @@ y = univtoydataset$y
 plot(x, y, type = "l", xlab = "x", ylab = "Y")
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedrhlp <- selectRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -942,7 +921,7 @@ selectedrhlp <- selectRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 selectedrhlp$plot(what = "estimatedsignal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -960,7 +939,7 @@ y = univtoydataset$y
 plot(x, y, type = "l", xlab = "x", ylab = "Y")
 ```
 
-<img src="man/figures/README-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -972,7 +951,7 @@ selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 selectedhmmr$plot(what = "smoothed")
 ```
 
-<img src="man/figures/README-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -992,7 +971,7 @@ y <- multivtoydataset[, c("y1", "y2", "y3")]
 matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1006,7 +985,7 @@ selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 
 selectedmrhlp$plot(what = "estimatedsignal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 
 </details>
 
@@ -1024,7 +1003,7 @@ y <- multivtoydataset[, c("y1", "y2", "y3")]
 matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 ``` r
 selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
@@ -1036,7 +1015,7 @@ selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 
 selectedmhmmr$plot(what = "smoothed")
 ```
 
-<img src="man/figures/README-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 
 </details>
 

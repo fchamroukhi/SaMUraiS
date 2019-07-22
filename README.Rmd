@@ -63,12 +63,14 @@ browseVignettes("samurais")
 
 # Usage
 
+```{r, message = FALSE}
+library(samurais)
+```
+
 <details>
   <summary>RHLP</summary>
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a toy data set
 data("univtoydataset")
 
@@ -93,7 +95,6 @@ rhlp$plot()
 ```
 
 ```{r, message = FALSE}
-
 # Application to a real data set
 data("univrealdataset")
 
@@ -122,10 +123,7 @@ rhlp$plot()
   <summary>HMMR</summary>
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a toy data set
-
 data("univtoydataset")
 
 K <- 5 # Number of regimes (states)
@@ -147,10 +145,7 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a real data set
-
 data("univrealdataset")
 
 K <- 5 # Number of regimes (states)
@@ -176,10 +171,7 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
   <summary>PWR</summary>
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a toy data set
-
 data("univtoydataset")
 
 K <- 5 # Number of segments
@@ -192,10 +184,7 @@ pwr$plot()
 
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a real data set
-
 data("univrealdataset")
 
 K <- 5 # Number of segments
@@ -212,10 +201,7 @@ pwr$plot()
 <summary>MRHLP</summary>
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a toy data set
-
 data("multivtoydataset")
 
 K <- 5 # Number of regimes (mixture components)
@@ -239,8 +225,6 @@ mrhlp$plot()
 ```
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a real data set (human activity recogntion data)
 data("multivrealdataset")
 
@@ -269,8 +253,6 @@ mrhlp$plot()
   <summary>MHMMR</summary>
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a simulated data set
 data("multivtoydataset")
 
@@ -292,10 +274,7 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ```
 
 ```{r, message = FALSE}
-library(samurais)
-
 # Application to a real data set (human activity recognition data)
-
 data("multivrealdataset")
 
 K <- 5 # Number of regimes (states)
