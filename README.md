@@ -911,14 +911,10 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 In this package, it is possible to select models based on information
 criteria such as **BIC**, **AIC** and **ICL**.
 
-The selection can be done for the two folliwng parameters:
+The selection can be done for the two following parameters:
 
   - **K**: The number of regimes;
-<<<<<<< HEAD
-  - **p**: The order of the polyniomial regression.
-=======
   - **p**: The order of the polynomial regression.
->>>>>>> master
 
 <details>
 

@@ -22,14 +22,16 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
 <!-- badges: end -->
 
-samurais is an open source toolbox (available in R and in Matlab) including many original and flexible 
-user-friendly statistical latent variable models and unsupervised algorithms 
-to segment and represent, time-series data (univariate or multivariate), 
-and more generally, longitudinal data which include regime changes.
+samurais is an open source toolbox (available in R and in Matlab) including 
+many original and flexible user-friendly statistical latent variable models 
+and unsupervised algorithms to segment and represent, time-series data 
+(univariate or multivariate), and more generally, longitudinal data which 
+include regime changes.
 
 Our samurais use mainly the following efficient "sword" packages to segment 
-data: Regression with Hidden Logistic Process (**RHLP**), Hidden Markov Model Regression (**HMMR**), Piece-Wise 
-    regression (**PWR**), Multivariate 'RHLP' (**MRHLP**), and Multivariate 'HMMR' (**MHMMR**).
+data: Regression with Hidden Logistic Process (**RHLP**), Hidden Markov Model
+Regression (**HMMR**), Piece-Wise regression (**PWR**), Multivariate 'RHLP'
+(**MRHLP**), and Multivariate 'HMMR' (**MHMMR**).
 
 The models and algorithms are developed and written in Matlab by Faicel 
 Chamroukhi, and translated and designed into R packages by Florian Lecocq, 
