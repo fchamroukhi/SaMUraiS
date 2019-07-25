@@ -58,7 +58,6 @@ pwr$stat$objective
 
 # Parameters of the polynomial regressions:
 pwr$param$beta
-
 }
 \seealso{
 \link{ParamPWR}, \link{StatPWR}

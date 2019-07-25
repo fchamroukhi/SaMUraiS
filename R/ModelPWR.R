@@ -7,6 +7,8 @@
 #' @field stat A [StatPWR][StatPWR] object. It contains all the statistics
 #'   associated to the PWR model.
 #' @seealso [ParamPWR], [StatPWR]
+#' @export
+#'
 #' @examples
 #' data(univtoydataset)
 #'
@@ -23,8 +25,6 @@
 #'
 #' # Parameters of the polynomial regressions:
 #' pwr$param$beta
-#'
-#' @export
 ModelPWR <- setRefClass(
   "ModelPWR",
   fields = list(

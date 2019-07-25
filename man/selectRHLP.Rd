@@ -46,14 +46,15 @@ model having the highest value of the chosen selection criterion is then
 selected.
 }
 \examples{
-\dontrun{
 data(univtoydataset)
 
-selectedrhlp <- selectRHLP(X = univtoydataset$x, Y = univtoydataset$y,
-                           Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
+# Let's select a RHLP model on a time series with 3 regimes:
+data <- univtoydataset[1:420,]
+
+selectedrhlp <- selectRHLP(X = data$x, Y = data$y,
+                           Kmin = 2, Kmax = 4, pmin = 0, pmax = 2)
 
 selectedrhlp$summary()
-}
 }
 \seealso{
 \link{ModelRHLP}

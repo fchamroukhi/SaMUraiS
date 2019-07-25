@@ -39,6 +39,8 @@
 #'   the log-likelihood should be printed during EM iterations.
 #' @return EM returns an object of class [ModelMHMMR][ModelMHMMR].
 #' @seealso [ModelMHMMR], [ParamMHMMR], [StatMHMMR]
+#' @export
+#'
 #' @examples
 #' data(multivtoydataset)
 #'
@@ -48,8 +50,6 @@
 #' mhmmr$summary()
 #'
 #' mhmmr$plot()
-#'
-#' @export
 emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-6, verbose = FALSE) {
 
   if (is.vector(Y)) { # Univariate time series

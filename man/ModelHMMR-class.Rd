@@ -70,7 +70,6 @@ hmmr$stat$loglik
 
 # Parameters of the polynomial regressions:
 hmmr$param$beta
-
 }
 \seealso{
 \link{ParamHMMR}, \link{StatHMMR}

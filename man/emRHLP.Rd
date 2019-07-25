@@ -73,7 +73,6 @@ rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
 rhlp$summary()
 
 rhlp$plot()
-
 }
 \seealso{
 \link{ModelRHLP}, \link{ParamRHLP}, \link{StatRHLP}

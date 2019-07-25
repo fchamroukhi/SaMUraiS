@@ -21,6 +21,8 @@
 #'   set at 3.
 #' @return fitPWRFisher returns an object of class [ModelPWR][ModelPWR].
 #' @seealso [ModelPWR], [ParamPWR], [StatPWR]
+#' @export
+#'
 #' @examples
 #' data(univtoydataset)
 #'
@@ -29,8 +31,6 @@
 #' pwr$summary()
 #'
 #' pwr$plot()
-#'
-#' @export
 fitPWRFisher = function(X, Y, K, p = 3) {
 
   Lmin <- p + 1

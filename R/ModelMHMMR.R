@@ -7,6 +7,8 @@
 #' @field stat A [StatMHMMR][StatMHMMR] object. It contains all the statistics
 #'   associated to the MHMMR model.
 #' @seealso [ParamMHMMR], [StatMHMMR]
+#' @export
+#'
 #' @examples
 #' data(multivtoydataset)
 #'
@@ -24,8 +26,6 @@
 #'
 #' # Parameters of the polynomial regressions:
 #' mhmmr$param$beta
-#'
-#' @export
 ModelMHMMR <- setRefClass(
   "ModelMHMMR",
   fields = list(

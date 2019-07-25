@@ -7,6 +7,8 @@
 #' @field stat A [StatMRHLP][StatMRHLP] object. It contains all the statistics
 #'   associated to the MRHLP model.
 #' @seealso [ParamMRHLP], [StatMRHLP]
+#' @export
+#'
 #' @examples
 #' data(multivtoydataset)
 #'
@@ -24,8 +26,6 @@
 #'
 #' # Parameters of the polynomial regressions:
 #' mrhlp$param$beta
-#'
-#' @export
 ModelMRHLP <- setRefClass(
   "ModelMRHLP",
   fields = list(

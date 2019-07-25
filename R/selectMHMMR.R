@@ -23,16 +23,17 @@
 #' @return selectMHMMR returns an object of class [ModelMHMMR][ModelMHMMR]
 #'   representing the selected MHMMR model according to the chosen `criterion`.
 #' @seealso [ModelMHMMR]
+#' @export
+#'
 #' @examples
 #' data(multivtoydataset)
-#' x = multivtoydataset$x
-#' y = multivtoydataset[, c("y1", "y2", "y3")]
+#' x <- multivtoydataset$x
+#' y <- multivtoydataset[, c("y1", "y2", "y3")]
 #'
 #' selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6,
 #'                              pmin = 0, pmax = 2)
 #'
 #' selectedmhmmr$summary()
-#' @export
 selectMHMMR <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 
   criterion <- match.arg(criterion)

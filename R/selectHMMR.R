@@ -23,6 +23,8 @@
 #' @return selectHMMR returns an object of class [ModelHMMR][ModelHMMR]
 #'   representing the selected HMMR model according to the chosen `criterion`.
 #' @seealso [ModelHMMR]
+#' @export
+#'
 #' @examples
 #' data(univtoydataset)
 #'
@@ -30,7 +32,6 @@
 #'                            Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
 #'
 #' selectedhmmr$plot()
-#' @export
 selectHMMR <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 
   criterion <- match.arg(criterion)

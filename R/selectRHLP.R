@@ -23,16 +23,18 @@
 #' @return selectRHLP returns an object of class [ModelRHLP][ModelRHLP]
 #'   representing the selected RHLP model according to the chosen `criterion`.
 #' @seealso [ModelRHLP]
+#' @export
+#'
 #' @examples
-#' \dontrun{
 #' data(univtoydataset)
 #'
-#' selectedrhlp <- selectRHLP(X = univtoydataset$x, Y = univtoydataset$y,
-#'                            Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
+#' # Let's select a RHLP model on a time series with 3 regimes:
+#' data <- univtoydataset[1:420,]
+#'
+#' selectedrhlp <- selectRHLP(X = data$x, Y = data$y,
+#'                            Kmin = 2, Kmax = 4, pmin = 0, pmax = 2)
 #'
 #' selectedrhlp$summary()
-#' }
-#' @export
 selectRHLP <- function(X, Y, Kmin = 1, Kmax = 10, pmin = 0, pmax = 4, criterion = c("BIC", "AIC"), verbose = TRUE) {
 
   criterion <- match.arg(criterion)

@@ -75,7 +75,6 @@ mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
 mrhlp$summary()
 
 mrhlp$plot()
-
 }
 \seealso{
 \link{ModelMRHLP}, \link{ParamMRHLP}, \link{StatMRHLP}

@@ -7,6 +7,8 @@
 #' @field stat An object of class [StatHMMR][StatHMMR]. It contains all the
 #'   statistics associated to the HMMR model.
 #' @seealso [ParamHMMR], [StatHMMR]
+#' @export
+#'
 #' @examples
 #' data(univtoydataset)
 #'
@@ -23,8 +25,6 @@
 #'
 #' # Parameters of the polynomial regressions:
 #' hmmr$param$beta
-#'
-#' @export
 ModelHMMR <- setRefClass(
   "ModelHMMR",
   fields = list(

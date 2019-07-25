@@ -7,6 +7,8 @@
 #' @field stat A [StatRHLP][StatRHLP] object. It contains all the statistics
 #'   associated to the RHLP model.
 #' @seealso [ParamRHLP], [StatRHLP]
+#' @export
+#'
 #' @examples
 #' data(univtoydataset)
 #'
@@ -23,8 +25,6 @@
 #'
 #' # Parameters of the polynomial regressions:
 #' rhlp$param$beta
-#'
-#' @export
 ModelRHLP <- setRefClass(
   "ModelRHLP",
   fields = list(

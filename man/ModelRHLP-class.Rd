@@ -62,7 +62,6 @@ rhlp$stat$loglik
 
 # Parameters of the polynomial regressions:
 rhlp$param$beta
-
 }
 \seealso{
 \link{ParamRHLP}, \link{StatRHLP}

@@ -68,7 +68,6 @@ mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
 mhmmr$summary()
 
 mhmmr$plot()
-
 }
 \seealso{
 \link{ModelMHMMR}, \link{ParamMHMMR}, \link{StatMHMMR}
