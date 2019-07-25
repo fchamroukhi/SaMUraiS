@@ -50,12 +50,12 @@ selected.
 data(multivtoydataset)
 
 # Let's select a MRHLP model on a multivariate time series with 3 regimes:
-data <- multivtoydataset[1:420, ]
+data <- multivtoydataset[1:320, ]
 x <- data$x
 y <- data[, c("y1", "y2", "y3")]
 
 selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 4,
-                             pmin = 0, pmax = 2)
+                             pmin = 0, pmax = 1)
 
 selectedmrhlp$summary()
 }

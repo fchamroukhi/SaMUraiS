@@ -49,10 +49,10 @@ selected.
 data(univtoydataset)
 
 # Let's select a RHLP model on a time series with 3 regimes:
-data <- univtoydataset[1:420,]
+data <- univtoydataset[1:320,]
 
 selectedrhlp <- selectRHLP(X = data$x, Y = data$y,
-                           Kmin = 2, Kmax = 4, pmin = 0, pmax = 2)
+                           Kmin = 2, Kmax = 4, pmin = 0, pmax = 1)
 
 selectedrhlp$summary()
 }
