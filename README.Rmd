@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
+[![CRAN versions](https://www.r-pkg.org/badges/version/samurais)](https://cran.r-project.org/web/packages/samurais/index.html)
 <!-- badges: end -->
 
 samurais is an open source toolbox (available in R and in Matlab) including 
