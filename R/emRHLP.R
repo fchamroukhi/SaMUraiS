@@ -98,7 +98,7 @@ emRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", "
       converge <- abs((stat$loglik - prev_loglik) / prev_loglik) <= threshold
       if (is.na(converge)) {
         converge <- FALSE
-      } # Basically for the first iteration when prev_loglik is Inf
+      } # Basically for the first iteration when prev_loglik is -inf
 
       prev_loglik <- stat$loglik
       stat$stored_loglik <- c(stat$stored_loglik, stat$loglik)

@@ -180,7 +180,7 @@ ParamMRHLP <- setRefClass(
         beta[, , k] <<- solve(M, tol = FALSE) %*% t(Xk) %*% yk # Maximization w.r.t betak
         z <- (mData$Y - phi$XBeta %*% beta[, , k]) * (sqrt(weights) %*% ones(1, mData$d))
 
-        # Maximisation w.r.t sigmak (the variances)
+        # Maximisation w.r.t sigma2k (the variances)
         sk <- t(z) %*% z
 
         if (variance_type == "homoskedastic") {

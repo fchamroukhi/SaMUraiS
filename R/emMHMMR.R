@@ -111,7 +111,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
       converged <- (abs(stat$loglik - prev_loglik) / abs(prev_loglik) < threshold)
       if (is.na(converged)) {
         converged <- FALSE
-      } # Basically for the first iteration when prev_loglik is Inf
+      } # Basically for the first iteration when prev_loglik is -inf
 
       prev_loglik <- stat$loglik
       stat$stored_loglik <- c(stat$stored_loglik, stat$loglik)
@@ -147,7 +147,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
   # Smoothing state sequences : argmax(smoothing probs), and corresponding binary allocations partition
   statSolution$MAP()
 
-  # Finish the computation of statistics
+  # Finish the computation of model statistics
   statSolution$computeStats(paramSolution)
 
   return(ModelMHMMR(param = paramSolution, stat = statSolution))
