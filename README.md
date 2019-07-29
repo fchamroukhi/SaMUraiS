@@ -889,19 +889,23 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 
 # Model selection
 
-In this package, it is possible to select models based on information
-criteria such as **BIC**, **AIC** and **ICL**.
+samurais also implements model selection procedures to select an optimal
+model based on information criteria including **BIC**, **AIC** and
+**ICL**.
 
 The selection can be done for the two following parameters:
 
-  - **K**: The number of regimes;
+  - **K**: The number of regimes (segments);
   - **p**: The order of the polynomial regression.
+
+Instructions below can be used to illustrate the model on provided
+simulated and real data sets.
 
 <details>
 
 <summary>RHLP</summary>
 
-Let’s select a RHLP model for the following time series **Y**:
+Let’s select a RHLP model for the following time series:
 
 ``` r
 data("univtoydataset")
@@ -931,7 +935,7 @@ selectedrhlp$plot(what = "estimatedsignal")
 
 <summary>HMMR</summary>
 
-Let’s select a HMMR model for the following time series **Y**:
+Let’s select a HMMR model for the following time series:
 
 ``` r
 data("univtoydataset")
@@ -961,8 +965,7 @@ selectedhmmr$plot(what = "smoothed")
 
 <summary>MRHLP</summary>
 
-Let’s select a MRHLP model for the following multivariate time series
-**Y**:
+Let’s select a MRHLP model for the following multivariate time series:
 
 <br />
 
@@ -995,8 +998,7 @@ selectedmrhlp$plot(what = "estimatedsignal")
 
 <summary>MHMMR</summary>
 
-Let’s select a MHMMR model for the following multivariate time series
-**Y**:
+Let’s select a MHMMR model for the following multivariate time series:
 
 ``` r
 data("multivtoydataset")

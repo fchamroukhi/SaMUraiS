@@ -299,13 +299,17 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 
 # Model selection
 
-samurais also implements model selection procedures to select an optimal model based on information criteria including **BIC**, **AIC** and **ICL**.
+samurais also implements model selection procedures to select an optimal model 
+based on information criteria including **BIC**, **AIC** and **ICL**.
 
 The selection can be done for the two following parameters:
 
  * **K**: The number of regimes (segments);
  * **p**: The order of the polynomial regression.
-Instructions below can be used to illustrate the model on provided simulated and real data sets.
+
+Instructions below can be used to illustrate the model on provided simulated 
+and real data sets.
+
 <details>
   <summary>RHLP</summary>
 
