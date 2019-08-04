@@ -51,12 +51,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Florian Lecocq \email{florian.lecocq@outlook.com}
+\strong{Maintainer}: Florian Lecocq \email{florian.lecocq@outlook.com} (R port) [translator]
 
 Authors:
 \itemize{
   \item Faicel Chamroukhi \email{faicel.chamroukhi@unicaen.fr} (0000-0002-5894-3103)
-  \item Marius Bartcus \email{marius.bartcus@gmail.com}
+  \item Marius Bartcus \email{marius.bartcus@gmail.com} (R port) [translator]
 }
 
 }
