@@ -3,12 +3,12 @@ Package: samurais
 Title: Statistical Models for the Unsupervised Segmentation of Time-Series ('SaMUraiS')
 Version: 0.1.0
 Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
-    email = "faicel.chamroukhi@unicaen.fr",
-    comment = c(ORCID = "0000-0002-5894-3103")),
-    person("Marius", "Bartcus", role = c("aut"), 
-    email = "marius.bartcus@gmail.com"),
-    person("Florian", "Lecocq", role = c("aut", "cre"),
-    email = "florian.lecocq@outlook.com"))
+    comment = c(ORCID = "0000-0002-5894-3103"),
+    email = "faicel.chamroukhi@unicaen.fr"),
+    person("Florian", "Lecocq", role = c("aut","trl","cre"), comment = "R port",
+    email = "florian.lecocq@outlook.com"),
+    person("Marius", "Bartcus", role = c("aut","trl"), comment = "R port",
+    email = "marius.bartcus@gmail.com"))
 Description:  Provides a variety of original and flexible user-friendly 
     statistical latent variable models and unsupervised learning algorithms to 
     segment and represent time-series data (univariate or multivariate), and 
@@ -18,7 +18,9 @@ Description:  Provides a variety of original and flexible user-friendly
     Logistic Process ('RHLP'), Hidden Markov Model Regression ('HMMR'), 
     Multivariate 'RHLP' ('MRHLP'), Multivariate 'HMMR' ('MHMMR'), Piece-Wise 
     regression ('PWR'). For the advantages/differences of each of them, the 
-    user is referred to our mentioned paper references.
+    user is referred to our mentioned paper references. Originally introduced, 
+    and written in Matlab by Faicel Chamroukhi
+    <https://github.com/fchamroukhi?&tab=repositories&q=time-series&type=public&language=matlab>
 URL: https://github.com/fchamroukhi/SaMUraiS
 License: GPL (>= 3)
 Depends: 
