@@ -65,7 +65,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
   while (nb_good_try < n_tries) {
 
     if (n_tries > 1 && verbose) {
-      cat(paste0("EM try number: ", nb_good_try + 1, "\n\n"))
+      message("EM try number: ", nb_good_try + 1, "\n")
     }
     total_nb_try <- total_nb_try + 1
 
@@ -99,13 +99,13 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
       stat$loglik <- stat$loglik + log(lambda)
 
       if (verbose) {
-        cat(paste0("EM: Iteration : ", iter, " || log-likelihood : ", stat$loglik, "\n"))
+        message("EM - MHMMR: Iteration: ", iter, " | log-likelihood: ", stat$loglik)
       }
 
       if ((prev_loglik - stat$loglik) > 1e-4) {
         top <- top + 1
         if (top == 10) {
-          warning(paste0("EM log-likelihood is decreasing from ", prev_loglik, "to ", stat$loglik, " !"))
+          warning("EM log-likelihood is decreasing from ", prev_loglik, "to ", stat$loglik, "!")
         }
       }
 
@@ -120,7 +120,7 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
     } # End of the EM loop
 
     if (n_tries > 1 && verbose) {
-      cat(paste0("Max value of the log-likelihood: ", stat$loglik, "\n\n"))
+      message("Max value of the log-likelihood: ", stat$loglik, "\n\n")
     }
 
     if (length(param$beta) != 0) {
@@ -136,13 +136,13 @@ emMHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homosk
     }
 
     if (total_nb_try > 500) {
-      stop(paste("can't obtain the requested number of classes"))
+      stop("can't obtain the requested number of classes")
     }
 
   }
 
   if (n_tries > 1 && verbose) {
-    cat(paste0("Best value of the log-likelihood: ", statSolution$loglik, "\n"))
+    message("Best value of the log-likelihood: ", statSolution$loglik, "\n")
   }
 
   # Smoothing state sequences : argmax(smoothing probs), and corresponding binary allocations partition

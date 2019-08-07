@@ -81,38 +81,38 @@ verbose_IRLS <- FALSE
 
 rhlp <- emRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
                max_iter, threshold, verbose, verbose_IRLS)
-#> EM: Iteration : 1 || log-likelihood : -2119.27308534609
-#> EM: Iteration : 2 || log-likelihood : -1149.01040321999
-#> EM: Iteration : 3 || log-likelihood : -1118.20384281234
-#> EM: Iteration : 4 || log-likelihood : -1096.88260636121
-#> EM: Iteration : 5 || log-likelihood : -1067.55719357295
-#> EM: Iteration : 6 || log-likelihood : -1037.26620122646
-#> EM: Iteration : 7 || log-likelihood : -1022.71743069484
-#> EM: Iteration : 8 || log-likelihood : -1006.11825447077
-#> EM: Iteration : 9 || log-likelihood : -1001.18491883952
-#> EM: Iteration : 10 || log-likelihood : -1000.91250763556
-#> EM: Iteration : 11 || log-likelihood : -1000.62280600209
-#> EM: Iteration : 12 || log-likelihood : -1000.3030988811
-#> EM: Iteration : 13 || log-likelihood : -999.932334880131
-#> EM: Iteration : 14 || log-likelihood : -999.484219706691
-#> EM: Iteration : 15 || log-likelihood : -998.928118038989
-#> EM: Iteration : 16 || log-likelihood : -998.234244664472
-#> EM: Iteration : 17 || log-likelihood : -997.359536276056
-#> EM: Iteration : 18 || log-likelihood : -996.152654857298
-#> EM: Iteration : 19 || log-likelihood : -994.697863447307
-#> EM: Iteration : 20 || log-likelihood : -993.186583974542
-#> EM: Iteration : 21 || log-likelihood : -991.81352379631
-#> EM: Iteration : 22 || log-likelihood : -990.611295217008
-#> EM: Iteration : 23 || log-likelihood : -989.539226273251
-#> EM: Iteration : 24 || log-likelihood : -988.55311887915
-#> EM: Iteration : 25 || log-likelihood : -987.539963690533
-#> EM: Iteration : 26 || log-likelihood : -986.073920116541
-#> EM: Iteration : 27 || log-likelihood : -983.263549878169
-#> EM: Iteration : 28 || log-likelihood : -979.340492188909
-#> EM: Iteration : 29 || log-likelihood : -977.468559852711
-#> EM: Iteration : 30 || log-likelihood : -976.653534236095
-#> EM: Iteration : 31 || log-likelihood : -976.5893387433
-#> EM: Iteration : 32 || log-likelihood : -976.589338067237
+#> EM - RHLP: Iteration: 1 | log-likelihood: -2119.27308534609
+#> EM - RHLP: Iteration: 2 | log-likelihood: -1149.01040321999
+#> EM - RHLP: Iteration: 3 | log-likelihood: -1118.20384281234
+#> EM - RHLP: Iteration: 4 | log-likelihood: -1096.88260636121
+#> EM - RHLP: Iteration: 5 | log-likelihood: -1067.55719357295
+#> EM - RHLP: Iteration: 6 | log-likelihood: -1037.26620122646
+#> EM - RHLP: Iteration: 7 | log-likelihood: -1022.71743069484
+#> EM - RHLP: Iteration: 8 | log-likelihood: -1006.11825447077
+#> EM - RHLP: Iteration: 9 | log-likelihood: -1001.18491883952
+#> EM - RHLP: Iteration: 10 | log-likelihood: -1000.91250763556
+#> EM - RHLP: Iteration: 11 | log-likelihood: -1000.62280600209
+#> EM - RHLP: Iteration: 12 | log-likelihood: -1000.3030988811
+#> EM - RHLP: Iteration: 13 | log-likelihood: -999.932334880131
+#> EM - RHLP: Iteration: 14 | log-likelihood: -999.484219706691
+#> EM - RHLP: Iteration: 15 | log-likelihood: -998.928118038989
+#> EM - RHLP: Iteration: 16 | log-likelihood: -998.234244664472
+#> EM - RHLP: Iteration: 17 | log-likelihood: -997.359536276056
+#> EM - RHLP: Iteration: 18 | log-likelihood: -996.152654857298
+#> EM - RHLP: Iteration: 19 | log-likelihood: -994.697863447307
+#> EM - RHLP: Iteration: 20 | log-likelihood: -993.186583974542
+#> EM - RHLP: Iteration: 21 | log-likelihood: -991.81352379631
+#> EM - RHLP: Iteration: 22 | log-likelihood: -990.611295217008
+#> EM - RHLP: Iteration: 23 | log-likelihood: -989.539226273251
+#> EM - RHLP: Iteration: 24 | log-likelihood: -988.55311887915
+#> EM - RHLP: Iteration: 25 | log-likelihood: -987.539963690533
+#> EM - RHLP: Iteration: 26 | log-likelihood: -986.073920116541
+#> EM - RHLP: Iteration: 27 | log-likelihood: -983.263549878169
+#> EM - RHLP: Iteration: 28 | log-likelihood: -979.340492188909
+#> EM - RHLP: Iteration: 29 | log-likelihood: -977.468559852711
+#> EM - RHLP: Iteration: 30 | log-likelihood: -976.653534236095
+#> EM - RHLP: Iteration: 31 | log-likelihood: -976.5893387433
+#> EM - RHLP: Iteration: 32 | log-likelihood: -976.589338067237
 
 rhlp$summary()
 #> ---------------------
@@ -161,11 +161,183 @@ variance_type <- "heteroskedastic" # "heteroskedastic" or "homoskedastic" model
 n_tries <- 1
 max_iter = 1500
 threshold <- 1e-6
-verbose <- FALSE
+verbose <- TRUE
 verbose_IRLS <- FALSE
 
 rhlp <- emRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
                max_iter, threshold, verbose, verbose_IRLS)
+#> EM - RHLP: Iteration: 1 | log-likelihood: -3321.6485760125
+#> EM - RHLP: Iteration: 2 | log-likelihood: -2286.48632282875
+#> EM - RHLP: Iteration: 3 | log-likelihood: -2257.60498391374
+#> EM - RHLP: Iteration: 4 | log-likelihood: -2243.74506764308
+#> EM - RHLP: Iteration: 5 | log-likelihood: -2233.3426635247
+#> EM - RHLP: Iteration: 6 | log-likelihood: -2226.89953345319
+#> EM - RHLP: Iteration: 7 | log-likelihood: -2221.77999023589
+#> EM - RHLP: Iteration: 8 | log-likelihood: -2215.81305295291
+#> EM - RHLP: Iteration: 9 | log-likelihood: -2208.25998029539
+#> EM - RHLP: Iteration: 10 | log-likelihood: -2196.27872403055
+#> EM - RHLP: Iteration: 11 | log-likelihood: -2185.40049009242
+#> EM - RHLP: Iteration: 12 | log-likelihood: -2180.13934245387
+#> EM - RHLP: Iteration: 13 | log-likelihood: -2175.4276274402
+#> EM - RHLP: Iteration: 14 | log-likelihood: -2170.86113669353
+#> EM - RHLP: Iteration: 15 | log-likelihood: -2165.34927170608
+#> EM - RHLP: Iteration: 16 | log-likelihood: -2161.12419211511
+#> EM - RHLP: Iteration: 17 | log-likelihood: -2158.63709280617
+#> EM - RHLP: Iteration: 18 | log-likelihood: -2156.19846850913
+#> EM - RHLP: Iteration: 19 | log-likelihood: -2154.04107470071
+#> EM - RHLP: Iteration: 20 | log-likelihood: -2153.24544245686
+#> EM - RHLP: Iteration: 21 | log-likelihood: -2151.74944795242
+#> EM - RHLP: Iteration: 22 | log-likelihood: -2149.90781423151
+#> EM - RHLP: Iteration: 23 | log-likelihood: -2146.40042232588
+#> EM - RHLP: Iteration: 24 | log-likelihood: -2142.37530025533
+#> EM - RHLP: Iteration: 25 | log-likelihood: -2134.85493291884
+#> EM - RHLP: Iteration: 26 | log-likelihood: -2129.67399002071
+#> EM - RHLP: Iteration: 27 | log-likelihood: -2126.44739300481
+#> EM - RHLP: Iteration: 28 | log-likelihood: -2124.94603052064
+#> EM - RHLP: Iteration: 29 | log-likelihood: -2122.51637426267
+#> EM - RHLP: Iteration: 30 | log-likelihood: -2121.01493646146
+#> EM - RHLP: Iteration: 31 | log-likelihood: -2118.45402063643
+#> EM - RHLP: Iteration: 32 | log-likelihood: -2116.9336204919
+#> EM - RHLP: Iteration: 33 | log-likelihood: -2114.34424563452
+#> EM - RHLP: Iteration: 34 | log-likelihood: -2112.84844186712
+#> EM - RHLP: Iteration: 35 | log-likelihood: -2110.34494568025
+#> EM - RHLP: Iteration: 36 | log-likelihood: -2108.81734757025
+#> EM - RHLP: Iteration: 37 | log-likelihood: -2106.26527191053
+#> EM - RHLP: Iteration: 38 | log-likelihood: -2104.96591147986
+#> EM - RHLP: Iteration: 39 | log-likelihood: -2102.43927829964
+#> EM - RHLP: Iteration: 40 | log-likelihood: -2101.27820194404
+#> EM - RHLP: Iteration: 41 | log-likelihood: -2098.81151697567
+#> EM - RHLP: Iteration: 42 | log-likelihood: -2097.48008514591
+#> EM - RHLP: Iteration: 43 | log-likelihood: -2094.98259556552
+#> EM - RHLP: Iteration: 44 | log-likelihood: -2093.66517040802
+#> EM - RHLP: Iteration: 45 | log-likelihood: -2091.23625905564
+#> EM - RHLP: Iteration: 46 | log-likelihood: -2089.91118603989
+#> EM - RHLP: Iteration: 47 | log-likelihood: -2087.67388435026
+#> EM - RHLP: Iteration: 48 | log-likelihood: -2086.11373786756
+#> EM - RHLP: Iteration: 49 | log-likelihood: -2083.84931461869
+#> EM - RHLP: Iteration: 50 | log-likelihood: -2082.16175664198
+#> EM - RHLP: Iteration: 51 | log-likelihood: -2080.45137011098
+#> EM - RHLP: Iteration: 52 | log-likelihood: -2078.37066132008
+#> EM - RHLP: Iteration: 53 | log-likelihood: -2077.06827662071
+#> EM - RHLP: Iteration: 54 | log-likelihood: -2074.66718553694
+#> EM - RHLP: Iteration: 55 | log-likelihood: -2073.68137124781
+#> EM - RHLP: Iteration: 56 | log-likelihood: -2071.20390017789
+#> EM - RHLP: Iteration: 57 | log-likelihood: -2069.88260759288
+#> EM - RHLP: Iteration: 58 | log-likelihood: -2067.30246728287
+#> EM - RHLP: Iteration: 59 | log-likelihood: -2066.08897944236
+#> EM - RHLP: Iteration: 60 | log-likelihood: -2064.14482062792
+#> EM - RHLP: Iteration: 61 | log-likelihood: -2062.39859624374
+#> EM - RHLP: Iteration: 62 | log-likelihood: -2060.73756242314
+#> EM - RHLP: Iteration: 63 | log-likelihood: -2058.4448132974
+#> EM - RHLP: Iteration: 64 | log-likelihood: -2057.23564743141
+#> EM - RHLP: Iteration: 65 | log-likelihood: -2054.73129678764
+#> EM - RHLP: Iteration: 66 | log-likelihood: -2053.66525147972
+#> EM - RHLP: Iteration: 67 | log-likelihood: -2051.05262427909
+#> EM - RHLP: Iteration: 68 | log-likelihood: -2049.89030367995
+#> EM - RHLP: Iteration: 69 | log-likelihood: -2047.68843285481
+#> EM - RHLP: Iteration: 70 | log-likelihood: -2046.16052536146
+#> EM - RHLP: Iteration: 71 | log-likelihood: -2044.92677581091
+#> EM - RHLP: Iteration: 72 | log-likelihood: -2042.67687818721
+#> EM - RHLP: Iteration: 73 | log-likelihood: -2041.77608506749
+#> EM - RHLP: Iteration: 74 | log-likelihood: -2039.40345316134
+#> EM - RHLP: Iteration: 75 | log-likelihood: -2038.20062153928
+#> EM - RHLP: Iteration: 76 | log-likelihood: -2036.05846372404
+#> EM - RHLP: Iteration: 77 | log-likelihood: -2034.52492449426
+#> EM - RHLP: Iteration: 78 | log-likelihood: -2033.44774900177
+#> EM - RHLP: Iteration: 79 | log-likelihood: -2031.15837908019
+#> EM - RHLP: Iteration: 80 | log-likelihood: -2030.29908045026
+#> EM - RHLP: Iteration: 81 | log-likelihood: -2028.08193331457
+#> EM - RHLP: Iteration: 82 | log-likelihood: -2026.82779637097
+#> EM - RHLP: Iteration: 83 | log-likelihood: -2025.51219569808
+#> EM - RHLP: Iteration: 84 | log-likelihood: -2023.47136697978
+#> EM - RHLP: Iteration: 85 | log-likelihood: -2022.86702240332
+#> EM - RHLP: Iteration: 86 | log-likelihood: -2021.05803372565
+#> EM - RHLP: Iteration: 87 | log-likelihood: -2019.68013062929
+#> EM - RHLP: Iteration: 88 | log-likelihood: -2018.57796815284
+#> EM - RHLP: Iteration: 89 | log-likelihood: -2016.51065270015
+#> EM - RHLP: Iteration: 90 | log-likelihood: -2015.84957111014
+#> EM - RHLP: Iteration: 91 | log-likelihood: -2014.25626618564
+#> EM - RHLP: Iteration: 92 | log-likelihood: -2012.83069679254
+#> EM - RHLP: Iteration: 93 | log-likelihood: -2012.36700738444
+#> EM - RHLP: Iteration: 94 | log-likelihood: -2010.80319327333
+#> EM - RHLP: Iteration: 95 | log-likelihood: -2009.62231094925
+#> EM - RHLP: Iteration: 96 | log-likelihood: -2009.18020396728
+#> EM - RHLP: Iteration: 97 | log-likelihood: -2007.70135886708
+#> EM - RHLP: Iteration: 98 | log-likelihood: -2006.56703696874
+#> EM - RHLP: Iteration: 99 | log-likelihood: -2006.01673291469
+#> EM - RHLP: Iteration: 100 | log-likelihood: -2004.41194242792
+#> EM - RHLP: Iteration: 101 | log-likelihood: -2003.4625414477
+#> EM - RHLP: Iteration: 102 | log-likelihood: -2002.88040058763
+#> EM - RHLP: Iteration: 103 | log-likelihood: -2001.35926477816
+#> EM - RHLP: Iteration: 104 | log-likelihood: -2000.57003100128
+#> EM - RHLP: Iteration: 105 | log-likelihood: -2000.13742634303
+#> EM - RHLP: Iteration: 106 | log-likelihood: -1998.8742667185
+#> EM - RHLP: Iteration: 107 | log-likelihood: -1997.9672441114
+#> EM - RHLP: Iteration: 108 | log-likelihood: -1997.53617878001
+#> EM - RHLP: Iteration: 109 | log-likelihood: -1996.26856906479
+#> EM - RHLP: Iteration: 110 | log-likelihood: -1995.29073069489
+#> EM - RHLP: Iteration: 111 | log-likelihood: -1994.96901833912
+#> EM - RHLP: Iteration: 112 | log-likelihood: -1994.04338389315
+#> EM - RHLP: Iteration: 113 | log-likelihood: -1992.93228304533
+#> EM - RHLP: Iteration: 114 | log-likelihood: -1992.58825334521
+#> EM - RHLP: Iteration: 115 | log-likelihood: -1992.08820485443
+#> EM - RHLP: Iteration: 116 | log-likelihood: -1990.99459284997
+#> EM - RHLP: Iteration: 117 | log-likelihood: -1990.39820233453
+#> EM - RHLP: Iteration: 118 | log-likelihood: -1990.25156085256
+#> EM - RHLP: Iteration: 119 | log-likelihood: -1990.02689844513
+#> EM - RHLP: Iteration: 120 | log-likelihood: -1989.4524459209
+#> EM - RHLP: Iteration: 121 | log-likelihood: -1988.77939887023
+#> EM - RHLP: Iteration: 122 | log-likelihood: -1988.43670301286
+#> EM - RHLP: Iteration: 123 | log-likelihood: -1988.05097380424
+#> EM - RHLP: Iteration: 124 | log-likelihood: -1987.13583867675
+#> EM - RHLP: Iteration: 125 | log-likelihood: -1986.24508709354
+#> EM - RHLP: Iteration: 126 | log-likelihood: -1985.66862327892
+#> EM - RHLP: Iteration: 127 | log-likelihood: -1984.91555844651
+#> EM - RHLP: Iteration: 128 | log-likelihood: -1984.02840365821
+#> EM - RHLP: Iteration: 129 | log-likelihood: -1983.69130067161
+#> EM - RHLP: Iteration: 130 | log-likelihood: -1983.59891631866
+#> EM - RHLP: Iteration: 131 | log-likelihood: -1983.46950685882
+#> EM - RHLP: Iteration: 132 | log-likelihood: -1983.16677154063
+#> EM - RHLP: Iteration: 133 | log-likelihood: -1982.7130488681
+#> EM - RHLP: Iteration: 134 | log-likelihood: -1982.36482921383
+#> EM - RHLP: Iteration: 135 | log-likelihood: -1982.09501016661
+#> EM - RHLP: Iteration: 136 | log-likelihood: -1981.45901315766
+#> EM - RHLP: Iteration: 137 | log-likelihood: -1980.56116931257
+#> EM - RHLP: Iteration: 138 | log-likelihood: -1979.78682525118
+#> EM - RHLP: Iteration: 139 | log-likelihood: -1978.57039689029
+#> EM - RHLP: Iteration: 140 | log-likelihood: -1977.62583903156
+#> EM - RHLP: Iteration: 141 | log-likelihood: -1976.44993964017
+#> EM - RHLP: Iteration: 142 | log-likelihood: -1975.34352117182
+#> EM - RHLP: Iteration: 143 | log-likelihood: -1973.94511304916
+#> EM - RHLP: Iteration: 144 | log-likelihood: -1972.69707782729
+#> EM - RHLP: Iteration: 145 | log-likelihood: -1971.24412635765
+#> EM - RHLP: Iteration: 146 | log-likelihood: -1970.06230181165
+#> EM - RHLP: Iteration: 147 | log-likelihood: -1968.63106242841
+#> EM - RHLP: Iteration: 148 | log-likelihood: -1967.54773416029
+#> EM - RHLP: Iteration: 149 | log-likelihood: -1966.19481640747
+#> EM - RHLP: Iteration: 150 | log-likelihood: -1965.07487280506
+#> EM - RHLP: Iteration: 151 | log-likelihood: -1963.69466194804
+#> EM - RHLP: Iteration: 152 | log-likelihood: -1962.43103040224
+#> EM - RHLP: Iteration: 153 | log-likelihood: -1961.13942311651
+#> EM - RHLP: Iteration: 154 | log-likelihood: -1959.76348415393
+#> EM - RHLP: Iteration: 155 | log-likelihood: -1958.66111557445
+#> EM - RHLP: Iteration: 156 | log-likelihood: -1957.08412155615
+#> EM - RHLP: Iteration: 157 | log-likelihood: -1956.38405033098
+#> EM - RHLP: Iteration: 158 | log-likelihood: -1955.13976323662
+#> EM - RHLP: Iteration: 159 | log-likelihood: -1954.0307602366
+#> EM - RHLP: Iteration: 160 | log-likelihood: -1953.28771131999
+#> EM - RHLP: Iteration: 161 | log-likelihood: -1951.68947232015
+#> EM - RHLP: Iteration: 162 | log-likelihood: -1950.97779043109
+#> EM - RHLP: Iteration: 163 | log-likelihood: -1950.82786273359
+#> EM - RHLP: Iteration: 164 | log-likelihood: -1950.39568293481
+#> EM - RHLP: Iteration: 165 | log-likelihood: -1949.51404624208
+#> EM - RHLP: Iteration: 166 | log-likelihood: -1948.906374824
+#> EM - RHLP: Iteration: 167 | log-likelihood: -1948.43487893552
+#> EM - RHLP: Iteration: 168 | log-likelihood: -1947.2118394595
+#> EM - RHLP: Iteration: 169 | log-likelihood: -1946.34871715855
+#> EM - RHLP: Iteration: 170 | log-likelihood: -1946.22041468711
+#> EM - RHLP: Iteration: 171 | log-likelihood: -1946.2132265072
+#> EM - RHLP: Iteration: 172 | log-likelihood: -1946.21315057723
 
 rhlp$summary()
 #> ---------------------
@@ -223,10 +395,10 @@ verbose <- TRUE
 
 hmmr <- emHMMR(X = x, Y = y, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 | log-likelihood : -1556.39696825601
-#> EM: Iteration : 2 | log-likelihood : -1022.47935723687
-#> EM: Iteration : 3 | log-likelihood : -1019.51830707432
-#> EM: Iteration : 4 | log-likelihood : -1019.51780361388
+#> EM - HMMR: Iteration: 1 | log-likelihood: -1556.39696825601
+#> EM - HMMR: Iteration: 2 | log-likelihood: -1022.47935723687
+#> EM - HMMR: Iteration: 3 | log-likelihood: -1019.51830707432
+#> EM - HMMR: Iteration: 4 | log-likelihood: -1019.51780361388
 
 hmmr$summary()
 #> ---------------------
@@ -278,21 +450,21 @@ verbose <- TRUE
 
 hmmr <- emHMMR(X = x, Y = y, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 | log-likelihood : -2733.41028643114
-#> EM: Iteration : 2 | log-likelihood : -2303.24018378559
-#> EM: Iteration : 3 | log-likelihood : -2295.0470677529
-#> EM: Iteration : 4 | log-likelihood : -2288.57866215726
-#> EM: Iteration : 5 | log-likelihood : -2281.36756202518
-#> EM: Iteration : 6 | log-likelihood : -2273.50303676091
-#> EM: Iteration : 7 | log-likelihood : -2261.70334656117
-#> EM: Iteration : 8 | log-likelihood : -2243.43509121433
-#> EM: Iteration : 9 | log-likelihood : -2116.4610801575
-#> EM: Iteration : 10 | log-likelihood : -2046.73194777839
-#> EM: Iteration : 11 | log-likelihood : -2046.68328282973
-#> EM: Iteration : 12 | log-likelihood : -2046.67329222076
-#> EM: Iteration : 13 | log-likelihood : -2046.66915144265
-#> EM: Iteration : 14 | log-likelihood : -2046.66694236131
-#> EM: Iteration : 15 | log-likelihood : -2046.66563379017
+#> EM - HMMR: Iteration: 1 | log-likelihood: -2733.41028643114
+#> EM - HMMR: Iteration: 2 | log-likelihood: -2303.24018378559
+#> EM - HMMR: Iteration: 3 | log-likelihood: -2295.0470677529
+#> EM - HMMR: Iteration: 4 | log-likelihood: -2288.57866215726
+#> EM - HMMR: Iteration: 5 | log-likelihood: -2281.36756202518
+#> EM - HMMR: Iteration: 6 | log-likelihood: -2273.50303676091
+#> EM - HMMR: Iteration: 7 | log-likelihood: -2261.70334656117
+#> EM - HMMR: Iteration: 8 | log-likelihood: -2243.43509121433
+#> EM - HMMR: Iteration: 9 | log-likelihood: -2116.4610801575
+#> EM - HMMR: Iteration: 10 | log-likelihood: -2046.73194777839
+#> EM - HMMR: Iteration: 11 | log-likelihood: -2046.68328282973
+#> EM - HMMR: Iteration: 12 | log-likelihood: -2046.67329222076
+#> EM - HMMR: Iteration: 13 | log-likelihood: -2046.66915144265
+#> EM - HMMR: Iteration: 14 | log-likelihood: -2046.66694236131
+#> EM - HMMR: Iteration: 15 | log-likelihood: -2046.66563379017
 
 hmmr$summary()
 #> ---------------------
@@ -340,9 +512,34 @@ x <- univtoydataset$x
 y <- univtoydataset$y
 
 K <- 5 # Number of segments
-p <- 1 # Polynomial degree
+p <- 3 # Polynomial degree
 
 pwr <- fitPWRFisher(X = x, Y = y, K, p)
+
+pwr$summary()
+#> --------------------
+#> Fitted PWR model
+#> --------------------
+#> 
+#> PWR model with K = 5 components:
+#> 
+#> Clustering table (Number of observations in each regimes):
+#> 
+#>   1   2   3   4   5 
+#> 100 120 200 100 150 
+#> 
+#> Regression coefficients:
+#> 
+#>       Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
+#> 1    6.106872e-02   -5.450955   -2.776275    122.7045    4.020809
+#> X^1 -7.486945e+00  158.922010   43.915969   -482.8929   13.217587
+#> X^2  2.942201e+02 -651.540876  -94.269414    609.6493  -33.787416
+#> X^3 -1.828308e+03  866.675017   67.247141   -249.8667   20.412380
+#> 
+#> Variances:
+#> 
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
+#>       1.220624      1.110193      1.079366     0.9779733      1.028329
 
 pwr$plot()
 ```
@@ -359,6 +556,31 @@ K <- 5 # Number of segments
 p <- 3 # Polynomial degree
 
 pwr <- fitPWRFisher(X = x, Y = y, K, p)
+
+pwr$summary()
+#> --------------------
+#> Fitted PWR model
+#> --------------------
+#> 
+#> PWR model with K = 5 components:
+#> 
+#> Clustering table (Number of observations in each regimes):
+#> 
+#>   1   2   3   4   5 
+#>  15 130 178 113 126 
+#> 
+#> Regression coefficients:
+#> 
+#>     Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
+#> 1      2163.323   334.23747   1458.6530 -11445.9003  6418.36449
+#> X^1  -13244.753  -125.04633  -1578.1793   9765.9713 -3572.38535
+#> X^2  -86993.374    35.33532    753.8468  -2660.5976   699.64809
+#> X^3  635558.069    49.12683   -113.1589    238.3246   -45.43516
+#> 
+#> Variances:
+#> 
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
+#>       9326.335      50.71573      75.23989      110.6818      15.66317
 
 pwr$plot()
 ```
@@ -390,26 +612,26 @@ verbose_IRLS <- FALSE
 
 mrhlp <- emMRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
                  max_iter, threshold, verbose, verbose_IRLS)
-#> EM: Iteration : 1 || log-likelihood : -4807.6644322901
-#> EM: Iteration : 2 || log-likelihood : -3314.25165556383
-#> EM: Iteration : 3 || log-likelihood : -3216.8871750704
-#> EM: Iteration : 4 || log-likelihood : -3126.33556053822
-#> EM: Iteration : 5 || log-likelihood : -2959.59933830667
-#> EM: Iteration : 6 || log-likelihood : -2895.65953485704
-#> EM: Iteration : 7 || log-likelihood : -2892.93263500326
-#> EM: Iteration : 8 || log-likelihood : -2889.34084959654
-#> EM: Iteration : 9 || log-likelihood : -2884.56422084139
-#> EM: Iteration : 10 || log-likelihood : -2878.29772085061
-#> EM: Iteration : 11 || log-likelihood : -2870.61242183846
-#> EM: Iteration : 12 || log-likelihood : -2862.86238149363
-#> EM: Iteration : 13 || log-likelihood : -2856.85351443338
-#> EM: Iteration : 14 || log-likelihood : -2851.74642203885
-#> EM: Iteration : 15 || log-likelihood : -2850.00381259526
-#> EM: Iteration : 16 || log-likelihood : -2849.86516522686
-#> EM: Iteration : 17 || log-likelihood : -2849.7354103643
-#> EM: Iteration : 18 || log-likelihood : -2849.56953544124
-#> EM: Iteration : 19 || log-likelihood : -2849.40322468732
-#> EM: Iteration : 20 || log-likelihood : -2849.40321381274
+#> EM - MRHLP: Iteration: 1 | log-likelihood: -4807.6644322901
+#> EM - MRHLP: Iteration: 2 | log-likelihood: -3314.25165556383
+#> EM - MRHLP: Iteration: 3 | log-likelihood: -3216.8871750704
+#> EM - MRHLP: Iteration: 4 | log-likelihood: -3126.33556053822
+#> EM - MRHLP: Iteration: 5 | log-likelihood: -2959.59933830667
+#> EM - MRHLP: Iteration: 6 | log-likelihood: -2895.65953485704
+#> EM - MRHLP: Iteration: 7 | log-likelihood: -2892.93263500326
+#> EM - MRHLP: Iteration: 8 | log-likelihood: -2889.34084959654
+#> EM - MRHLP: Iteration: 9 | log-likelihood: -2884.56422084139
+#> EM - MRHLP: Iteration: 10 | log-likelihood: -2878.29772085061
+#> EM - MRHLP: Iteration: 11 | log-likelihood: -2870.61242183846
+#> EM - MRHLP: Iteration: 12 | log-likelihood: -2862.86238149363
+#> EM - MRHLP: Iteration: 13 | log-likelihood: -2856.85351443338
+#> EM - MRHLP: Iteration: 14 | log-likelihood: -2851.74642203885
+#> EM - MRHLP: Iteration: 15 | log-likelihood: -2850.00381259526
+#> EM - MRHLP: Iteration: 16 | log-likelihood: -2849.86516522686
+#> EM - MRHLP: Iteration: 17 | log-likelihood: -2849.7354103643
+#> EM - MRHLP: Iteration: 18 | log-likelihood: -2849.56953544124
+#> EM - MRHLP: Iteration: 19 | log-likelihood: -2849.40322468732
+#> EM - MRHLP: Iteration: 20 | log-likelihood: -2849.40321381274
 
 mrhlp$summary()
 #> ----------------------
@@ -521,31 +743,31 @@ verbose_IRLS <- FALSE
 
 mrhlp <- emMRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
                  max_iter, threshold, verbose, verbose_IRLS)
-#> EM: Iteration : 1 || log-likelihood : -792.888668727036
-#> EM: Iteration : 2 || log-likelihood : 6016.45835957306
-#> EM: Iteration : 3 || log-likelihood : 6362.81791662824
-#> EM: Iteration : 4 || log-likelihood : 6615.72233403002
-#> EM: Iteration : 5 || log-likelihood : 6768.32107943849
-#> EM: Iteration : 6 || log-likelihood : 6840.97339565987
-#> EM: Iteration : 7 || log-likelihood : 6860.97262839295
-#> EM: Iteration : 8 || log-likelihood : 6912.25605673784
-#> EM: Iteration : 9 || log-likelihood : 6945.96718258737
-#> EM: Iteration : 10 || log-likelihood : 6951.28584396645
-#> EM: Iteration : 11 || log-likelihood : 6952.37644678517
-#> EM: Iteration : 12 || log-likelihood : 6954.80510338749
-#> EM: Iteration : 13 || log-likelihood : 6958.99033092484
-#> EM: Iteration : 14 || log-likelihood : 6964.81099837456
-#> EM: Iteration : 15 || log-likelihood : 6999.90358068156
-#> EM: Iteration : 16 || log-likelihood : 7065.39327246318
-#> EM: Iteration : 17 || log-likelihood : 7166.23398344994
-#> EM: Iteration : 18 || log-likelihood : 7442.73330846285
-#> EM: Iteration : 19 || log-likelihood : 7522.65416438396
-#> EM: Iteration : 20 || log-likelihood : 7524.41524338024
-#> EM: Iteration : 21 || log-likelihood : 7524.57590110924
-#> EM: Iteration : 22 || log-likelihood : 7524.73808801417
-#> EM: Iteration : 23 || log-likelihood : 7524.88684996651
-#> EM: Iteration : 24 || log-likelihood : 7524.9753964817
-#> EM: Iteration : 25 || log-likelihood : 7524.97701548847
+#> EM - MRHLP: Iteration: 1 | log-likelihood: -792.888668727036
+#> EM - MRHLP: Iteration: 2 | log-likelihood: 6016.45835957306
+#> EM - MRHLP: Iteration: 3 | log-likelihood: 6362.81791662824
+#> EM - MRHLP: Iteration: 4 | log-likelihood: 6615.72233403002
+#> EM - MRHLP: Iteration: 5 | log-likelihood: 6768.32107943849
+#> EM - MRHLP: Iteration: 6 | log-likelihood: 6840.97339565987
+#> EM - MRHLP: Iteration: 7 | log-likelihood: 6860.97262839295
+#> EM - MRHLP: Iteration: 8 | log-likelihood: 6912.25605673784
+#> EM - MRHLP: Iteration: 9 | log-likelihood: 6945.96718258737
+#> EM - MRHLP: Iteration: 10 | log-likelihood: 6951.28584396645
+#> EM - MRHLP: Iteration: 11 | log-likelihood: 6952.37644678517
+#> EM - MRHLP: Iteration: 12 | log-likelihood: 6954.80510338749
+#> EM - MRHLP: Iteration: 13 | log-likelihood: 6958.99033092484
+#> EM - MRHLP: Iteration: 14 | log-likelihood: 6964.81099837456
+#> EM - MRHLP: Iteration: 15 | log-likelihood: 6999.90358068156
+#> EM - MRHLP: Iteration: 16 | log-likelihood: 7065.39327246318
+#> EM - MRHLP: Iteration: 17 | log-likelihood: 7166.23398344994
+#> EM - MRHLP: Iteration: 18 | log-likelihood: 7442.73330846285
+#> EM - MRHLP: Iteration: 19 | log-likelihood: 7522.65416438396
+#> EM - MRHLP: Iteration: 20 | log-likelihood: 7524.41524338024
+#> EM - MRHLP: Iteration: 21 | log-likelihood: 7524.57590110924
+#> EM - MRHLP: Iteration: 22 | log-likelihood: 7524.73808801417
+#> EM - MRHLP: Iteration: 23 | log-likelihood: 7524.88684996651
+#> EM - MRHLP: Iteration: 24 | log-likelihood: 7524.9753964817
+#> EM - MRHLP: Iteration: 25 | log-likelihood: 7524.97701548847
 
 mrhlp$summary()
 #> ----------------------
@@ -671,12 +893,12 @@ verbose <- TRUE
 
 mhmmr <- emMHMMR(X = x, Y = y, K, p, variance_type, n_tries, 
                  max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -4539.37845473736
-#> EM: Iteration : 2 || log-likelihood : -3075.7862970485
-#> EM: Iteration : 3 || log-likelihood : -2904.71126233611
-#> EM: Iteration : 4 || log-likelihood : -2883.23456594806
-#> EM: Iteration : 5 || log-likelihood : -2883.12446634454
-#> EM: Iteration : 6 || log-likelihood : -2883.12436399888
+#> EM - MHMMR: Iteration: 1 | log-likelihood: -4539.37845473736
+#> EM - MHMMR: Iteration: 2 | log-likelihood: -3075.7862970485
+#> EM - MHMMR: Iteration: 3 | log-likelihood: -2904.71126233611
+#> EM - MHMMR: Iteration: 4 | log-likelihood: -2883.23456594806
+#> EM - MHMMR: Iteration: 5 | log-likelihood: -2883.12446634454
+#> EM - MHMMR: Iteration: 6 | log-likelihood: -2883.12436399888
 
 mhmmr$summary()
 #> ----------------------
@@ -786,19 +1008,19 @@ verbose <- TRUE
 
 mhmmr <- emMHMMR(X = x, Y = y, K, p, variance_type, n_tries, 
                  max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : 817.206309249687
-#> EM: Iteration : 2 || log-likelihood : 1793.49320726452
-#> EM: Iteration : 3 || log-likelihood : 1908.47251424374
-#> EM: Iteration : 4 || log-likelihood : 2006.7976746047
-#> EM: Iteration : 5 || log-likelihood : 3724.91911814713
-#> EM: Iteration : 6 || log-likelihood : 3846.02584774854
-#> EM: Iteration : 7 || log-likelihood : 3957.04953794437
-#> EM: Iteration : 8 || log-likelihood : 4008.60804596975
-#> EM: Iteration : 9 || log-likelihood : 4011.09964067314
-#> EM: Iteration : 10 || log-likelihood : 4014.35810165377
-#> EM: Iteration : 11 || log-likelihood : 4026.38632031497
-#> EM: Iteration : 12 || log-likelihood : 4027.13758668835
-#> EM: Iteration : 13 || log-likelihood : 4027.13639613206
+#> EM - MHMMR: Iteration: 1 | log-likelihood: 817.206309249687
+#> EM - MHMMR: Iteration: 2 | log-likelihood: 1793.49320726452
+#> EM - MHMMR: Iteration: 3 | log-likelihood: 1908.47251424374
+#> EM - MHMMR: Iteration: 4 | log-likelihood: 2006.7976746047
+#> EM - MHMMR: Iteration: 5 | log-likelihood: 3724.91911814713
+#> EM - MHMMR: Iteration: 6 | log-likelihood: 3846.02584774854
+#> EM - MHMMR: Iteration: 7 | log-likelihood: 3957.04953794437
+#> EM - MHMMR: Iteration: 8 | log-likelihood: 4008.60804596975
+#> EM - MHMMR: Iteration: 9 | log-likelihood: 4011.09964067314
+#> EM - MHMMR: Iteration: 10 | log-likelihood: 4014.35810165377
+#> EM - MHMMR: Iteration: 11 | log-likelihood: 4026.38632031497
+#> EM - MHMMR: Iteration: 12 | log-likelihood: 4027.13758668835
+#> EM - MHMMR: Iteration: 13 | log-likelihood: 4027.13639613206
 
 mhmmr$summary()
 #> ----------------------
@@ -997,7 +1219,7 @@ matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ``` r
 selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 #> Warning in emMRHLP(X = X1, Y = Y1, K, p): EM log-likelihood is decreasing
-#> from -3105.78591044952to -3105.78627830471 !
+#> from -3105.78591044952to -3105.78627830471!
 #> The MRHLP model selected via the "BIC" has K = 5 regimes 
 #>  and the order of the polynomial regression is p = 0.
 #> BIC = -3033.20042397111

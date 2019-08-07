@@ -70,7 +70,7 @@ emMRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", 
     try_EM <- try_EM + 1
 
     if (n_tries > 1 && verbose) {
-      cat(paste0("EM try number: ", try_EM, "\n\n"))
+      message("EM try number: ", try_EM, "\n")
     }
 
     # Initialization
@@ -91,10 +91,10 @@ emMRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", 
 
       iter <- iter + 1
       if (verbose) {
-        cat(paste0("EM: Iteration : ", iter, " || log-likelihood : ", stat$loglik, "\n"))
+        message("EM - MRHLP: Iteration: ", iter, " | log-likelihood: ", stat$loglik)
       }
       if (prev_loglik - stat$loglik > 1e-5) {
-        warning(paste0("EM log-likelihood is decreasing from ", prev_loglik, "to ", stat$loglik, " !"))
+        warning("EM log-likelihood is decreasing from ", prev_loglik, "to ", stat$loglik, "!")
         top <- top + 1
         if (top > 20)
           break
@@ -117,7 +117,7 @@ emMRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", 
       best_loglik <- stat$loglik
     }
     if (n_tries > 1 && verbose) {
-      cat(paste0("Max value of the log-likelihood: ", stat$loglik, "\n\n"))
+      message("Max value of the log-likelihood: ", stat$loglik, "\n\n")
     }
   }
 
@@ -125,7 +125,7 @@ emMRHLP <- function(X, Y, K, p = 3, q = 1, variance_type = c("heteroskedastic", 
   statSolution$MAP()
 
   if (n_tries > 1 && verbose) {
-    cat(paste0("Max value of the log-likelihood: ", statSolution$loglik, "\n"))
+    message("Max value of the log-likelihood: ", statSolution$loglik, "\n")
   }
 
   # Finish the computation of statistics
