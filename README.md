@@ -130,7 +130,7 @@ rhlp$summary()
 #> 
 #> Regression coefficients:
 #> 
-#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#>       Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
 #> 1    6.031875e-02   -5.434903   -2.770416    120.7699    4.027542
 #> X^1 -7.424718e+00  158.705091   43.879453   -474.5888   13.194261
 #> X^2  2.931652e+02 -650.592347  -94.194780    597.7948  -33.760603
@@ -138,7 +138,7 @@ rhlp$summary()
 #> 
 #> Variances:
 #> 
-#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
 #>       1.220624      1.110243      1.079394     0.9779734      1.028332
 
 rhlp$plot()
@@ -182,7 +182,7 @@ rhlp$summary()
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#>     Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
 #> 1      2187.539   330.05723   1508.2809 -13446.7332  6417.62830
 #> X^1  -15032.659  -107.79782  -1648.9562  11321.4509 -3571.94090
 #> X^2  -56433.432    14.40154    786.5723  -3062.2825   699.55894
@@ -190,7 +190,7 @@ rhlp$summary()
 #> 
 #> Variances:
 #> 
-#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
 #>       8924.363      49.22616       78.2758      105.6606      15.66317
 
 rhlp$plot()
@@ -219,10 +219,10 @@ verbose <- TRUE
 
 hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -1556.39696825601
-#> EM: Iteration : 2 || log-likelihood : -1022.47935723687
-#> EM: Iteration : 3 || log-likelihood : -1019.51830707432
-#> EM: Iteration : 4 || log-likelihood : -1019.51780361388
+#> EM: Iteration : 1 | log-likelihood : -1556.39696825601
+#> EM: Iteration : 2 | log-likelihood : -1022.47935723687
+#> EM: Iteration : 3 | log-likelihood : -1019.51830707432
+#> EM: Iteration : 4 | log-likelihood : -1019.51780361388
 
 hmmr$summary()
 #> ---------------------
@@ -241,7 +241,7 @@ hmmr$summary()
 #> 
 #> Regression coefficients:
 #> 
-#>       Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#>       Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
 #> 1    6.031872e-02   -5.326689    -2.65064    120.8612    3.858683
 #> X^1 -7.424715e+00  157.189455    43.13601   -474.9870   13.757279
 #> X^2  2.931651e+02 -643.706204   -92.68115    598.3726  -34.384734
@@ -249,7 +249,7 @@ hmmr$summary()
 #> 
 #> Variances:
 #> 
-#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
 #>       1.220624      1.111487      1.080043     0.9779724      1.028399
 
 hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
@@ -272,21 +272,21 @@ verbose <- TRUE
 
 hmmr <- emHMMR(univrealdataset$x, univrealdataset$y2, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
-#> EM: Iteration : 1 || log-likelihood : -2733.41028643114
-#> EM: Iteration : 2 || log-likelihood : -2303.24018378559
-#> EM: Iteration : 3 || log-likelihood : -2295.0470677529
-#> EM: Iteration : 4 || log-likelihood : -2288.57866215726
-#> EM: Iteration : 5 || log-likelihood : -2281.36756202518
-#> EM: Iteration : 6 || log-likelihood : -2273.50303676091
-#> EM: Iteration : 7 || log-likelihood : -2261.70334656117
-#> EM: Iteration : 8 || log-likelihood : -2243.43509121433
-#> EM: Iteration : 9 || log-likelihood : -2116.4610801575
-#> EM: Iteration : 10 || log-likelihood : -2046.73194777839
-#> EM: Iteration : 11 || log-likelihood : -2046.68328282973
-#> EM: Iteration : 12 || log-likelihood : -2046.67329222076
-#> EM: Iteration : 13 || log-likelihood : -2046.66915144265
-#> EM: Iteration : 14 || log-likelihood : -2046.66694236131
-#> EM: Iteration : 15 || log-likelihood : -2046.66563379017
+#> EM: Iteration : 1 | log-likelihood : -2733.41028643114
+#> EM: Iteration : 2 | log-likelihood : -2303.24018378559
+#> EM: Iteration : 3 | log-likelihood : -2295.0470677529
+#> EM: Iteration : 4 | log-likelihood : -2288.57866215726
+#> EM: Iteration : 5 | log-likelihood : -2281.36756202518
+#> EM: Iteration : 6 | log-likelihood : -2273.50303676091
+#> EM: Iteration : 7 | log-likelihood : -2261.70334656117
+#> EM: Iteration : 8 | log-likelihood : -2243.43509121433
+#> EM: Iteration : 9 | log-likelihood : -2116.4610801575
+#> EM: Iteration : 10 | log-likelihood : -2046.73194777839
+#> EM: Iteration : 11 | log-likelihood : -2046.68328282973
+#> EM: Iteration : 12 | log-likelihood : -2046.67329222076
+#> EM: Iteration : 13 | log-likelihood : -2046.66915144265
+#> EM: Iteration : 14 | log-likelihood : -2046.66694236131
+#> EM: Iteration : 15 | log-likelihood : -2046.66563379017
 
 hmmr$summary()
 #> ---------------------
@@ -305,7 +305,7 @@ hmmr$summary()
 #> 
 #> Regression coefficients:
 #> 
-#>     Beta(K = 1) Beta(K = 2) Beta(K = 3) Beta(K = 4) Beta(K = 5)
+#>     Beta(k = 1) Beta(k = 2) Beta(k = 3) Beta(k = 4) Beta(k = 5)
 #> 1       2152.64   379.75158   5211.1759 -14306.4654  6417.62823
 #> X^1   -12358.67  -373.37266  -5744.7879  11987.6666 -3571.94086
 #> X^2  -103908.33   394.49359   2288.9418  -3233.8021   699.55894
@@ -313,7 +313,7 @@ hmmr$summary()
 #> 
 #> Variances:
 #> 
-#>  Sigma2(K = 1) Sigma2(K = 2) Sigma2(K = 3) Sigma2(K = 4) Sigma2(K = 5)
+#>  Sigma2(k = 1) Sigma2(k = 2) Sigma2(k = 3) Sigma2(k = 4) Sigma2(k = 5)
 #>       9828.793      125.3346      58.71053      105.8328      15.66317
 
 hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
@@ -416,7 +416,7 @@ mrhlp$summary()
 #> 
 #> 
 #> ------------------
-#> Regime 1 (K = 1):
+#> Regime 1 (k = 1):
 #> 
 #> Regression coefficients:
 #> 
@@ -430,7 +430,7 @@ mrhlp$summary()
 #>  0.12765794  0.87144062 -0.05213162
 #>  0.05537134 -0.05213162  0.87885166
 #> ------------------
-#> Regime 2 (K = 2):
+#> Regime 2 (k = 2):
 #> 
 #> Regression coefficients:
 #> 
@@ -444,7 +444,7 @@ mrhlp$summary()
 #>  -0.1829337  1.05280632 0.01390041
 #>   0.1260246  0.01390041 0.75995058
 #> ------------------
-#> Regime 3 (K = 3):
+#> Regime 3 (k = 3):
 #> 
 #> Regression coefficients:
 #> 
@@ -458,7 +458,7 @@ mrhlp$summary()
 #>  -0.05445227  1.18941700  0.01565240
 #>  -0.02019896  0.01565240  1.00257195
 #> ------------------
-#> Regime 4 (K = 4):
+#> Regime 4 (k = 4):
 #> 
 #> Regression coefficients:
 #> 
@@ -472,7 +472,7 @@ mrhlp$summary()
 #>  -0.03249118  1.12087583 -0.07881351
 #>  -0.03411075 -0.07881351  0.86060127
 #> ------------------
-#> Regime 5 (K = 5):
+#> Regime 5 (k = 5):
 #> 
 #> Regression coefficients:
 #> 
@@ -551,7 +551,7 @@ mrhlp$summary()
 #> 
 #> 
 #> ------------------
-#> Regime 1 (K = 1):
+#> Regime 1 (k = 1):
 #> 
 #> Regression coefficients:
 #> 
@@ -567,7 +567,7 @@ mrhlp$summary()
 #>  -0.0042380363  0.006082904 -0.0012973026
 #>   0.0004011388 -0.001297303  0.0013201963
 #> ------------------
-#> Regime 2 (K = 2):
+#> Regime 2 (k = 2):
 #> 
 #> Regression coefficients:
 #> 
@@ -583,7 +583,7 @@ mrhlp$summary()
 #>  -0.03866052  0.17730401  0.04036629
 #>  -0.06693441  0.04036629  0.11983979
 #> ------------------
-#> Regime 3 (K = 3):
+#> Regime 3 (k = 3):
 #> 
 #> Regression coefficients:
 #> 
@@ -599,7 +599,7 @@ mrhlp$summary()
 #>  -1.330363e-04  0.0006297205 2.027763e-04
 #>   5.289199e-05  0.0002027763 1.374405e-03
 #> ------------------
-#> Regime 4 (K = 4):
+#> Regime 4 (k = 4):
 #> 
 #> Regression coefficients:
 #> 
@@ -615,7 +615,7 @@ mrhlp$summary()
 #>  -0.017661572  0.047588713 0.007867532
 #>   0.002139975  0.007867532 0.067150809
 #> ------------------
-#> Regime 5 (K = 5):
+#> Regime 5 (k = 5):
 #> 
 #> Regression coefficients:
 #> 
@@ -680,7 +680,7 @@ mhmmr$summary()
 #> 
 #> 
 #> ------------------
-#> Regime 1 (K = 1):
+#> Regime 1 (k = 1):
 #> 
 #> Regression coefficients:
 #> 
@@ -694,7 +694,7 @@ mhmmr$summary()
 #>  0.12765794  0.87145062 -0.05213162
 #>  0.05537134 -0.05213162  0.87886166
 #> ------------------
-#> Regime 2 (K = 2):
+#> Regime 2 (k = 2):
 #> 
 #> Regression coefficients:
 #> 
@@ -708,7 +708,7 @@ mhmmr$summary()
 #>  -0.1824079  1.05317924 0.01419686
 #>   0.1267597  0.01419686 0.76030310
 #> ------------------
-#> Regime 3 (K = 3):
+#> Regime 3 (k = 3):
 #> 
 #> Regression coefficients:
 #> 
@@ -722,7 +722,7 @@ mhmmr$summary()
 #>  -0.05491451  1.18921808  0.01510035
 #>  -0.01930098  0.01510035  1.00352482
 #> ------------------
-#> Regime 4 (K = 4):
+#> Regime 4 (k = 4):
 #> 
 #> Regression coefficients:
 #> 
@@ -736,7 +736,7 @@ mhmmr$summary()
 #>  -0.03249118  1.12088583 -0.07881351
 #>  -0.03411075 -0.07881351  0.86061127
 #> ------------------
-#> Regime 5 (K = 5):
+#> Regime 5 (k = 5):
 #> 
 #> Regression coefficients:
 #> 
@@ -800,7 +800,7 @@ mhmmr$summary()
 #> 
 #> 
 #> ------------------
-#> Regime 1 (K = 1):
+#> Regime 1 (k = 1):
 #> 
 #> Regression coefficients:
 #> 
@@ -816,7 +816,7 @@ mhmmr$summary()
 #>  -0.01938101  0.109202105 -0.001402791
 #>  -0.01881085 -0.001402791  0.026461790
 #> ------------------
-#> Regime 2 (K = 2):
+#> Regime 2 (k = 2):
 #> 
 #> Regression coefficients:
 #> 
@@ -832,7 +832,7 @@ mhmmr$summary()
 #>  -0.03271648  0.032475350 0.008585402
 #>   0.01362677  0.008585402 0.041960228
 #> ------------------
-#> Regime 3 (K = 3):
+#> Regime 3 (k = 3):
 #> 
 #> Regression coefficients:
 #> 
@@ -848,7 +848,7 @@ mhmmr$summary()
 #>  -0.0002523608  0.0006584694  0.0002391577
 #>  -0.0001992900  0.0002391577  0.0014228769
 #> ------------------
-#> Regime 4 (K = 4):
+#> Regime 4 (k = 4):
 #> 
 #> Regression coefficients:
 #> 
@@ -864,7 +864,7 @@ mhmmr$summary()
 #>  -0.07328139  0.17055704  0.45218611
 #>  -0.08824736  0.45218611  1.76616982
 #> ------------------
-#> Regime 5 (K = 5):
+#> Regime 5 (k = 5):
 #> 
 #> Regression coefficients:
 #> 

@@ -126,12 +126,12 @@ ModelPWR <- setRefClass(
       }
 
       betas <- data.frame(param$beta, row.names = row.names)
-      colnames(betas) <- sapply(1:param$K, function(x) paste0("Beta(K = ", x, ")"))
+      colnames(betas) <- sapply(1:param$K, function(x) paste0("Beta(k = ", x, ")"))
       print(betas, digits = digits)
 
       cat("\nVariances:\n\n")
       sigma2 = data.frame(t(param$sigma2), row.names = NULL)
-      colnames(sigma2) = sapply(1:param$K, function(x) paste0("Sigma2(K = ", x, ")"))
+      colnames(sigma2) = sapply(1:param$K, function(x) paste0("Sigma2(k = ", x, ")"))
       print(sigma2, digits = digits, row.names = FALSE)
 
     }

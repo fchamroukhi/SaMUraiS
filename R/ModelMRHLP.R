@@ -148,7 +148,7 @@ ModelMRHLP <- setRefClass(
 
       for (k in 1:param$K) {
         cat(txt)
-        cat("\nRegime ", k, " (K = ", k, "):\n", sep = "")
+        cat("\nRegime ", k, " (k = ", k, "):\n", sep = "")
 
         cat("\nRegression coefficients:\n\n")
         if (param$p > 0) {

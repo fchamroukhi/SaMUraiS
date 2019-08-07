@@ -40,7 +40,8 @@ Marius Bartcus and Faicel Chamroukhi.
 
 # Installation
 
-You can install the **samurais** package from [GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
+You can install the **samurais** package from
+[GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
 
 ```{r, eval = FALSE}
 # install.packages("devtools")
