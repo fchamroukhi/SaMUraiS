@@ -47,6 +47,7 @@ Chamroukhi, F., A. Same, G. Govaert, and P. Aknin. 2009. \emph{Time Series Model
 Useful links:
 \itemize{
   \item \url{https://github.com/fchamroukhi/SaMUraiS}
+  \item Report bugs at \url{https://github.com/fchamroukhi/SaMUraiS/issues}
 }
 
 }
