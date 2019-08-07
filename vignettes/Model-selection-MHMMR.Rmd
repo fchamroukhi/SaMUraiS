@@ -46,14 +46,14 @@ Let's select a MHMMR model for the following multivariate time series $Y$:
 ```{r}
 data("multivtoydataset")
 x <- multivtoydataset$x
-y <- multivtoydataset[, c("y1", "y2", "y3")]
-matplot(x, y, type = "l", xlab = "x", ylab = "Y")
+Y <- multivtoydataset[, c("y1", "y2", "y3")]
+matplot(x, Y, type = "l", xlab = "x", ylab = "Y")
 ```
 
 # Model selection with BIC
 
 ```{r}
-selectedmhmmr <- selectMHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+selectedmhmmr <- selectMHMMR(X = x, Y = Y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 ```
 
 The selected model has $K = 5$ regimes and the order of the polynomial 

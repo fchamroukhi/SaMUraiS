@@ -45,6 +45,8 @@ See `help(package="samurais")` for further details and references provided by `c
 
 ```{r}
 data("multivtoydataset")
+x <- multivtoydataset$x
+Y <- multivtoydataset[,c("y1", "y2", "y3")]
 ```
 
 ## Set up MRHLP model parameters
@@ -70,9 +72,8 @@ verbose_IRLS <- FALSE
 ## Estimation
 
 ```{r}
-mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
-                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
-                 verbose_IRLS)
+mrhlp <- emMRHLP(X = x, Y = Y, K, p, q, variance_type, n_tries, 
+                 max_iter, threshold, verbose, verbose_IRLS)
 ```
 
 ## Summary

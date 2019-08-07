@@ -140,13 +140,12 @@ StatRHLP <- setRefClass(
         muk <- paramRHLP$phi$XBeta %*% paramRHLP$beta[, k]
 
         if (paramRHLP$variance_type == "homoskedastic") {
-          sigmak <-  paramRHLP$sigma2[1]
+          sigmak <- paramRHLP$sigma2[1]
         } else {
           sigmak <- paramRHLP$sigma2[k]
         }
         z <- ((paramRHLP$Y - muk) ^ 2) / sigmak
-        log_piik_fik[, k] <<-
-          log(pi_ik[, k]) - (0.5 * ones(paramRHLP$m, 1) * (log(2 * pi) + log(sigmak))) - (0.5 * z)
+        log_piik_fik[, k] <<- log(pi_ik[, k]) - (0.5 * ones(paramRHLP$m, 1) * (log(2 * pi) + log(sigmak))) - (0.5 * z)
       }
 
       log_piik_fik <<- pmax(log_piik_fik, log(.Machine$double.xmin))

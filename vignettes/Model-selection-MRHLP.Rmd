@@ -46,14 +46,14 @@ Let's select a MRHLP model for the following multivariate time series $Y$:
 ```{r}
 data("multivtoydataset")
 x <- multivtoydataset$x
-y <- multivtoydataset[, c("y1", "y2", "y3")]
-matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
+Y <- multivtoydataset[, c("y1", "y2", "y3")]
+matplot(x, Y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 ```
 
 # Model selection with BIC
 
 ```{r}
-selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
+selectedmrhlp <- selectMRHLP(X = x, Y = Y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
 ```
 
 The selected model has $K = 5$ regimes and the order of the polynomial 

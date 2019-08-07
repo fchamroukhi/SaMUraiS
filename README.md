@@ -65,6 +65,8 @@ library(samurais)
 ``` r
 # Application to a toy data set
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 
 K <- 5 # Number of regimes (mixture components)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -77,9 +79,8 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K, p, q, 
-               variance_type, n_tries, max_iter, threshold, 
-               verbose, verbose_IRLS)
+rhlp <- emRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
+               max_iter, threshold, verbose, verbose_IRLS)
 #> EM: Iteration : 1 || log-likelihood : -2119.27308534609
 #> EM: Iteration : 2 || log-likelihood : -1149.01040321999
 #> EM: Iteration : 3 || log-likelihood : -1118.20384281234
@@ -149,6 +150,8 @@ rhlp$plot()
 ``` r
 # Application to a real data set
 data("univrealdataset")
+x <- univrealdataset$x
+y <- univrealdataset$y2
 
 K <- 5 # Number of regimes (mixture components)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -161,9 +164,8 @@ threshold <- 1e-6
 verbose <- FALSE
 verbose_IRLS <- FALSE
 
-rhlp <- emRHLP(univrealdataset$x, univrealdataset$y2, K, p, q, 
-               variance_type, n_tries, max_iter, threshold, 
-               verbose, verbose_IRLS)
+rhlp <- emRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
+               max_iter, threshold, verbose, verbose_IRLS)
 
 rhlp$summary()
 #> ---------------------
@@ -207,6 +209,8 @@ rhlp$plot()
 ``` r
 # Application to a toy data set
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 
 K <- 5 # Number of regimes (states)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -217,7 +221,7 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, 
+hmmr <- emHMMR(X = x, Y = y, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
 #> EM: Iteration : 1 | log-likelihood : -1556.39696825601
 #> EM: Iteration : 2 | log-likelihood : -1022.47935723687
@@ -260,6 +264,8 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ``` r
 # Application to a real data set
 data("univrealdataset")
+x <- univrealdataset$x
+y <- univrealdataset$y2
 
 K <- 5 # Number of regimes (states)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -270,7 +276,7 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-hmmr <- emHMMR(univrealdataset$x, univrealdataset$y2, K, p, variance_type, 
+hmmr <- emHMMR(X = x, Y = y, K, p, variance_type, 
                n_tries, max_iter, threshold, verbose)
 #> EM: Iteration : 1 | log-likelihood : -2733.41028643114
 #> EM: Iteration : 2 | log-likelihood : -2303.24018378559
@@ -330,11 +336,13 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ``` r
 # Application to a toy data set
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 
 K <- 5 # Number of segments
 p <- 1 # Polynomial degree
 
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+pwr <- fitPWRFisher(X = x, Y = y, K, p)
 
 pwr$plot()
 ```
@@ -344,11 +352,13 @@ pwr$plot()
 ``` r
 # Application to a real data set
 data("univrealdataset")
+x <- univrealdataset$x
+y <- univrealdataset$y2
 
 K <- 5 # Number of segments
 p <- 3 # Polynomial degree
 
-pwr <- fitPWRFisher(univrealdataset$x, univrealdataset$y2, K, p)
+pwr <- fitPWRFisher(X = x, Y = y, K, p)
 
 pwr$plot()
 ```
@@ -364,6 +374,8 @@ pwr$plot()
 ``` r
 # Application to a toy data set
 data("multivtoydataset")
+x <- multivtoydataset$x
+y <- multivtoydataset[,c("y1", "y2", "y3")]
 
 K <- 5 # Number of regimes (mixture components)
 p <- 1 # Dimension of beta (order of the polynomial regressors)
@@ -376,9 +388,8 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
-                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
-                 verbose_IRLS)
+mrhlp <- emMRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
+                 max_iter, threshold, verbose, verbose_IRLS)
 #> EM: Iteration : 1 || log-likelihood : -4807.6644322901
 #> EM: Iteration : 2 || log-likelihood : -3314.25165556383
 #> EM: Iteration : 3 || log-likelihood : -3216.8871750704
@@ -494,6 +505,8 @@ mrhlp$plot()
 ``` r
 # Application to a real data set (human activity recogntion data)
 data("multivrealdataset")
+x <- multivrealdataset$x
+y <- multivrealdataset[,c("y1", "y2", "y3")]
 
 K <- 5 # Number of regimes (mixture components)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -506,9 +519,8 @@ threshold <- 1e-6
 verbose <- TRUE
 verbose_IRLS <- FALSE
 
-mrhlp <- emMRHLP(multivrealdataset$x, multivrealdataset[,c("y1", "y2", "y3")], 
-                 K, p, q, variance_type, n_tries, max_iter, threshold, verbose,
-                 verbose_IRLS)
+mrhlp <- emMRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
+                 max_iter, threshold, verbose, verbose_IRLS)
 #> EM: Iteration : 1 || log-likelihood : -792.888668727036
 #> EM: Iteration : 2 || log-likelihood : 6016.45835957306
 #> EM: Iteration : 3 || log-likelihood : 6362.81791662824
@@ -645,6 +657,8 @@ mrhlp$plot()
 ``` r
 # Application to a simulated data set
 data("multivtoydataset")
+x <- multivtoydataset$x
+y <- multivtoydataset[,c("y1", "y2", "y3")]
 
 K <- 5 # Number of regimes (states)
 p <- 1 # Dimension of beta (order of the polynomial regressors)
@@ -655,8 +669,8 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[, c("y1", "y2", "y3")],
-                 K, p, variance_type, n_tries, max_iter, threshold, verbose)
+mhmmr <- emMHMMR(X = x, Y = y, K, p, variance_type, n_tries, 
+                 max_iter, threshold, verbose)
 #> EM: Iteration : 1 || log-likelihood : -4539.37845473736
 #> EM: Iteration : 2 || log-likelihood : -3075.7862970485
 #> EM: Iteration : 3 || log-likelihood : -2904.71126233611
@@ -758,6 +772,8 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 ``` r
 # Application to a real data set (human activity recognition data)
 data("multivrealdataset")
+x <- multivrealdataset$x
+y <- multivrealdataset[,c("y1", "y2", "y3")]
 
 K <- 5 # Number of regimes (states)
 p <- 3 # Dimension of beta (order of the polynomial regressors)
@@ -768,8 +784,8 @@ max_iter <- 1500
 threshold <- 1e-6
 verbose <- TRUE
 
-mhmmr <- emMHMMR(multivrealdataset$x, multivrealdataset[, c("y1", "y2", "y3")],
-                 K, p, variance_type, n_tries, max_iter, threshold, verbose)
+mhmmr <- emMHMMR(X = x, Y = y, K, p, variance_type, n_tries, 
+                 max_iter, threshold, verbose)
 #> EM: Iteration : 1 || log-likelihood : 817.206309249687
 #> EM: Iteration : 2 || log-likelihood : 1793.49320726452
 #> EM: Iteration : 3 || log-likelihood : 1908.47251424374

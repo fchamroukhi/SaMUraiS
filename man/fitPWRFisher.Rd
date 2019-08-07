@@ -37,8 +37,10 @@ the class \link{ParamPWR}).
 }
 \examples{
 data(univtoydataset)
+x <- univtoydataset$x
+y <- univtoydataset$y
 
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K = 5, p = 1)
+pwr <- fitPWRFisher(X = x, Y = y, K = 5, p = 1)
 
 pwr$summary()
 

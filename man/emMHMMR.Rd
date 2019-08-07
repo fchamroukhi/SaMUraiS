@@ -61,9 +61,10 @@ than the \code{threshold} parameter).
 }
 \examples{
 data(multivtoydataset)
+x <- multivtoydataset$x
+y <- multivtoydataset[,c("y1", "y2", "y3")]
 
-mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
-                 K = 5, p = 1, verbose = TRUE)
+mhmmr <- emMHMMR(X = x, Y = y, K = 5, p = 1, verbose = TRUE)
 
 mhmmr$summary()
 

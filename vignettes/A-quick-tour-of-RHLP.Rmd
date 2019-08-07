@@ -45,6 +45,8 @@ See `help(package="samurais")` for further details and references provided by `c
 
 ```{r}
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 ```
 
 # Set up RHLP model parameters
@@ -69,8 +71,8 @@ verbose_IRLS <- FALSE
 # Estimation
 
 ```{r}
-rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K, p, q, 
-               variance_type, n_tries, max_iter, threshold, verbose, verbose_IRLS)
+rhlp <- emRHLP(X = x, Y = y, K, p, q, variance_type, n_tries, 
+               max_iter, threshold, verbose, verbose_IRLS)
 ```
 
 # Summary

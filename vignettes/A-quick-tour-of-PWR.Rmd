@@ -44,6 +44,8 @@ See `help(package="samurais")` for further details and references provided by `c
 
 ```{r}
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 ```
 
 # Set up PWR model parameters
@@ -56,7 +58,7 @@ p <- 3 # Polynomial degree
 # Estimation
 
 ```{r}
-pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K, p)
+pwr <- fitPWRFisher(X = x, Y = y, K, p)
 ```
 
 # Summary

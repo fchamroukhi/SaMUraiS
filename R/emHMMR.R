@@ -45,12 +45,14 @@
 #'
 #' @examples
 #' data(univtoydataset)
-#' hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+#' x <- univtoydataset$x
+#' y <- univtoydataset$y
+#'
+#' hmmr <- emHMMR(X = x, Y = y, K = 5, p = 1, verbose = TRUE)
 #'
 #' hmmr$summary()
 #'
 #' hmmr$plot()
-#'
 emHMMR <- function(X, Y, K, p = 3, variance_type = c("heteroskedastic", "homoskedastic"), n_tries = 1, max_iter = 1500, threshold = 1e-6, verbose = FALSE) {
 
   nb_good_try <- 0

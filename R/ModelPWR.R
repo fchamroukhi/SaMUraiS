@@ -11,8 +11,10 @@
 #'
 #' @examples
 #' data(univtoydataset)
+#' x <- univtoydataset$x
+#' y <- univtoydataset$y
 #'
-#' pwr <- fitPWRFisher(univtoydataset$x, univtoydataset$y, K = 5, p = 1)
+#' pwr <- fitPWRFisher(X = x, Y = y, K = 5, p = 1)
 #'
 #' # pwr is a ModelPWR object. It contains some methods such as 'summary' and 'plot'
 #' pwr$summary()

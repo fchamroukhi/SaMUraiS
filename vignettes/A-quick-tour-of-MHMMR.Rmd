@@ -44,6 +44,8 @@ See `help(package="samurais")` for further details and references provided by `c
 
 ```{r}
 data("multivtoydataset")
+x <- multivtoydataset$x
+Y <- multivtoydataset[,c("y1", "y2", "y3")]
 ```
 
 # Set up MHMMR model parameters
@@ -66,8 +68,8 @@ verbose <- TRUE
 # Estimation
 
 ```{r}
-mhmmr <- emMHMMR(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")], 
-                 K, p, variance_type, n_tries, max_iter, threshold, verbose)
+mhmmr <- emMHMMR(X = x, Y = Y, K, p, variance_type, n_tries, 
+                 max_iter, threshold, verbose)
 ```
 
 # Summary

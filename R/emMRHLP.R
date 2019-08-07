@@ -47,9 +47,10 @@
 #'
 #' @examples
 #' data(multivtoydataset)
+#' x <- multivtoydataset$x
+#' y <- multivtoydataset[,c("y1", "y2", "y3")]
 #'
-#' mrhlp <- emMRHLP(multivtoydataset$x, multivtoydataset[,c("y1", "y2", "y3")],
-#'                  K = 5, p = 1, verbose = TRUE)
+#' mrhlp <- emMRHLP(X = x, Y = y, K = 5, p = 1, verbose = TRUE)
 #'
 #' mrhlp$summary()
 #'

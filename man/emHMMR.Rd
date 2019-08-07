@@ -62,12 +62,14 @@ is less than the \code{threshold} parameter).
 }
 \examples{
 data(univtoydataset)
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+x <- univtoydataset$x
+y <- univtoydataset$y
+
+hmmr <- emHMMR(X = x, Y = y, K = 5, p = 1, verbose = TRUE)
 
 hmmr$summary()
 
 hmmr$plot()
-
 }
 \seealso{
 \link{ModelHMMR}, \link{ParamHMMR}, \link{StatHMMR}

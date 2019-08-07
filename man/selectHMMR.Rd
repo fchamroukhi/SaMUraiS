@@ -47,9 +47,10 @@ selected.
 }
 \examples{
 data(univtoydataset)
+x <- univtoydataset$x
+y <- univtoydataset$y
 
-selectedhmmr <- selectHMMR(X = univtoydataset$x, Y = univtoydataset$y,
-                           Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
+selectedhmmr <- selectHMMR(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 2)
 
 selectedhmmr$plot()
 }

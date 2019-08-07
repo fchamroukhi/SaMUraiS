@@ -46,8 +46,10 @@
 #'
 #' @examples
 #' data(univtoydataset)
+#' x <- univtoydataset$x
+#' y <- univtoydataset$y
 #'
-#' rhlp <- emRHLP(univtoydataset$x, univtoydataset$y, K = 3, p = 1, verbose = TRUE)
+#' rhlp <- emRHLP(X = x, Y = y, K = 3, p = 1, verbose = TRUE)
 #'
 #' rhlp$summary()
 #'

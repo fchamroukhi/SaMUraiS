@@ -44,6 +44,8 @@ See `help(package="samurais")` for further details and references provided by `c
 
 ```{r}
 data("univtoydataset")
+x <- univtoydataset$x
+y <- univtoydataset$y
 ```
 
 # Set up HMMR model parameters
@@ -66,8 +68,8 @@ verbose <- TRUE
 # Estimation
 
 ```{r}
-hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K, p, variance_type, n_tries, 
-               max_iter, threshold, verbose)
+hmmr <- emHMMR(X = x, Y = y, K, p, variance_type, 
+               n_tries, max_iter, threshold, verbose)
 ```
 
 # Summary

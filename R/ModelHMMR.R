@@ -11,8 +11,10 @@
 #'
 #' @examples
 #' data(univtoydataset)
+#' x <- univtoydataset$x
+#' y <- univtoydataset$y
 #'
-#' hmmr <- emHMMR(univtoydataset$x, univtoydataset$y, K = 5, p = 1, verbose = TRUE)
+#' hmmr <- emHMMR(X = x, Y = y, K = 5, p = 1, verbose = TRUE)
 #'
 #' # hmmr is a ModelHMMR object. It contains some methods such as 'summary' and 'plot'
 #' hmmr$summary()
