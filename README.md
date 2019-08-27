@@ -9,6 +9,8 @@
 status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
 [![CRAN
 versions](https://www.r-pkg.org/badges/version/samurais)](https://cran.r-project.org/web/packages/samurais/index.html)
+[![CRAN
+logs](https://cranlogs.r-pkg.org/badges/samurais)](https://cran.rstudio.com/web/packages/samurais/index.html)
 <!-- badges: end -->
 
 samurais is an open source toolbox (available in R and in Matlab)
@@ -1278,7 +1280,7 @@ Reviews: Data Mining and Knowledge Discovery*.
 
 Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
 Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
-<https://chamroukhi.com/Dossier/FChamroukhi-Habilitation.pdf>.
+<https://chamroukhi.com/FChamroukhi-HDR.pdf>.
 
 </div>
 
@@ -1315,7 +1317,7 @@ Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
 
 Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
 Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
-Compiègne. <https://chamroukhi.com/papers/FChamroukhi-Thesis.pdf>.
+Compiègne. <https://chamroukhi.com/FChamroukhi-PhD.pdf>.
 
 </div>
 
