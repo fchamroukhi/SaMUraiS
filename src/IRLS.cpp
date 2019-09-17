@@ -250,7 +250,7 @@ List IRLS(arma::mat& X, arma::mat& Tau, arma::mat& Gamma, arma::mat& Winit, bool
     }
   } else {
     Rcout << "\n";
-    Rcout << "IRLS : doesn't converged (increase the number of iterations > "  + std::to_string(iter) + ")\n";
+    Rcout << "IRLS : did not converge (increase the number of iterations > "  + std::to_string(max_iter) + ")\n";
   }
 
   double reg_irls = 0;
