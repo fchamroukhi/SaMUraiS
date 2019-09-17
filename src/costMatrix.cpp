@@ -8,6 +8,9 @@ using namespace Rcpp;
 arma::mat costMatrix(arma::colvec& y, arma::mat& X, double Lmin = 1) {
 
     double nl = y.size() - Lmin + 1;
+    double nk;
+
+    double sigma2;
 
     arma::Mat<double> C1 = arma::mat(y.size(), y.size());
     C1.fill(arma::datum::inf);
@@ -26,12 +29,12 @@ arma::mat costMatrix(arma::colvec& y, arma::mat& X, double Lmin = 1) {
           arma::colvec yab = y.subvec(a, b);
           arma::mat X_ab = X.rows(a, b);
 
-          double nk = b - a;
+          nk = b - a;
 
           arma::colvec beta = pinv(X_ab.t() * X_ab) * X_ab.t() * yab;
           arma::colvec z = yab - X_ab * beta;
-          double sigma = arma::as_scalar(z.t() * z) / nk;
-          C1(a, b) = nk + nk * log(sigma + 2.220446e-16);
+          sigma2 = arma::as_scalar(z.t() * z) / nk;
+          C1(a, b) = nk * 0.5 * std::log(2 * arma::datum::pi) + nk * 0.5 * std::log(sigma2 + 2.220446e-16) + arma::as_scalar(z.t() * z) / sigma2;
         }
       }
     }
