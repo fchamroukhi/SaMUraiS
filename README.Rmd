@@ -20,8 +20,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
-[![CRAN versions](https://www.r-pkg.org/badges/version/samurais)](https://cran.r-project.org/web/packages/samurais/index.html)
-[![CRAN logs](https://cranlogs.r-pkg.org/badges/samurais)](https://cran.rstudio.com/web/packages/samurais/index.html)
+[![CRAN versions](https://www.r-pkg.org/badges/version/samurais)](https://CRAN.R-project.org/package=samurais)
+[![CRAN logs](https://cranlogs.r-pkg.org/badges/samurais)](https://CRAN.R-project.org/package=samurais)
 <!-- badges: end -->
 
 samurais is an open source toolbox (available in R and in Matlab) including 
