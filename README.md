@@ -1,45 +1,28 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# **SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
+**SaMUraiS**: **S**t**A**tistical **M**odels for the **U**nsupe**R**vised segment**A**t**I**on of time-**S**eries
+=================================================================================================================
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS) [![CRAN versions](https://www.r-pkg.org/badges/version/samurais)](https://CRAN.R-project.org/package=samurais) [![CRAN logs](https://cranlogs.r-pkg.org/badges/samurais)](https://CRAN.R-project.org/package=samurais) <!-- badges: end -->
 
-[![Travis build
-status](https://travis-ci.org/fchamroukhi/SaMUraiS.svg?branch=master)](https://travis-ci.org/fchamroukhi/SaMUraiS)
-[![CRAN
-versions](https://www.r-pkg.org/badges/version/samurais)](https://CRAN.R-project.org/package=samurais)
-[![CRAN
-logs](https://cranlogs.r-pkg.org/badges/samurais)](https://CRAN.R-project.org/package=samurais)
-<!-- badges: end -->
+samurais is an open source toolbox (available in R and in Matlab) including many original and flexible user-friendly statistical latent variable models and unsupervised algorithms to segment and represent, time-series data (univariate or multivariate), and more generally, longitudinal data which include regime changes.
 
-samurais is an open source toolbox (available in R and in Matlab)
-including many original and flexible user-friendly statistical latent
-variable models and unsupervised algorithms to segment and represent,
-time-series data (univariate or multivariate), and more generally,
-longitudinal data which include regime changes.
+Our samurais use mainly the following efficient "sword" packages to segment data: Regression with Hidden Logistic Process (**RHLP**), Hidden Markov Model Regression (**HMMR**), Piece-Wise regression (**PWR**), Multivariate 'RHLP' (**MRHLP**), and Multivariate 'HMMR' (**MHMMR**).
 
-Our samurais use mainly the following efficient “sword” packages to
-segment data: Regression with Hidden Logistic Process (**RHLP**), Hidden
-Markov Model Regression (**HMMR**), Piece-Wise regression (**PWR**),
-Multivariate ‘RHLP’ (**MRHLP**), and Multivariate ‘HMMR’ (**MHMMR**).
+The models and algorithms are developed and written in Matlab by Faicel Chamroukhi, and translated and designed into R packages by Florian Lecocq, Marius Bartcus and Faicel Chamroukhi.
 
-The models and algorithms are developed and written in Matlab by Faicel
-Chamroukhi, and translated and designed into R packages by Florian
-Lecocq, Marius Bartcus and Faicel Chamroukhi.
+Installation
+============
 
-# Installation
-
-You can install the **samurais** package from
-[GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
+You can install the **samurais** package from [GitHub](https://github.com/fchamroukhi/SaMUraiS) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("fchamroukhi/SaMUraiS")
 ```
 
-To build *vignettes* for examples of usage, type the command below
-instead:
+To build *vignettes* for examples of usage, type the command below instead:
 
 ``` r
 # install.packages("devtools")
@@ -54,15 +37,14 @@ Use the following command to display vignettes:
 browseVignettes("samurais")
 ```
 
-# Usage
+Usage
+=====
 
 ``` r
 library(samurais)
 ```
 
-<details>
-
-<summary>RHLP</summary>
+<details> <summary>RHLP</summary>
 
 ``` r
 # Application to a toy data set
@@ -372,13 +354,9 @@ rhlp$summary()
 rhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-7-3.png" style="display: block; margin: auto;" /> </details>
 
-</details>
-
-<details>
-
-<summary>HMMR</summary>
+<details> <summary>HMMR</summary>
 
 ``` r
 # Application to a toy data set
@@ -503,9 +481,7 @@ hmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 
 </details>
 
-<details>
-
-<summary>PWR</summary>
+<details> <summary>PWR</summary>
 
 ``` r
 # Application to a toy data set
@@ -591,9 +567,7 @@ pwr$plot()
 
 </details>
 
-<details>
-
-<summary>MRHLP</summary>
+<details> <summary>MRHLP</summary>
 
 ``` r
 # Application to a toy data set
@@ -870,13 +844,9 @@ mrhlp$summary()
 mrhlp$plot()
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-13-1.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-2.png" style="display: block; margin: auto;" /><img src="man/figures/README-unnamed-chunk-13-3.png" style="display: block; margin: auto;" /> </details>
 
-</details>
-
-<details>
-
-<summary>MHMMR</summary>
+<details> <summary>MHMMR</summary>
 
 ``` r
 # Application to a simulated data set
@@ -1127,25 +1097,21 @@ mhmmr$plot(what = c("smoothed", "regressors", "loglikelihood"))
 
 </details>
 
-# Model selection
+Model selection
+===============
 
-samurais also implements model selection procedures to select an optimal
-model based on information criteria including **BIC**, **AIC** and
-**ICL**.
+samurais also implements model selection procedures to select an optimal model based on information criteria including **BIC**, **AIC** and **ICL**.
 
 The selection can be done for the two following parameters:
 
-  - **K**: The number of regimes (segments);
-  - **p**: The order of the polynomial regression.
+-   **K**: The number of regimes (segments);
+-   **p**: The order of the polynomial regression.
 
-Instructions below can be used to illustrate the model on provided
-simulated and real data sets.
+Instructions below can be used to illustrate the model on provided simulated and real data sets.
 
-<details>
+<details> <summary>RHLP</summary>
 
-<summary>RHLP</summary>
-
-Let’s select a RHLP model for the following time series:
+Let's select a RHLP model for the following time series:
 
 ``` r
 data("univtoydataset")
@@ -1171,11 +1137,9 @@ selectedrhlp$plot(what = "estimatedsignal")
 
 </details>
 
-<details>
+<details> <summary>HMMR</summary>
 
-<summary>HMMR</summary>
-
-Let’s select a HMMR model for the following time series:
+Let's select a HMMR model for the following time series:
 
 ``` r
 data("univtoydataset")
@@ -1201,11 +1165,9 @@ selectedhmmr$plot(what = "smoothed")
 
 </details>
 
-<details>
+<details> <summary>MRHLP</summary>
 
-<summary>MRHLP</summary>
-
-Let’s select a MRHLP model for the following multivariate time series:
+Let's select a MRHLP model for the following multivariate time series:
 
 <br />
 
@@ -1220,8 +1182,8 @@ matplot(x, y, type = "l", xlab = "x", ylab = "Y", lty = 1)
 
 ``` r
 selectedmrhlp <- selectMRHLP(X = x, Y = y, Kmin = 2, Kmax = 6, pmin = 0, pmax = 3)
-#> Warning in emMRHLP(X = X1, Y = Y1, K, p): EM log-likelihood is decreasing from
-#> -3105.78591044952to -3105.78627830471 !
+#> Warning in emMRHLP(X = X1, Y = Y1, K, p): EM log-likelihood is decreasing
+#> from -3105.78591044952to -3105.78627830471 !
 #> The MRHLP model selected via the "BIC" has K = 5 regimes 
 #>  and the order of the polynomial regression is p = 0.
 #> BIC = -3033.20042397111
@@ -1234,11 +1196,9 @@ selectedmrhlp$plot(what = "estimatedsignal")
 
 </details>
 
-<details>
+<details> <summary>MHMMR</summary>
 
-<summary>MHMMR</summary>
-
-Let’s select a MHMMR model for the following multivariate time series:
+Let's select a MHMMR model for the following multivariate time series:
 
 ``` r
 data("multivtoydataset")
@@ -1263,71 +1223,19 @@ selectedmhmmr$plot(what = "smoothed")
 
 </details>
 
-# References
+References
+==========
 
-<div id="refs" class="references">
+Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering and Classification of Functional Data.” *Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery*, jan. <https://chamroukhi.com/papers/MBCC-FDA.pdf>.
 
-<div id="ref-Chamroukhi-FDA-2018">
+Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon. <https://chamroukhi.com/FChamroukhi-HDR.pdf>.
 
-Chamroukhi, Faicel, and Hien D. Nguyen. 2019. “Model-Based Clustering
-and Classification of Functional Data.” *Wiley Interdisciplinary
-Reviews: Data Mining and Knowledge Discovery*.
-<https://chamroukhi.com/papers/MBCC-FDA.pdf>.
+Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat. 2013. “Joint Segmentation of Multivariate Time Series with Hidden Process Regression for Human Activity Recognition.” *Neurocomputing* 120 (november): 633–44. <https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
 
-</div>
+Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat. 2013. “An Unsupervised Approach for Automatic Activity Recognition Based on Hidden Markov Model Regression.” *IEEE Transactions on Automation Science and Engineering* 3 (10): 829–335. <https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
 
-<div id="ref-Chamroukhi-HDR-2015">
+Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling, Classification and Tracking.” Ph.D. Thesis, Université de Technologie de Compiègne. <https://chamroukhi.com/FChamroukhi-PhD.pdf>.
 
-Chamroukhi, F. 2015. “Statistical Learning of Latent Data Models for
-Complex Data Analysis.” Habilitation Thesis (HDR), Université de Toulon.
-<https://chamroukhi.com/FChamroukhi-HDR.pdf>.
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden Process Regression Model for Functional Data Description. Application to Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21. <https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
 
-</div>
-
-<div id="ref-Chamroukhi-MHMMR-2013">
-
-Trabelsi, D., S. Mohammed, F. Chamroukhi, L. Oukhellou, and Y. Amirat.
-2013. “An Unsupervised Approach for Automatic Activity Recognition Based
-on Hidden Markov Model Regression.” *IEEE Transactions on Automation
-Science and Engineering* 3 (10): 829–335.
-<https://chamroukhi.com/papers/Chamroukhi-MHMMR-IeeeTase.pdf>.
-
-</div>
-
-<div id="ref-Chamroukhi-MRHLP-2013">
-
-Chamroukhi, F., D. Trabelsi, S. Mohammed, L. Oukhellou, and Y. Amirat.
-2013. “Joint Segmentation of Multivariate Time Series with Hidden
-Process Regression for Human Activity Recognition.” *Neurocomputing*
-120: 633–44.
-<https://chamroukhi.com/papers/chamroukhi_et_al_neucomp2013b.pdf>.
-
-</div>
-
-<div id="ref-chamroukhi_et_al_neurocomp2010">
-
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2010. “A Hidden
-Process Regression Model for Functional Data Description. Application to
-Curve Discrimination.” *Neurocomputing* 73 (7-9): 1210–21.
-<https://chamroukhi.com/papers/chamroukhi_neucomp_2010.pdf>.
-
-</div>
-
-<div id="ref-Chamroukhi_PhD_2010">
-
-Chamroukhi, F. 2010. “Hidden Process Regression for Curve Modeling,
-Classification and Tracking.” Ph.D. Thesis, Université de Technologie de
-Compiègne. <https://chamroukhi.com/FChamroukhi-PhD.pdf>.
-
-</div>
-
-<div id="ref-chamroukhi_et_al_NN2009">
-
-Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series
-Modeling by a Regression Approach Based on a Latent Process.” *Neural
-Networks* 22 (5-6): 593–602.
-<https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
-
-</div>
-
-</div>
+Chamroukhi, F., A. Samé, G. Govaert, and P. Aknin. 2009. “Time Series Modeling by a Regression Approach Based on a Latent Process.” *Neural Networks* 22 (5-6): 593–602. <https://chamroukhi.com/papers/Chamroukhi_Neural_Networks_2009.pdf>.
