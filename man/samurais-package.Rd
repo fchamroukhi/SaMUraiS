@@ -56,7 +56,7 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Faicel Chamroukhi \email{faicel.chamroukhi@unicaen.fr} (0000-0002-5894-3103)
+  \item Faicel Chamroukhi \email{faicel.chamroukhi@gmail.com} (0000-0002-5894-3103)
   \item Marius Bartcus \email{marius.bartcus@gmail.com} (R port) [translator]
 }
 

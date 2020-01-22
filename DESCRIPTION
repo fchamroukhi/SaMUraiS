@@ -1,10 +1,10 @@
 Type: Package
 Package: samurais
 Title: Statistical Models for the Unsupervised Segmentation of Time-Series ('SaMUraiS')
-Version: 0.1.0.9000
+Version: 0.1.0
 Authors@R: c(person("Faicel", "Chamroukhi", role = c("aut"),
     comment = c(ORCID = "0000-0002-5894-3103"),
-    email = "faicel.chamroukhi@unicaen.fr"),
+    email = "faicel.chamroukhi@gmail.com"),
     person("Florian", "Lecocq", role = c("aut","trl","cre"), comment = "R port",
     email = "florian.lecocq@outlook.com"),
     person("Marius", "Bartcus", role = c("aut","trl"), comment = "R port",
